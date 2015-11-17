@@ -1,0 +1,4 @@
+D:\Users\chlee\Desktop\JCDecaux_Prototype\vs2010\AdvertisingWebService\bin\AdvertisingWebService.dll
+D:\Users\chlee\Desktop\JCDecaux_Prototype\vs2010\AdvertisingWebService\bin\AdvertisingWebService.pdb
+D:\Users\chlee\Desktop\JCDecaux_Prototype\vs2010\AdvertisingWebService\obj\Debug\AdvertisingWebService.dll
+D:\Users\chlee\Desktop\JCDecaux_Prototype\vs2010\AdvertisingWebService\obj\Debug\AdvertisingWebService.pdb
