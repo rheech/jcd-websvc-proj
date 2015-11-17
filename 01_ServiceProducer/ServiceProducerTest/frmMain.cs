@@ -11,7 +11,7 @@ using System.Diagnostics;
 
 namespace ServiceProducerTest
 {
-    // Install Nuget Package
+    // Turned off BindingFailure & IO Exception
     public partial class frmMain : Form
     {
         WeatherService wSvc;
@@ -20,9 +20,9 @@ namespace ServiceProducerTest
         {
             InitializeComponent();
 
-            //wSvc = new WeatherService();
-            libwebsvcprod.Weather2.WeatherSoapClient client = new libwebsvcprod.Weather2.WeatherSoapClient();
-            client.GetCityWeatherByZIP("76543");
+            wSvc = new WeatherService();
+            //libwebsvcprod.Weather2.WeatherSoapClient client = new libwebsvcprod.Weather2.WeatherSoapClient();
+            //client.GetCityWeatherByZIP("76543");
         }
 
         private void frmMain_Load(object sender, EventArgs e)
