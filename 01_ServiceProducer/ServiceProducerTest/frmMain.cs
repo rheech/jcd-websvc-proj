@@ -41,9 +41,14 @@ namespace ServiceProducerTest
                 string[] result;
 
                 result = wSvc.GetCitiesByCountry("Korea");
-                MessageBox.Show(result[8]);
 
-                MessageBox.Show(wSvc.GetWeather(result[8], "Korea"));
+                WeatherInformation info = wSvc.GetWeather(result[2], "Korea");
+
+                sb.AppendFormat("Location: {0}\n", info.Location);
+                sb.AppendFormat("Temperature: {0}\n", info.Temperature);
+                sb.AppendFormat("Dewpoint: {0}\n", info.DewPoint);
+                sb.AppendFormat("SkyConditions: {0}\n", info.SkyConditions);
+                MessageBox.Show(sb.ToString());
 
                 //XmlReader reader = XmlReader.Create(sb.ToString());
 
