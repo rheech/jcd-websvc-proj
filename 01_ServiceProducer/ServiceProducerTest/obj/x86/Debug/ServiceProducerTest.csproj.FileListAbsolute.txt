@@ -26,3 +26,15 @@ D:\Users\Cheong\Desktop\New folder (4)\01_ServiceProducer\ServiceProducerTest\ob
 D:\Users\Cheong\Desktop\New folder (4)\01_ServiceProducer\ServiceProducerTest\obj\x86\Debug\ServiceProducerTest.frmMain.resources
 D:\Users\Cheong\Desktop\New folder (4)\01_ServiceProducer\ServiceProducerTest\obj\x86\Debug\ServiceProducerTest.Properties.Resources.resources
 D:\Users\Cheong\Desktop\New folder (4)\01_ServiceProducer\ServiceProducerTest\obj\x86\Debug\ServiceProducerTest.csproj.GenerateResource.Cache
+D:\Users\Cheong\Desktop\2\01_ServiceProducer\ServiceProducerTest\bin\Debug\ServiceProducerTest.exe.config
+D:\Users\Cheong\Desktop\2\01_ServiceProducer\ServiceProducerTest\obj\x86\Debug\ServiceProducerTest.exe
+D:\Users\Cheong\Desktop\2\01_ServiceProducer\ServiceProducerTest\obj\x86\Debug\ServiceProducerTest.pdb
+D:\Users\Cheong\Desktop\2\01_ServiceProducer\ServiceProducerTest\bin\Debug\ServiceProducerTest.exe
+D:\Users\Cheong\Desktop\2\01_ServiceProducer\ServiceProducerTest\bin\Debug\ServiceProducerTest.pdb
+D:\Users\Cheong\Desktop\2\01_ServiceProducer\ServiceProducerTest\bin\Debug\libwebsvcprod.dll
+D:\Users\Cheong\Desktop\2\01_ServiceProducer\ServiceProducerTest\bin\Debug\libwebsvcprod.pdb
+D:\Users\Cheong\Desktop\2\01_ServiceProducer\ServiceProducerTest\obj\x86\Debug\ServiceProducerTest.csprojResolveAssemblyReference.cache
+D:\Users\Cheong\Desktop\2\01_ServiceProducer\ServiceProducerTest\obj\x86\Debug\ServiceProducerTest.frmMain.resources
+D:\Users\Cheong\Desktop\2\01_ServiceProducer\ServiceProducerTest\obj\x86\Debug\ServiceProducerTest.Properties.Resources.resources
+D:\Users\Cheong\Desktop\2\01_ServiceProducer\ServiceProducerTest\obj\x86\Debug\ServiceProducerTest.csproj.GenerateResource.Cache
+D:\Users\Cheong\Desktop\2\01_ServiceProducer\bin\Debug\ServiceProducerTest.exe.config

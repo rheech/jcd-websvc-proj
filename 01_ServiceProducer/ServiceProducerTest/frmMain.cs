@@ -8,6 +8,8 @@ using System.Text;
 using System.Windows.Forms;
 using libwebsvcprod;
 using System.Diagnostics;
+using System.Xml;
+using System.IO;
 
 namespace ServiceProducerTest
 {
@@ -35,7 +37,16 @@ namespace ServiceProducerTest
         {
             try
             {
-                MessageBox.Show(wSvc.GetCitiesByCountry("Korea"));
+                StringBuilder sb = new StringBuilder();
+                string[] result;
+
+                result = wSvc.GetCitiesByCountry("Korea");
+                MessageBox.Show(result[8]);
+
+                MessageBox.Show(wSvc.GetWeather(result[8], "Korea"));
+
+                //XmlReader reader = XmlReader.Create(sb.ToString());
+
             }
             catch (Exception ex)
             {
