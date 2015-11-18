@@ -61,7 +61,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="packages.config" />
     <None Include="Service References\GlobalWeather\globalweather.wsdl" />
     <None Include="Service References\Weather2\libwebsvcprod.Weather2.ForecastReturn.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>

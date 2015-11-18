@@ -1,9 +1,6 @@
 D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\libwebsvcprod\bin\Debug\libwebsvcprod.dll.config
 D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\libwebsvcprod\bin\Debug\libwebsvcprod.dll
 D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\libwebsvcprod\bin\Debug\libwebsvcprod.pdb
-D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\libwebsvcprod\obj\Debug\libwebsvcprod.dll
-D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\libwebsvcprod\obj\Debug\libwebsvcprod.pdb
-D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\libwebsvcprod\obj\Debug\libwebsvcprod.csprojResolveAssemblyReference.cache
 D:\Users\Cheong\Desktop\New folder (4)\01_ServiceProducer\libwebsvcprod\bin\Debug\libwebsvcprod.dll.config
 D:\Users\Cheong\Desktop\New folder (4)\01_ServiceProducer\libwebsvcprod\bin\Debug\libwebsvcprod.dll
 D:\Users\Cheong\Desktop\New folder (4)\01_ServiceProducer\libwebsvcprod\bin\Debug\libwebsvcprod.pdb

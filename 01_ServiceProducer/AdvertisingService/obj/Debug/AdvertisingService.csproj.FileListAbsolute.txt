@@ -2,7 +2,3 @@ D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\AdvertisingWebServi
 D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\AdvertisingWebService\AdvertisingService\bin\AdvertisingService.pdb
 D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\AdvertisingWebService\AdvertisingService\obj\Debug\AdvertisingService.dll
 D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\AdvertisingWebService\AdvertisingService\obj\Debug\AdvertisingService.pdb
-D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\AdvertisingService\bin\AdvertisingService.dll
-D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\AdvertisingService\bin\AdvertisingService.pdb
-D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\AdvertisingService\obj\Debug\AdvertisingService.dll
-D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\AdvertisingService\obj\Debug\AdvertisingService.pdb

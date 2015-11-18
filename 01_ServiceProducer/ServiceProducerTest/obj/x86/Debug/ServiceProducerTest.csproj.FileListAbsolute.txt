@@ -4,12 +4,6 @@ D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\AdvertisingWebServi
 D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\AdvertisingWebService\ServiceProducerTest\obj\x86\Debug\ServiceProducerTest.csproj.GenerateResource.Cache
 D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\AdvertisingWebService\ServiceProducerTest\obj\x86\Debug\ServiceProducerTest.exe
 D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\AdvertisingWebService\ServiceProducerTest\obj\x86\Debug\ServiceProducerTest.pdb
-D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\ServiceProducerTest\obj\x86\Debug\ServiceProducerTest.exe
-D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\ServiceProducerTest\obj\x86\Debug\ServiceProducerTest.pdb
-D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\ServiceProducerTest\obj\x86\Debug\ServiceProducerTest.csprojResolveAssemblyReference.cache
-D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\ServiceProducerTest\obj\x86\Debug\ServiceProducerTest.frmMain.resources
-D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\ServiceProducerTest\obj\x86\Debug\ServiceProducerTest.Properties.Resources.resources
-D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\ServiceProducerTest\obj\x86\Debug\ServiceProducerTest.csproj.GenerateResource.Cache
 D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\ServiceProducerTest\bin\Debug\ServiceProducerTest.exe
 D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\ServiceProducerTest\bin\Debug\ServiceProducerTest.pdb
 D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\ServiceProducerTest\bin\Debug\libwebsvcprod.dll
