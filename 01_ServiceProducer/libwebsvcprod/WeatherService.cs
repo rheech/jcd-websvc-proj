@@ -36,7 +36,6 @@ namespace libwebsvcprod
         public WeatherInformation(string xml)
         {
             List<string> sList;
-            string value;
             XmlTextReader reader;
 
             _xml = xml;

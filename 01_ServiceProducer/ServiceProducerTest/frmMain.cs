@@ -48,6 +48,7 @@ namespace ServiceProducerTest
                 sb.AppendFormat("Temperature: {0}\n", info.Temperature);
                 sb.AppendFormat("Dewpoint: {0}\n", info.DewPoint);
                 sb.AppendFormat("SkyConditions: {0}\n", info.SkyConditions);
+
                 MessageBox.Show(sb.ToString());
 
                 //XmlReader reader = XmlReader.Create(sb.ToString());
