@@ -7,7 +7,7 @@ using System.Data;
 using System.Data.OleDb;
 using System.Text.RegularExpressions;
 
-namespace libdbio
+namespace libordermgmt
 {
     public abstract class DatabaseIO
     {

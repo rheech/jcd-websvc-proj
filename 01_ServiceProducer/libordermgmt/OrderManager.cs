@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data.OleDb;
 
-namespace libdbio
+namespace libordermgmt
 {
     // We never work on rainy days, and national holidays!! ==> Web Service
     // Real-time currency exchange rate

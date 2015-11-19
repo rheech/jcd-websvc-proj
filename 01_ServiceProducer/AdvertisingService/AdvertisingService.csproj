@@ -79,9 +79,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\libdbio\libdbio.csproj">
-      <Project>{7F9128F3-D694-49C3-9909-385691569665}</Project>
-      <Name>libdbio</Name>
+    <ProjectReference Include="..\libordermgmt\libordermgmt.csproj">
+      <Project>{C2BEC6F6-845A-47D1-B46C-33F3A6C5090C}</Project>
+      <Name>libordermgmt</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

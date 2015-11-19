@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
-using libdbio;
+using libordermgmt;
 
 namespace AdvertisingService
 {
@@ -18,35 +18,21 @@ namespace AdvertisingService
     public class PurchasingService : System.Web.Services.WebService
     {
         [WebMethod]
-        public string RequestOrderDetails()
-        {
-            return "Not implemented";
-        }
-
-        [WebMethod]
-        public string CreateOrderDetails()
-        {
-            return "Not implemented";
-        }
-
-        [WebMethod]
         public void SendOrderDetails()
         {
             
         }
 
         [WebMethod]
-        public void CreateInvoice()
+        public string RequestOrder(OrderInfo info)
         {
-
+            return info.Requirement;
         }
 
         [WebMethod]
-        public bool CreateDatabase(string file)
+        public string CheckOrderStatus(OrderInfo info)
         {
-            DatabaseIO dbio = new DatabaseIO();
-
-            return true;
+            return info.Requirement;
         }
     }
 }

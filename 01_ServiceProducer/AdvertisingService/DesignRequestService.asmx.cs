@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
-using libdbio;
+using libordermgmt;
 
 namespace AdvertisingService
 {
@@ -17,19 +17,10 @@ namespace AdvertisingService
     // [System.Web.Script.Services.ScriptService]
     public class DesignRequestService : System.Web.Services.WebService
     {
-
         [WebMethod]
         public string HelloWorld()
         {
             return "Hello World";
-        }
-
-        [WebMethod]
-        public bool CreateDatabase(string file)
-        {
-            DatabaseIO dbio = new DatabaseIO();
-
-            return true;
         }
     }
 }
