@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://lab.cheonghyun.com:8888/AdvertisingService/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://lab.cheonghyun.com:8888/AdvertisingService/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://lab.cheonghyun.com:8888/AdvertisingService/">
+      <s:element name="RequestOrderDetails">
+        <s:complexType />
+      </s:element>
+      <s:element name="RequestOrderDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RequestOrderDetailsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateOrderDetails">
+        <s:complexType />
+      </s:element>
+      <s:element name="CreateOrderDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateOrderDetailsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendOrderDetails">
+        <s:complexType />
+      </s:element>
+      <s:element name="SendOrderDetailsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CreateInvoice">
+        <s:complexType />
+      </s:element>
+      <s:element name="CreateInvoiceResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CreateDatabase">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="file" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateDatabaseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CreateDatabaseResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="RequestOrderDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:RequestOrderDetails" />
+  </wsdl:message>
+  <wsdl:message name="RequestOrderDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:RequestOrderDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateOrderDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateOrderDetails" />
+  </wsdl:message>
+  <wsdl:message name="CreateOrderDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateOrderDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendOrderDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:SendOrderDetails" />
+  </wsdl:message>
+  <wsdl:message name="SendOrderDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:SendOrderDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateInvoiceSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateInvoice" />
+  </wsdl:message>
+  <wsdl:message name="CreateInvoiceSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateInvoiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateDatabaseSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateDatabase" />
+  </wsdl:message>
+  <wsdl:message name="CreateDatabaseSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateDatabaseResponse" />
+  </wsdl:message>
+  <wsdl:portType name="PurchasingServiceSoap">
+    <wsdl:operation name="RequestOrderDetails">
+      <wsdl:input message="tns:RequestOrderDetailsSoapIn" />
+      <wsdl:output message="tns:RequestOrderDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrderDetails">
+      <wsdl:input message="tns:CreateOrderDetailsSoapIn" />
+      <wsdl:output message="tns:CreateOrderDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendOrderDetails">
+      <wsdl:input message="tns:SendOrderDetailsSoapIn" />
+      <wsdl:output message="tns:SendOrderDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateInvoice">
+      <wsdl:input message="tns:CreateInvoiceSoapIn" />
+      <wsdl:output message="tns:CreateInvoiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateDatabase">
+      <wsdl:input message="tns:CreateDatabaseSoapIn" />
+      <wsdl:output message="tns:CreateDatabaseSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PurchasingServiceSoap" type="tns:PurchasingServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RequestOrderDetails">
+      <soap:operation soapAction="http://lab.cheonghyun.com:8888/AdvertisingService/RequestOrderDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrderDetails">
+      <soap:operation soapAction="http://lab.cheonghyun.com:8888/AdvertisingService/CreateOrderDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendOrderDetails">
+      <soap:operation soapAction="http://lab.cheonghyun.com:8888/AdvertisingService/SendOrderDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateInvoice">
+      <soap:operation soapAction="http://lab.cheonghyun.com:8888/AdvertisingService/CreateInvoice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateDatabase">
+      <soap:operation soapAction="http://lab.cheonghyun.com:8888/AdvertisingService/CreateDatabase" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PurchasingServiceSoap12" type="tns:PurchasingServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RequestOrderDetails">
+      <soap12:operation soapAction="http://lab.cheonghyun.com:8888/AdvertisingService/RequestOrderDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrderDetails">
+      <soap12:operation soapAction="http://lab.cheonghyun.com:8888/AdvertisingService/CreateOrderDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendOrderDetails">
+      <soap12:operation soapAction="http://lab.cheonghyun.com:8888/AdvertisingService/SendOrderDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateInvoice">
+      <soap12:operation soapAction="http://lab.cheonghyun.com:8888/AdvertisingService/CreateInvoice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateDatabase">
+      <soap12:operation soapAction="http://lab.cheonghyun.com:8888/AdvertisingService/CreateDatabase" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PurchasingService">
+    <wsdl:port name="PurchasingServiceSoap" binding="tns:PurchasingServiceSoap">
+      <soap:address location="http://lab.cheonghyun.com:8888/AdvertisingService/PurchasingService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PurchasingServiceSoap12" binding="tns:PurchasingServiceSoap12">
+      <soap12:address location="http://lab.cheonghyun.com:8888/AdvertisingService/PurchasingService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

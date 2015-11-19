@@ -15,34 +15,38 @@ namespace ServiceConsumerTest.AdvertisingService {
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://lab.cheonghyun.com:8888/AdvertisingService/", ConfigurationName="AdvertisingService.PurchasingServiceSoap")]
     public interface PurchasingServiceSoap {
         
-        // CODEGEN: Generating message contract since element name requestOrderDetailsResult from namespace http://lab.cheonghyun.com:8888/AdvertisingService/ is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://lab.cheonghyun.com:8888/AdvertisingService/requestOrderDetails", ReplyAction="*")]
-        ServiceConsumerTest.AdvertisingService.requestOrderDetailsResponse requestOrderDetails(ServiceConsumerTest.AdvertisingService.requestOrderDetailsRequest request);
+        // CODEGEN: Generating message contract since element name RequestOrderDetailsResult from namespace http://lab.cheonghyun.com:8888/AdvertisingService/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://lab.cheonghyun.com:8888/AdvertisingService/RequestOrderDetails", ReplyAction="*")]
+        ServiceConsumerTest.AdvertisingService.RequestOrderDetailsResponse RequestOrderDetails(ServiceConsumerTest.AdvertisingService.RequestOrderDetailsRequest request);
         
-        // CODEGEN: Generating message contract since element name createOrderDetailsResult from namespace http://lab.cheonghyun.com:8888/AdvertisingService/ is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://lab.cheonghyun.com:8888/AdvertisingService/createOrderDetails", ReplyAction="*")]
-        ServiceConsumerTest.AdvertisingService.createOrderDetailsResponse createOrderDetails(ServiceConsumerTest.AdvertisingService.createOrderDetailsRequest request);
+        // CODEGEN: Generating message contract since element name CreateOrderDetailsResult from namespace http://lab.cheonghyun.com:8888/AdvertisingService/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://lab.cheonghyun.com:8888/AdvertisingService/CreateOrderDetails", ReplyAction="*")]
+        ServiceConsumerTest.AdvertisingService.CreateOrderDetailsResponse CreateOrderDetails(ServiceConsumerTest.AdvertisingService.CreateOrderDetailsRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://lab.cheonghyun.com:8888/AdvertisingService/sendOrderDetails", ReplyAction="*")]
-        void sendOrderDetails();
+        [System.ServiceModel.OperationContractAttribute(Action="http://lab.cheonghyun.com:8888/AdvertisingService/SendOrderDetails", ReplyAction="*")]
+        void SendOrderDetails();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://lab.cheonghyun.com:8888/AdvertisingService/createInvoice", ReplyAction="*")]
-        void createInvoice();
+        [System.ServiceModel.OperationContractAttribute(Action="http://lab.cheonghyun.com:8888/AdvertisingService/CreateInvoice", ReplyAction="*")]
+        void CreateInvoice();
+        
+        // CODEGEN: Generating message contract since element name file from namespace http://lab.cheonghyun.com:8888/AdvertisingService/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://lab.cheonghyun.com:8888/AdvertisingService/CreateDatabase", ReplyAction="*")]
+        ServiceConsumerTest.AdvertisingService.CreateDatabaseResponse CreateDatabase(ServiceConsumerTest.AdvertisingService.CreateDatabaseRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class requestOrderDetailsRequest {
+    public partial class RequestOrderDetailsRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="requestOrderDetails", Namespace="http://lab.cheonghyun.com:8888/AdvertisingService/", Order=0)]
-        public ServiceConsumerTest.AdvertisingService.requestOrderDetailsRequestBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="RequestOrderDetails", Namespace="http://lab.cheonghyun.com:8888/AdvertisingService/", Order=0)]
+        public ServiceConsumerTest.AdvertisingService.RequestOrderDetailsRequestBody Body;
         
-        public requestOrderDetailsRequest() {
+        public RequestOrderDetailsRequest() {
         }
         
-        public requestOrderDetailsRequest(ServiceConsumerTest.AdvertisingService.requestOrderDetailsRequestBody Body) {
+        public RequestOrderDetailsRequest(ServiceConsumerTest.AdvertisingService.RequestOrderDetailsRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -51,9 +55,9 @@ namespace ServiceConsumerTest.AdvertisingService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.Runtime.Serialization.DataContractAttribute()]
-    public partial class requestOrderDetailsRequestBody {
+    public partial class RequestOrderDetailsRequestBody {
         
-        public requestOrderDetailsRequestBody() {
+        public RequestOrderDetailsRequestBody() {
         }
     }
     
@@ -61,15 +65,15 @@ namespace ServiceConsumerTest.AdvertisingService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class requestOrderDetailsResponse {
+    public partial class RequestOrderDetailsResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="requestOrderDetailsResponse", Namespace="http://lab.cheonghyun.com:8888/AdvertisingService/", Order=0)]
-        public ServiceConsumerTest.AdvertisingService.requestOrderDetailsResponseBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="RequestOrderDetailsResponse", Namespace="http://lab.cheonghyun.com:8888/AdvertisingService/", Order=0)]
+        public ServiceConsumerTest.AdvertisingService.RequestOrderDetailsResponseBody Body;
         
-        public requestOrderDetailsResponse() {
+        public RequestOrderDetailsResponse() {
         }
         
-        public requestOrderDetailsResponse(ServiceConsumerTest.AdvertisingService.requestOrderDetailsResponseBody Body) {
+        public RequestOrderDetailsResponse(ServiceConsumerTest.AdvertisingService.RequestOrderDetailsResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -78,16 +82,16 @@ namespace ServiceConsumerTest.AdvertisingService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.Runtime.Serialization.DataContractAttribute(Namespace="http://lab.cheonghyun.com:8888/AdvertisingService/")]
-    public partial class requestOrderDetailsResponseBody {
+    public partial class RequestOrderDetailsResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string requestOrderDetailsResult;
+        public string RequestOrderDetailsResult;
         
-        public requestOrderDetailsResponseBody() {
+        public RequestOrderDetailsResponseBody() {
         }
         
-        public requestOrderDetailsResponseBody(string requestOrderDetailsResult) {
-            this.requestOrderDetailsResult = requestOrderDetailsResult;
+        public RequestOrderDetailsResponseBody(string RequestOrderDetailsResult) {
+            this.RequestOrderDetailsResult = RequestOrderDetailsResult;
         }
     }
     
@@ -95,15 +99,15 @@ namespace ServiceConsumerTest.AdvertisingService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class createOrderDetailsRequest {
+    public partial class CreateOrderDetailsRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="createOrderDetails", Namespace="http://lab.cheonghyun.com:8888/AdvertisingService/", Order=0)]
-        public ServiceConsumerTest.AdvertisingService.createOrderDetailsRequestBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateOrderDetails", Namespace="http://lab.cheonghyun.com:8888/AdvertisingService/", Order=0)]
+        public ServiceConsumerTest.AdvertisingService.CreateOrderDetailsRequestBody Body;
         
-        public createOrderDetailsRequest() {
+        public CreateOrderDetailsRequest() {
         }
         
-        public createOrderDetailsRequest(ServiceConsumerTest.AdvertisingService.createOrderDetailsRequestBody Body) {
+        public CreateOrderDetailsRequest(ServiceConsumerTest.AdvertisingService.CreateOrderDetailsRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -112,9 +116,9 @@ namespace ServiceConsumerTest.AdvertisingService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.Runtime.Serialization.DataContractAttribute()]
-    public partial class createOrderDetailsRequestBody {
+    public partial class CreateOrderDetailsRequestBody {
         
-        public createOrderDetailsRequestBody() {
+        public CreateOrderDetailsRequestBody() {
         }
     }
     
@@ -122,15 +126,15 @@ namespace ServiceConsumerTest.AdvertisingService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class createOrderDetailsResponse {
+    public partial class CreateOrderDetailsResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="createOrderDetailsResponse", Namespace="http://lab.cheonghyun.com:8888/AdvertisingService/", Order=0)]
-        public ServiceConsumerTest.AdvertisingService.createOrderDetailsResponseBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateOrderDetailsResponse", Namespace="http://lab.cheonghyun.com:8888/AdvertisingService/", Order=0)]
+        public ServiceConsumerTest.AdvertisingService.CreateOrderDetailsResponseBody Body;
         
-        public createOrderDetailsResponse() {
+        public CreateOrderDetailsResponse() {
         }
         
-        public createOrderDetailsResponse(ServiceConsumerTest.AdvertisingService.createOrderDetailsResponseBody Body) {
+        public CreateOrderDetailsResponse(ServiceConsumerTest.AdvertisingService.CreateOrderDetailsResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -139,16 +143,84 @@ namespace ServiceConsumerTest.AdvertisingService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.Runtime.Serialization.DataContractAttribute(Namespace="http://lab.cheonghyun.com:8888/AdvertisingService/")]
-    public partial class createOrderDetailsResponseBody {
+    public partial class CreateOrderDetailsResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string createOrderDetailsResult;
+        public string CreateOrderDetailsResult;
         
-        public createOrderDetailsResponseBody() {
+        public CreateOrderDetailsResponseBody() {
         }
         
-        public createOrderDetailsResponseBody(string createOrderDetailsResult) {
-            this.createOrderDetailsResult = createOrderDetailsResult;
+        public CreateOrderDetailsResponseBody(string CreateOrderDetailsResult) {
+            this.CreateOrderDetailsResult = CreateOrderDetailsResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CreateDatabaseRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateDatabase", Namespace="http://lab.cheonghyun.com:8888/AdvertisingService/", Order=0)]
+        public ServiceConsumerTest.AdvertisingService.CreateDatabaseRequestBody Body;
+        
+        public CreateDatabaseRequest() {
+        }
+        
+        public CreateDatabaseRequest(ServiceConsumerTest.AdvertisingService.CreateDatabaseRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://lab.cheonghyun.com:8888/AdvertisingService/")]
+    public partial class CreateDatabaseRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string file;
+        
+        public CreateDatabaseRequestBody() {
+        }
+        
+        public CreateDatabaseRequestBody(string file) {
+            this.file = file;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CreateDatabaseResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateDatabaseResponse", Namespace="http://lab.cheonghyun.com:8888/AdvertisingService/", Order=0)]
+        public ServiceConsumerTest.AdvertisingService.CreateDatabaseResponseBody Body;
+        
+        public CreateDatabaseResponse() {
+        }
+        
+        public CreateDatabaseResponse(ServiceConsumerTest.AdvertisingService.CreateDatabaseResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://lab.cheonghyun.com:8888/AdvertisingService/")]
+    public partial class CreateDatabaseResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool CreateDatabaseResult;
+        
+        public CreateDatabaseResponseBody() {
+        }
+        
+        public CreateDatabaseResponseBody(bool CreateDatabaseResult) {
+            this.CreateDatabaseResult = CreateDatabaseResult;
         }
     }
     
@@ -180,35 +252,48 @@ namespace ServiceConsumerTest.AdvertisingService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        ServiceConsumerTest.AdvertisingService.requestOrderDetailsResponse ServiceConsumerTest.AdvertisingService.PurchasingServiceSoap.requestOrderDetails(ServiceConsumerTest.AdvertisingService.requestOrderDetailsRequest request) {
-            return base.Channel.requestOrderDetails(request);
+        ServiceConsumerTest.AdvertisingService.RequestOrderDetailsResponse ServiceConsumerTest.AdvertisingService.PurchasingServiceSoap.RequestOrderDetails(ServiceConsumerTest.AdvertisingService.RequestOrderDetailsRequest request) {
+            return base.Channel.RequestOrderDetails(request);
         }
         
-        public string requestOrderDetails() {
-            ServiceConsumerTest.AdvertisingService.requestOrderDetailsRequest inValue = new ServiceConsumerTest.AdvertisingService.requestOrderDetailsRequest();
-            inValue.Body = new ServiceConsumerTest.AdvertisingService.requestOrderDetailsRequestBody();
-            ServiceConsumerTest.AdvertisingService.requestOrderDetailsResponse retVal = ((ServiceConsumerTest.AdvertisingService.PurchasingServiceSoap)(this)).requestOrderDetails(inValue);
-            return retVal.Body.requestOrderDetailsResult;
+        public string RequestOrderDetails() {
+            ServiceConsumerTest.AdvertisingService.RequestOrderDetailsRequest inValue = new ServiceConsumerTest.AdvertisingService.RequestOrderDetailsRequest();
+            inValue.Body = new ServiceConsumerTest.AdvertisingService.RequestOrderDetailsRequestBody();
+            ServiceConsumerTest.AdvertisingService.RequestOrderDetailsResponse retVal = ((ServiceConsumerTest.AdvertisingService.PurchasingServiceSoap)(this)).RequestOrderDetails(inValue);
+            return retVal.Body.RequestOrderDetailsResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        ServiceConsumerTest.AdvertisingService.createOrderDetailsResponse ServiceConsumerTest.AdvertisingService.PurchasingServiceSoap.createOrderDetails(ServiceConsumerTest.AdvertisingService.createOrderDetailsRequest request) {
-            return base.Channel.createOrderDetails(request);
+        ServiceConsumerTest.AdvertisingService.CreateOrderDetailsResponse ServiceConsumerTest.AdvertisingService.PurchasingServiceSoap.CreateOrderDetails(ServiceConsumerTest.AdvertisingService.CreateOrderDetailsRequest request) {
+            return base.Channel.CreateOrderDetails(request);
         }
         
-        public string createOrderDetails() {
-            ServiceConsumerTest.AdvertisingService.createOrderDetailsRequest inValue = new ServiceConsumerTest.AdvertisingService.createOrderDetailsRequest();
-            inValue.Body = new ServiceConsumerTest.AdvertisingService.createOrderDetailsRequestBody();
-            ServiceConsumerTest.AdvertisingService.createOrderDetailsResponse retVal = ((ServiceConsumerTest.AdvertisingService.PurchasingServiceSoap)(this)).createOrderDetails(inValue);
-            return retVal.Body.createOrderDetailsResult;
+        public string CreateOrderDetails() {
+            ServiceConsumerTest.AdvertisingService.CreateOrderDetailsRequest inValue = new ServiceConsumerTest.AdvertisingService.CreateOrderDetailsRequest();
+            inValue.Body = new ServiceConsumerTest.AdvertisingService.CreateOrderDetailsRequestBody();
+            ServiceConsumerTest.AdvertisingService.CreateOrderDetailsResponse retVal = ((ServiceConsumerTest.AdvertisingService.PurchasingServiceSoap)(this)).CreateOrderDetails(inValue);
+            return retVal.Body.CreateOrderDetailsResult;
         }
         
-        public void sendOrderDetails() {
-            base.Channel.sendOrderDetails();
+        public void SendOrderDetails() {
+            base.Channel.SendOrderDetails();
         }
         
-        public void createInvoice() {
-            base.Channel.createInvoice();
+        public void CreateInvoice() {
+            base.Channel.CreateInvoice();
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ServiceConsumerTest.AdvertisingService.CreateDatabaseResponse ServiceConsumerTest.AdvertisingService.PurchasingServiceSoap.CreateDatabase(ServiceConsumerTest.AdvertisingService.CreateDatabaseRequest request) {
+            return base.Channel.CreateDatabase(request);
+        }
+        
+        public bool CreateDatabase(string file) {
+            ServiceConsumerTest.AdvertisingService.CreateDatabaseRequest inValue = new ServiceConsumerTest.AdvertisingService.CreateDatabaseRequest();
+            inValue.Body = new ServiceConsumerTest.AdvertisingService.CreateDatabaseRequestBody();
+            inValue.Body.file = file;
+            ServiceConsumerTest.AdvertisingService.CreateDatabaseResponse retVal = ((ServiceConsumerTest.AdvertisingService.PurchasingServiceSoap)(this)).CreateDatabase(inValue);
+            return retVal.Body.CreateDatabaseResult;
         }
     }
 }

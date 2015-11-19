@@ -18,11 +18,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://lab.cheonghyun.com:8888/AdvertisingWebService/PurchasingService.asmx" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://lab.cheonghyun.com:8888/AdvertisingService/PurchasingService.asmx" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="PurchasingService.disco" MetadataType="Disco" ID="f430eff9-bd1d-49c8-9d68-9219f35af2d2" SourceId="1" SourceUrl="http://lab.cheonghyun.com:8888/AdvertisingWebService/PurchasingService.asmx?disco" />
-    <MetadataFile FileName="PurchasingService.wsdl" MetadataType="Wsdl" ID="c116a128-abd7-4f35-a756-ece2f1444a58" SourceId="1" SourceUrl="http://lab.cheonghyun.com:8888/AdvertisingWebService/PurchasingService.asmx?wsdl" />
+    <MetadataFile FileName="PurchasingService1.wsdl" MetadataType="Wsdl" ID="fcdcbba5-d343-468e-9f14-5ae581e803f7" SourceId="1" SourceUrl="http://lab.cheonghyun.com:8888/AdvertisingService/PurchasingService.asmx?wsdl" />
+    <MetadataFile FileName="PurchasingService1.disco" MetadataType="Disco" ID="bf82d173-f0b7-4585-97cc-d1aee681c7d4" SourceId="1" SourceUrl="http://lab.cheonghyun.com:8888/AdvertisingService/PurchasingService.asmx?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="6eudWUkKnf7wfZ77eqcUsK8XAlI=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="hN9XGLkEOV0VA7r2Rqc0jd6GRr0=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="PurchasingServiceSoap">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="PurchasingServiceSoap" contract="AdvertisingService.PurchasingServiceSoap" bindingType="basicHttpBinding" address="http://lab.cheonghyun.com:8888/AdvertisingWebService/PurchasingService.asmx" bindingConfiguration="PurchasingServiceSoap">
+    <endpoint name="PurchasingServiceSoap" contract="AdvertisingService.PurchasingServiceSoap" bindingType="basicHttpBinding" address="http://lab.cheonghyun.com:8888/AdvertisingService/PurchasingService.asmx" bindingConfiguration="PurchasingServiceSoap">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://lab.cheonghyun.com:8888/AdvertisingWebService/PurchasingService.asmx</serializedValue>
+          <serializedValue>http://lab.cheonghyun.com:8888/AdvertisingService/PurchasingService.asmx</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

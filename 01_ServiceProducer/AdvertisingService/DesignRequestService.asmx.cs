@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
+using libdbio;
 
 namespace AdvertisingService
 {
@@ -21,6 +22,14 @@ namespace AdvertisingService
         public string HelloWorld()
         {
             return "Hello World";
+        }
+
+        [WebMethod]
+        public bool CreateDatabase(string file)
+        {
+            DatabaseIO dbio = new DatabaseIO();
+
+            return true;
         }
     }
 }

@@ -2,6 +2,10 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvertisingService", "AdvertisingService\AdvertisingService.csproj", "{DCE397AE-5B09-48C1-A0B7-743171051135}"
+	ProjectSection(ProjectDependencies) = postProject
+		{75AADAA7-EF9F-4616-B075-7EDC7C3437AC} = {75AADAA7-EF9F-4616-B075-7EDC7C3437AC}
+		{C2BEC6F6-845A-47D1-B46C-33F3A6C5090C} = {C2BEC6F6-845A-47D1-B46C-33F3A6C5090C}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceProducerTest", "ServiceProducerTest\ServiceProducerTest.csproj", "{EB45FB0B-1405-40DD-8C99-93206C43986F}"
 EndProject
@@ -10,6 +14,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceConsumerTest", "ServiceConsumerTest\ServiceConsumerTest.csproj", "{8CEA99C3-B207-4249-AA28-B2FDEF2B81A4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "libordermgmt", "libordermgmt\libordermgmt.csproj", "{C2BEC6F6-845A-47D1-B46C-33F3A6C5090C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "libdbio", "libdbio\libdbio.csproj", "{7F9128F3-D694-49C3-9909-385691569665}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,6 +77,16 @@ Global
 		{C2BEC6F6-845A-47D1-B46C-33F3A6C5090C}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{C2BEC6F6-845A-47D1-B46C-33F3A6C5090C}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{C2BEC6F6-845A-47D1-B46C-33F3A6C5090C}.Release|x86.ActiveCfg = Release|Any CPU
+		{7F9128F3-D694-49C3-9909-385691569665}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F9128F3-D694-49C3-9909-385691569665}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F9128F3-D694-49C3-9909-385691569665}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{7F9128F3-D694-49C3-9909-385691569665}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{7F9128F3-D694-49C3-9909-385691569665}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7F9128F3-D694-49C3-9909-385691569665}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F9128F3-D694-49C3-9909-385691569665}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F9128F3-D694-49C3-9909-385691569665}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{7F9128F3-D694-49C3-9909-385691569665}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{7F9128F3-D694-49C3-9909-385691569665}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
