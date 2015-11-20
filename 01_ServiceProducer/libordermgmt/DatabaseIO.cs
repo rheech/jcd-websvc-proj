@@ -7,28 +7,26 @@ using System.Data;
 using System.Data.OleDb;
 using System.Text.RegularExpressions;
 using System.Data.SqlClient;
+using MySql.Data;
+using MySql.Data.MySqlClient;
 
 namespace libordermgmt
 {
     public abstract class DatabaseIO
     {
-        FileInfo _file;
-        OleDbConnection _con;
-        OleDbCommand _cmd;
+        protected MySqlConnection _con;
+        protected MySqlCommand _cmd;
+        private bool _isOpen;
 
-        protected DatabaseIO(string fileName)
+        protected DatabaseIO()
         {
             // for security, remove invalid characters and limit file name to 10
             //fileName = Regex.Replace(fileName, "[^0-9a-zA-Z_.-]+", "");
             //fileName = fileName.Substring(0, 30);
 
             //_file = new FileInfo(String.Format("{0}{1}", BASE_PATH, fileName));
-            _file = new FileInfo(fileName);
-
-            if (!_file.Exists)
-            {
-                CreateDatabase();
-            }
+            Open();
+            CreateDatabase(false);
         }
 
         /*public DatabaseIO()
@@ -41,23 +39,35 @@ namespace libordermgmt
             }
         }*/
 
-        public void Reset()
+        ~DatabaseIO()
         {
-            if (_file.Exists)
-            {
-                _file.Delete();
-            }
-
-            CreateDatabase();
+            Close();
         }
 
-        protected virtual void CreateDatabase()
+        public void Reset()
         {
-            ADOX.Catalog cat;
+            CreateDatabase(true);
+        }
 
-            // Create MDB
-            cat = new ADOX.Catalog();
-            cat.Create(ConnectionString);
+        protected virtual void CreateDatabase(bool resetDB)
+        {
+            // Connect
+            //Open();
+
+            // Create Database
+            if (resetDB)
+            {
+                _cmd.CommandText = "DROP DATABASE IF EXISTS advertising_company;";
+                _cmd.ExecuteNonQuery();
+            }
+
+            _cmd.CommandText = "CREATE DATABASE IF NOT EXISTS advertising_company;";
+            _cmd.ExecuteNonQuery();
+
+            _cmd.CommandText = "USE advertising_company;";
+            _cmd.ExecuteNonQuery();
+
+            //Close();
         }
 
         protected void ExecuteNonQuery(string query)
@@ -82,45 +92,50 @@ namespace libordermgmt
             }
         }
 
-        protected OleDbCommand Open()
+        protected void Open()
         {
-            _con = new OleDbConnection(ConnectionString);
+            /*_con = new OleDbConnection(ConnectionString);
             _con.Open();
             _cmd = new OleDbCommand();
+            _cmd.Connection = _con;*/
+
+            _con = new MySqlConnection(ConnectionString);
+            _con.Open();
+
+            _cmd = new MySqlCommand();
             _cmd.Connection = _con;
 
-            return _cmd;
+            _isOpen = true;
         }
 
-        public SqlCommand OpenForQuery()
-        {
-            SqlConnection con = new SqlConnection(ConnectionString);
-            SqlCommand cmd = new SqlCommand();
-            SqlDataReader reader;
-
-            cmd.Connection = con;
-            cmd.CommandType = CommandType.Text;
-            
-        }
-
-        public void Close()
+        protected void Close()
         {
             if (_con != null)
             {
-                _cmd = null;
                 _con.Close();
+                _cmd = null;
             }
             else
             {
                 throw new Exception("Database is not open.");
             }
+
+            _isOpen = false;
         }
 
         protected string ConnectionString
         {
             get
             {
-                return String.Format("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=\"{0}\"", _file.FullName);
+                return "Server=127.0.0.1;Uid=root;Pwd=teddybear;";
+            }
+        }
+
+        public bool isOpen
+        {
+            get
+            {
+                return _isOpen;
             }
         }
     }

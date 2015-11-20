@@ -61,7 +61,6 @@ namespace ServiceProducerTest
             OrderManager om = new OrderManager();
 
             om.Reset();
-            om.Open();
 
             CustomerInfo info = new CustomerInfo();
             info.CompanyName = "White House";
@@ -69,6 +68,8 @@ namespace ServiceProducerTest
             info.EMail = "sample@email.com";
 
             om.CreateCustomer(info);
+            om.FindCustomer(info);
+            
         }
     }
 }

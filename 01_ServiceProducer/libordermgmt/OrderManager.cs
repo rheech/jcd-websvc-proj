@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data.OleDb;
 using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 
 namespace libordermgmt
 {
@@ -36,70 +37,57 @@ namespace libordermgmt
 
     public class OrderManager : DatabaseIO
     {
-        const string BASE_PATH = "D:\\Programs\\iis_webpage\\dbtemp\\";
-        const string MDB_PATH = "D:\\Programs\\iis_webpage\\dbtemp\\servicedata.mdb";
-
-        public OrderManager() : base(MDB_PATH)
+        public OrderManager() : base()
         {
             
         }
 
-        protected override void CreateDatabase()
+        protected override void CreateDatabase(bool resetDB)
         {
-            OleDbConnection con;
-            OleDbCommand oCmd;
+            base.CreateDatabase(resetDB);
 
-            base.CreateDatabase();
-
-            // Connect MDB
-            con = new OleDbConnection();
-            con.ConnectionString = ConnectionString;
-            con.Open();
-
-            // Create basic table
-            oCmd = new OleDbCommand();
-            oCmd.Connection = con;
+            //Open();
 
             // Customer Table
-            oCmd.CommandText = String.Format(
-@"CREATE TABLE Customer
+            _cmd.CommandText = String.Format(
+@"CREATE TABLE IF NOT EXISTS Customer
 (
-    CustomerID AUTOINCREMENT,
+    CustomerID INT NOT NULL AUTO_INCREMENT,
     CompanyName VARCHAR(255),
     Address VARCHAR(255),
     EMail VARCHAR(255),
     PhoneNumber VARCHAR(255),
-    CONSTRAINT PK_CustomerID PRIMARY KEY (CustomerID)
+    PRIMARY KEY (CustomerID)
 )");
-            oCmd.ExecuteNonQuery();
+            _cmd.ExecuteNonQuery();
 
             // Product Table
-            oCmd.CommandText = String.Format(
-@"CREATE TABLE Product
+            _cmd.CommandText = String.Format(
+@"CREATE TABLE IF NOT EXISTS Product
 (
-    ProductID AUTOINCREMENT,
+    ProductID INT NOT NULL AUTO_INCREMENT,
     ProductName VARCHAR(255),
-    Price CURRENCY,
-    CONSTRAINT PK_ProductID PRIMARY KEY (ProductID)
+    Price DECIMAL,
+    PRIMARY KEY (ProductID)
 )");
-            oCmd.ExecuteNonQuery();
+            _cmd.ExecuteNonQuery();
 
             // Order Table
-            oCmd.CommandText = String.Format(
-@"CREATE TABLE OrderInfo
+            _cmd.CommandText = String.Format(
+@"CREATE TABLE IF NOT EXISTS OrderInfo
 (
-    OrderID AUTOINCREMENT,
+    OrderID INT NOT NULL AUTO_INCREMENT,
     CustomerID INT NOT NULL,
     OrderStatus VARCHAR(255),
-    CONSTRAINT PK_OrderID PRIMARY KEY (OrderID),
+    PRIMARY KEY (OrderID),
     CONSTRAINT FK_OrderInfo_CustomerID FOREIGN KEY (CustomerID)
     REFERENCES Customer(CustomerID)
 )");
-            oCmd.ExecuteNonQuery();
+            _cmd.ExecuteNonQuery();
 
             // Product_Order Table
-            oCmd.CommandText = String.Format(
-@"CREATE TABLE Product_Order
+            _cmd.CommandText = String.Format(
+@"CREATE TABLE IF NOT EXISTS Product_Order
 (
     ProductID INT NOT NULL,
     OrderID INT NOT NULL,
@@ -108,15 +96,15 @@ namespace libordermgmt
     CONSTRAINT FK_ProductOrder_OrderID FOREIGN KEY (OrderID)
     REFERENCES OrderInfo(OrderID)
 )");
-            oCmd.ExecuteNonQuery();
+            _cmd.ExecuteNonQuery();
 
-            con.Close();
+            //Close();
         }
 
         public void CreateCustomer(CustomerInfo info)
         {
             /*
-            @"CREATE TABLE Customer
+            @"CREATE TABLE IF NOT EXISTS Customer
             (
                 CustomerID INT NOT NULL,
                 CompanyName VARCHAR(255),
@@ -137,16 +125,17 @@ namespace libordermgmt
 
         public void FindCustomer(CustomerInfo info)
         {
+            MySqlDataReader reader;
+
             _cmd.CommandText = String.Format(
 @"SELECT * FROM Customer WHERE EMail = '{0}'"
             , info.EMail);
 
-            SqlCommand cmd = new SqlCommand(
+            reader = _cmd.ExecuteReader();
         }
 
         public void CustomerExists(CustomerInfo info)
         {
-
         }
 
         public void FindProduct(Product product)
