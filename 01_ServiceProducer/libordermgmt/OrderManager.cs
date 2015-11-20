@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data.OleDb;
+using System.Data.SqlClient;
 
 namespace libordermgmt
 {
@@ -14,6 +15,7 @@ namespace libordermgmt
         public string CustomerID;
         public string CompanyName;
         public string Address;
+        public string EMail;
         public string PhoneNumber;
     }
 
@@ -62,7 +64,7 @@ namespace libordermgmt
             oCmd.CommandText = String.Format(
 @"CREATE TABLE Customer
 (
-    CustomerID INT NOT NULL,
+    CustomerID AUTOINCREMENT,
     CompanyName VARCHAR(255),
     Address VARCHAR(255),
     EMail VARCHAR(255),
@@ -75,7 +77,7 @@ namespace libordermgmt
             oCmd.CommandText = String.Format(
 @"CREATE TABLE Product
 (
-    ProductID INT NOT NULL,
+    ProductID AUTOINCREMENT,
     ProductName VARCHAR(255),
     Price CURRENCY,
     CONSTRAINT PK_ProductID PRIMARY KEY (ProductID)
@@ -86,7 +88,7 @@ namespace libordermgmt
             oCmd.CommandText = String.Format(
 @"CREATE TABLE OrderInfo
 (
-    OrderID INT NOT NULL,
+    OrderID AUTOINCREMENT,
     CustomerID INT NOT NULL,
     OrderStatus VARCHAR(255),
     CONSTRAINT PK_OrderID PRIMARY KEY (OrderID),
@@ -113,12 +115,33 @@ namespace libordermgmt
 
         public void CreateCustomer(CustomerInfo info)
         {
-            
+            /*
+            @"CREATE TABLE Customer
+            (
+                CustomerID INT NOT NULL,
+                CompanyName VARCHAR(255),
+                Address VARCHAR(255),
+                EMail VARCHAR(255),
+                PhoneNumber VARCHAR(255),
+                CONSTRAINT PK_CustomerID PRIMARY KEY (CustomerID)
+            )");
+            */
+            _cmd.CommandText = String.Format(
+@"INSERT INTO Customer (CompanyName, Address, EMail, PhoneNumber)
+    VALUES ('{0}', '{1}', '{2}', '{3}')
+"
+            , info.CompanyName, info.Address, info.EMail, info.PhoneNumber);
+
+            _cmd.ExecuteNonQuery();
         }
 
         public void FindCustomer(CustomerInfo info)
         {
+            _cmd.CommandText = String.Format(
+@"SELECT * FROM Customer WHERE EMail = '{0}'"
+            , info.EMail);
 
+            SqlCommand cmd = new SqlCommand(
         }
 
         public void CustomerExists(CustomerInfo info)

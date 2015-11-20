@@ -10,6 +10,7 @@ using libwebsvcprod;
 using System.Diagnostics;
 using System.Xml;
 using System.IO;
+using libordermgmt;
 
 namespace ServiceProducerTest
 {
@@ -22,7 +23,7 @@ namespace ServiceProducerTest
         {
             InitializeComponent();
 
-            wSvc = new WeatherService();
+            //wSvc = new WeatherService();
             //libwebsvcprod.Weather2.WeatherSoapClient client = new libwebsvcprod.Weather2.WeatherSoapClient();
             //client.GetCityWeatherByZIP("76543");
         }
@@ -35,7 +36,7 @@ namespace ServiceProducerTest
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
+            /*try
             {
                 StringBuilder sb = new StringBuilder();
                 string[] result;
@@ -56,7 +57,18 @@ namespace ServiceProducerTest
             }
             catch (Exception ex)
             {
-            }
+            }*/
+            OrderManager om = new OrderManager();
+
+            om.Reset();
+            om.Open();
+
+            CustomerInfo info = new CustomerInfo();
+            info.CompanyName = "White House";
+            info.Address = "1600 Pennsylvania Ave NW, Washington, DC 20500";
+            info.EMail = "sample@email.com";
+
+            om.CreateCustomer(info);
         }
     }
 }

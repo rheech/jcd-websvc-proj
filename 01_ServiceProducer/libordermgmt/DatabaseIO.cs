@@ -6,14 +6,15 @@ using System.IO;
 using System.Data;
 using System.Data.OleDb;
 using System.Text.RegularExpressions;
+using System.Data.SqlClient;
 
 namespace libordermgmt
 {
     public abstract class DatabaseIO
     {
         FileInfo _file;
-        protected OleDbConnection _con;
-        protected OleDbCommand _cmd;
+        OleDbConnection _con;
+        OleDbCommand _cmd;
 
         protected DatabaseIO(string fileName)
         {
@@ -81,12 +82,25 @@ namespace libordermgmt
             }
         }
 
-        public void Open()
+        protected OleDbCommand Open()
         {
             _con = new OleDbConnection(ConnectionString);
             _con.Open();
             _cmd = new OleDbCommand();
             _cmd.Connection = _con;
+
+            return _cmd;
+        }
+
+        public SqlCommand OpenForQuery()
+        {
+            SqlConnection con = new SqlConnection(ConnectionString);
+            SqlCommand cmd = new SqlCommand();
+            SqlDataReader reader;
+
+            cmd.Connection = con;
+            cmd.CommandType = CommandType.Text;
+            
         }
 
         public void Close()

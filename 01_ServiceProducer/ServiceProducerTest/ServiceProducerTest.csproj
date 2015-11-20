@@ -97,6 +97,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\libordermgmt\libordermgmt.csproj">
+      <Project>{C2BEC6F6-845A-47D1-B46C-33F3A6C5090C}</Project>
+      <Name>libordermgmt</Name>
+    </ProjectReference>
     <ProjectReference Include="..\libwebsvcprod\libwebsvcprod.csproj">
       <Project>{75AADAA7-EF9F-4616-B075-7EDC7C3437AC}</Project>
       <Name>libwebsvcprod</Name>
