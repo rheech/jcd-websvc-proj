@@ -67,6 +67,10 @@ namespace ServiceProducerTest
             info.Address = "1600 Pennsylvania Ave NW, Washington, DC 20500";
             info.EMail = "sample@email.com";
 
+            /*info.CompanyName = "KAIST";
+            info.Address = "291 Daehak-ro, Yuseong-gu, Daejeon, South Korea";
+            info.EMail = "kaist@emailsample.com";*/
+
             om.CreateCustomer(info);
             om.FindCustomer(info);
             
