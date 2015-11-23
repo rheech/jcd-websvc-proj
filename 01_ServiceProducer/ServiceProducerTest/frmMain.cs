@@ -71,8 +71,14 @@ namespace ServiceProducerTest
             info.Address = "291 Daehak-ro, Yuseong-gu, Daejeon, South Korea";
             info.EMail = "kaist@emailsample.com";*/
 
-            om.CreateCustomer(info);
-            om.FindCustomer(info);
+            om.InsertCustomer(info);
+
+            CustomerInfo ii = new CustomerInfo();
+
+            if (om.FindCustomer("sample@email.com", ref ii))
+            {
+                MessageBox.Show(ii.CustomerID.ToString());
+            }
             
         }
     }

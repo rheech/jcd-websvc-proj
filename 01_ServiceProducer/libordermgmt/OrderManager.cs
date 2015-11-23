@@ -13,7 +13,7 @@ namespace libordermgmt
 
     public struct CustomerInfo
     {
-        public string CustomerID;
+        public int CustomerID;
         public string CompanyName;
         public string Address;
         public string EMail;
@@ -57,7 +57,7 @@ namespace libordermgmt
     Address VARCHAR(255),
     EMail VARCHAR(255),
     PhoneNumber VARCHAR(255),
-    PRIMARY KEY (CustomerID)
+    PRIMARY KEY (CustomerID, EMail)
 )");
             _cmd.ExecuteNonQuery();
 
@@ -101,7 +101,7 @@ namespace libordermgmt
             //Close();
         }
 
-        public void CreateCustomer(CustomerInfo info)
+        public void InsertCustomer(CustomerInfo info)
         {
             /*
             @"CREATE TABLE IF NOT EXISTS Customer
@@ -123,13 +123,16 @@ namespace libordermgmt
             _cmd.ExecuteNonQuery();
         }
 
-        public void FindCustomer(CustomerInfo info)
+        public bool FindCustomer(string email, ref CustomerInfo info)
         {
+            bool bFound;
             MySqlDataReader reader;
 
+            info = new CustomerInfo();
+
             _cmd.CommandText = String.Format(
-@"SELECT * FROM Customer WHERE EMail = '{0}'"
-            , info.EMail);
+@"SELECT * FROM Customer WHERE UPPER(EMail) = '{0}'"
+            , email.ToUpper());
 
             reader = _cmd.ExecuteReader();
 
@@ -137,19 +140,24 @@ namespace libordermgmt
             {
                 while (reader.Read())
                 {
-                    Console.WriteLine("{0}\t{1}", reader.GetInt32(0),
-                        reader.GetString(1));
+                    info.CustomerID = reader.GetInt32("CustomerID");
+                    info.CompanyName = reader.GetString("CompanyName");
+                    info.Address = reader.GetString("Address");
+                    info.EMail = reader.GetString("EMail");
+                    info.PhoneNumber = reader.GetString("PhoneNumber");
                 }
+
+                bFound = true;
             }
             else
             {
-                Console.WriteLine("No rows found.");
+                // No rows found.
+                bFound = false;
             }
-            reader.Close();
-        }
 
-        public void CustomerExists(CustomerInfo info)
-        {
+            reader.Close();
+
+            return bFound;
         }
 
         public void FindProduct(Product product)
