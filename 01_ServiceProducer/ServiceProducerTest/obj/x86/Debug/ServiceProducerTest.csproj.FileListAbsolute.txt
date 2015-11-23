@@ -32,3 +32,12 @@ D:\Users\Cheong\Desktop\2\01_ServiceProducer\ServiceProducerTest\obj\x86\Debug\S
 D:\Users\Cheong\Desktop\2\01_ServiceProducer\ServiceProducerTest\obj\x86\Debug\ServiceProducerTest.Properties.Resources.resources
 D:\Users\Cheong\Desktop\2\01_ServiceProducer\ServiceProducerTest\obj\x86\Debug\ServiceProducerTest.csproj.GenerateResource.Cache
 D:\Users\Cheong\Desktop\2\01_ServiceProducer\bin\Debug\ServiceProducerTest.exe.config
+D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\bin\Debug\ServiceProducerTest.exe.config
+D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\bin\Debug\ServiceProducerTest.exe
+D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\bin\Debug\ServiceProducerTest.pdb
+D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\ServiceProducerTest\obj\x86\Debug\ServiceProducerTest.csprojResolveAssemblyReference.cache
+D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\ServiceProducerTest\obj\x86\Debug\ServiceProducerTest.frmMain.resources
+D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\ServiceProducerTest\obj\x86\Debug\ServiceProducerTest.Properties.Resources.resources
+D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\ServiceProducerTest\obj\x86\Debug\ServiceProducerTest.csproj.GenerateResource.Cache
+D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\ServiceProducerTest\obj\x86\Debug\ServiceProducerTest.exe
+D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\ServiceProducerTest\obj\x86\Debug\ServiceProducerTest.pdb

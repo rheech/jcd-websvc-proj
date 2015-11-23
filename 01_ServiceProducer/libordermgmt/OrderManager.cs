@@ -22,15 +22,15 @@ namespace libordermgmt
 
     public struct OrderInfo
     {
-        public string OrderID;
+        public int OrderID;
+        public Product Product;
         public string OrderStatus;
         public CustomerInfo Customer;
-        public string Requirement;
     }
 
     public struct Product
     {
-        public string ProductID;
+        public int ProductID;
         public string ProductName;
         public double Price;
     }
@@ -57,7 +57,7 @@ namespace libordermgmt
     Address VARCHAR(255),
     EMail VARCHAR(255),
     PhoneNumber VARCHAR(255),
-    PRIMARY KEY (CustomerID, EMail)
+    PRIMARY KEY (CustomerID)
 )");
             _cmd.ExecuteNonQuery();
 
@@ -78,14 +78,17 @@ namespace libordermgmt
 (
     OrderID INT NOT NULL AUTO_INCREMENT,
     CustomerID INT NOT NULL,
+    ProductID INT NOT NULL,
     OrderStatus VARCHAR(255),
     PRIMARY KEY (OrderID),
     CONSTRAINT FK_OrderInfo_CustomerID FOREIGN KEY (CustomerID)
-    REFERENCES Customer(CustomerID)
+    REFERENCES Customer(CustomerID),
+    CONSTRAINT FK_OrderInfo_ProductID FOREIGN KEY (ProductID)
+    REFERENCEs Product(ProductID)
 )");
             _cmd.ExecuteNonQuery();
 
-            // Product_Order Table
+            /*// Product_Order Table
             _cmd.CommandText = String.Format(
 @"CREATE TABLE IF NOT EXISTS Product_Order
 (
@@ -96,24 +99,13 @@ namespace libordermgmt
     CONSTRAINT FK_ProductOrder_OrderID FOREIGN KEY (OrderID)
     REFERENCES OrderInfo(OrderID)
 )");
-            _cmd.ExecuteNonQuery();
+            _cmd.ExecuteNonQuery();*/
 
             //Close();
         }
 
         public void InsertCustomer(CustomerInfo info)
         {
-            /*
-            @"CREATE TABLE IF NOT EXISTS Customer
-            (
-                CustomerID INT NOT NULL,
-                CompanyName VARCHAR(255),
-                Address VARCHAR(255),
-                EMail VARCHAR(255),
-                PhoneNumber VARCHAR(255),
-                CONSTRAINT PK_CustomerID PRIMARY KEY (CustomerID)
-            )");
-            */
             _cmd.CommandText = String.Format(
 @"INSERT INTO Customer (CompanyName, Address, EMail, PhoneNumber)
     VALUES ('{0}', '{1}', '{2}', '{3}')
@@ -160,20 +152,192 @@ namespace libordermgmt
             return bFound;
         }
 
-        public void FindProduct(Product product)
+        private CustomerInfo GetCustomerById(int customerID)
         {
+            MySqlDataReader reader;
+            CustomerInfo info;
 
+            info = new CustomerInfo();
+
+            _cmd.CommandText = String.Format(
+@"SELECT * FROM Customer WHERE CustomerID = {0}"
+            , customerID);
+
+            reader = _cmd.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    info.CustomerID = reader.GetInt32("CustomerID");
+                    info.CompanyName = reader.GetString("CompanyName");
+                    info.Address = reader.GetString("Address");
+                    info.EMail = reader.GetString("EMail");
+                    info.PhoneNumber = reader.GetString("PhoneNumber");
+                }
+            }
+
+            reader.Close();
+
+            return info;
+        }
+
+        public void InsertProduct(Product product)
+        {
+            /*@"CREATE TABLE IF NOT EXISTS Product
+            (
+                ProductID INT NOT NULL AUTO_INCREMENT,
+                ProductName VARCHAR(255),
+                Price DECIMAL,
+                PRIMARY KEY (ProductID)
+            )"*/
+            _cmd.CommandText = String.Format(
+@"INSERT INTO Product (ProductName, Price)
+    VALUES ('{0}', {1})
+"
+            , product.ProductName, product.Price);
+
+            _cmd.ExecuteNonQuery();
+        }
+
+        public bool FindProduct(string productName, ref Product product)
+        {
+            bool bFound;
+            MySqlDataReader reader;
+
+            product = new Product();
+
+            _cmd.CommandText = String.Format(
+@"SELECT * FROM Customer WHERE UPPER(ProductName) = '{0}'"
+            , productName.ToUpper());
+
+            reader = _cmd.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    product.ProductName = reader.GetString("ProductName");
+                    product.Price = reader.GetDouble("Price");
+                }
+
+                bFound = true;
+            }
+            else
+            {
+                // No rows found.
+                bFound = false;
+            }
+
+            reader.Close();
+
+            return bFound;
+        }
+
+        public Product[] RetrieveProduct()
+        {
+            MySqlDataReader reader;
+            List<Product> productList;
+            Product product;
+
+            productList = new List<Product>();
+            _cmd.CommandText = @"SELECT * FROM Product";
+            reader = _cmd.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    product = new Product();
+                    product.ProductID = reader.GetInt32("ProductID");
+                    product.ProductName = reader.GetString("ProductName");
+                    product.Price = reader.GetDouble("Price");
+
+                    productList.Add(product);
+                }
+            }
+
+            reader.Close();
+
+            return productList.ToArray();
+        }
+
+        private Product GetProductById(int productID)
+        {
+            MySqlDataReader reader;
+            Product product;
+
+            product = new Product();
+
+            _cmd.CommandText = String.Format(
+@"SELECT * FROM Customer WHERE ProductID = {0}"
+            , productID);
+
+            reader = _cmd.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    product.ProductName = reader.GetString("ProductName");
+                    product.Price = reader.GetDouble("Price");
+                }
+            }
+
+            reader.Close();
+
+            return product;
         }
 
         public void CreateOrder(CustomerInfo info, Product product)
         {
             // Return Order info as an invoice
             // Send email for order confirmation
+/*@"CREATE TABLE IF NOT EXISTS OrderInfo
+(
+    OrderID INT NOT NULL AUTO_INCREMENT,
+    CustomerID INT NOT NULL,
+    OrderStatus VARCHAR(255),
+    PRIMARY KEY (OrderID),
+    CONSTRAINT FK_OrderInfo_CustomerID FOREIGN KEY (CustomerID)
+    REFERENCES Customer(CustomerID)
+)"*/
+            _cmd.CommandText = String.Format(
+@"INSERT INTO OrderInfo (CustomerID, ProductID, OrderStatus)
+    VALUES ({0}, {1}, '{2}')
+"
+            , info.CustomerID, product);
+
+            _cmd.ExecuteNonQuery();
         }
 
-        public void RetrieveOrder(OrderInfo info)
+        public OrderInfo[] RetrieveOrder()
         {
+            MySqlDataReader reader;
+            List<OrderInfo> orderList;
+            OrderInfo info;
 
+            orderList = new List<OrderInfo>();
+            _cmd.CommandText = @"SELECT * FROM OrderInfo";
+            reader = _cmd.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    info = new OrderInfo();
+                    info.OrderID = reader.GetInt32("OrderID");
+                    info.Customer = GetCustomerById(reader.GetInt32("ProductID"));
+                    info.Product = GetProductById(reader.GetInt32("ProductName"));
+                    info.OrderStatus = reader.GetString("OrderStatus");
+
+                    orderList.Add(info);
+                }
+            }
+
+            reader.Close();
+
+            return orderList.ToArray();
         }
     }
 }
