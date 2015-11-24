@@ -17,17 +17,29 @@ namespace AdvertisingCompany
         public frmMain()
         {
             InitializeComponent();
-            om = new OrderManagerSampleData();
+            listView1.FullRowSelect = true;
+            om = new OrderManager();
         }
 
         private void btnOrderList_Click(object sender, EventArgs e)
         {
             OrderInfo[] orders = om.RetrieveOrder();
+            ListViewItem item;
 
             foreach (OrderInfo o in orders)
             {
-                
+                item = new ListViewItem(o.Customer.CompanyName);
+                item.SubItems.Add(o.Product.ProductName);
+                item.SubItems.Add(o.Product.Price.ToString());
+                item.SubItems.Add(o.OrderStatus);
+
+                listView1.Items.Add(item);
             }
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

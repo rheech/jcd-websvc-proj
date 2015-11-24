@@ -21,7 +21,7 @@ namespace ClientCompany
 
             listView1.FullRowSelect = true;
 
-            om = new OrderManagerSampleData();
+            om = new OrderManager();
             Customer = new CustomerInfo();
 
             om.FindCustomer("sample@email.com", ref Customer);

@@ -126,28 +126,27 @@ namespace libordermgmt
 @"SELECT * FROM Customer WHERE UPPER(EMail) = '{0}'"
             , email.ToUpper());
 
-            reader = _cmd.ExecuteReader();
-
-            if (reader.HasRows)
+            using (reader = _cmd.ExecuteReader())
             {
-                while (reader.Read())
+                if (reader.HasRows)
                 {
-                    info.CustomerID = reader.GetInt32("CustomerID");
-                    info.CompanyName = reader.GetString("CompanyName");
-                    info.Address = reader.GetString("Address");
-                    info.EMail = reader.GetString("EMail");
-                    info.PhoneNumber = reader.GetString("PhoneNumber");
+                    while (reader.Read())
+                    {
+                        info.CustomerID = reader.GetInt32("CustomerID");
+                        info.CompanyName = reader.GetString("CompanyName");
+                        info.Address = reader.GetString("Address");
+                        info.EMail = reader.GetString("EMail");
+                        info.PhoneNumber = reader.GetString("PhoneNumber");
+                    }
+
+                    bFound = true;
                 }
-
-                bFound = true;
+                else
+                {
+                    // No rows found.
+                    bFound = false;
+                }
             }
-            else
-            {
-                // No rows found.
-                bFound = false;
-            }
-
-            reader.Close();
 
             return bFound;
         }
@@ -163,21 +162,20 @@ namespace libordermgmt
 @"SELECT * FROM Customer WHERE CustomerID = {0}"
             , customerID);
 
-            reader = _cmd.ExecuteReader();
-
-            if (reader.HasRows)
+            using (reader = _cmd.ExecuteReader())
             {
-                while (reader.Read())
+                if (reader.HasRows)
                 {
-                    info.CustomerID = reader.GetInt32("CustomerID");
-                    info.CompanyName = reader.GetString("CompanyName");
-                    info.Address = reader.GetString("Address");
-                    info.EMail = reader.GetString("EMail");
-                    info.PhoneNumber = reader.GetString("PhoneNumber");
+                    while (reader.Read())
+                    {
+                        info.CustomerID = reader.GetInt32("CustomerID");
+                        info.CompanyName = reader.GetString("CompanyName");
+                        info.Address = reader.GetString("Address");
+                        info.EMail = reader.GetString("EMail");
+                        info.PhoneNumber = reader.GetString("PhoneNumber");
+                    }
                 }
             }
-
-            reader.Close();
 
             return info;
         }
@@ -211,25 +209,24 @@ namespace libordermgmt
 @"SELECT * FROM Customer WHERE UPPER(ProductName) = '{0}'"
             , productName.ToUpper());
 
-            reader = _cmd.ExecuteReader();
-
-            if (reader.HasRows)
+            using (reader = _cmd.ExecuteReader())
             {
-                while (reader.Read())
+                if (reader.HasRows)
                 {
-                    product.ProductName = reader.GetString("ProductName");
-                    product.Price = reader.GetDouble("Price");
+                    while (reader.Read())
+                    {
+                        product.ProductName = reader.GetString("ProductName");
+                        product.Price = reader.GetDouble("Price");
+                    }
+
+                    bFound = true;
                 }
-
-                bFound = true;
+                else
+                {
+                    // No rows found.
+                    bFound = false;
+                }
             }
-            else
-            {
-                // No rows found.
-                bFound = false;
-            }
-
-            reader.Close();
 
             return bFound;
         }
@@ -242,22 +239,22 @@ namespace libordermgmt
 
             productList = new List<Product>();
             _cmd.CommandText = @"SELECT * FROM Product";
-            reader = _cmd.ExecuteReader();
 
-            if (reader.HasRows)
+            using (reader = _cmd.ExecuteReader())
             {
-                while (reader.Read())
+                if (reader.HasRows)
                 {
-                    product = new Product();
-                    product.ProductID = reader.GetInt32("ProductID");
-                    product.ProductName = reader.GetString("ProductName");
-                    product.Price = reader.GetDouble("Price");
+                    while (reader.Read())
+                    {
+                        product = new Product();
+                        product.ProductID = reader.GetInt32("ProductID");
+                        product.ProductName = reader.GetString("ProductName");
+                        product.Price = reader.GetDouble("Price");
 
-                    productList.Add(product);
+                        productList.Add(product);
+                    }
                 }
             }
-
-            reader.Close();
 
             return productList.ToArray();
         }
@@ -273,19 +270,18 @@ namespace libordermgmt
 @"SELECT * FROM Product WHERE ProductID = {0}"
             , productID);
 
-            reader = _cmd.ExecuteReader();
-
-            if (reader.HasRows)
+            using (reader = _cmd.ExecuteReader())
             {
-                while (reader.Read())
+                if (reader.HasRows)
                 {
-                    product.ProductID = reader.GetInt32("ProductID");
-                    product.ProductName = reader.GetString("ProductName");
-                    product.Price = reader.GetDouble("Price");
+                    while (reader.Read())
+                    {
+                        product.ProductID = reader.GetInt32("ProductID");
+                        product.ProductName = reader.GetString("ProductName");
+                        product.Price = reader.GetDouble("Price");
+                    }
                 }
             }
-
-            reader.Close();
 
             return product;
         }
@@ -316,29 +312,42 @@ namespace libordermgmt
         {
             MySqlDataReader reader;
             List<OrderInfo> orderList;
+            OrderInfo[] orderArray;
             OrderInfo info;
 
             orderList = new List<OrderInfo>();
             _cmd.CommandText = @"SELECT * FROM OrderInfo";
-            reader = _cmd.ExecuteReader();
 
-            if (reader.HasRows)
+            using (reader = _cmd.ExecuteReader())
             {
-                while (reader.Read())
+                if (reader.HasRows)
                 {
-                    info = new OrderInfo();
-                    info.OrderID = reader.GetInt32("OrderID");
-                    info.Customer = GetCustomerById(reader.GetInt32("ProductID"));
-                    info.Product = GetProductById(reader.GetInt32("ProductName"));
-                    info.OrderStatus = reader.GetString("OrderStatus");
+                    while (reader.Read())
+                    {
+                        info = new OrderInfo();
+                        info.OrderID = reader.GetInt32("OrderID");
 
-                    orderList.Add(info);
+                        info.Customer = new CustomerInfo();
+                        info.Customer.CustomerID = reader.GetInt32("CustomerID");
+
+                        info.Product = new Product();
+                        info.Product.ProductID = reader.GetInt32("ProductID");
+                        info.OrderStatus = reader.GetString("OrderStatus");
+
+                        orderList.Add(info);
+                    }
                 }
             }
 
-            reader.Close();
+            orderArray = orderList.ToArray();
 
-            return orderList.ToArray();
+            for (int i = 0; i < orderArray.Length; i++)
+            {
+                orderArray[i].Customer = GetCustomerById(orderArray[i].Customer.CustomerID);
+                orderArray[i].Product = GetProductById(orderArray[i].Product.ProductID);
+            }
+
+            return orderArray;
         }
     }
 }
