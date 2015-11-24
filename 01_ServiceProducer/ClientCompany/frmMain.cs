@@ -19,6 +19,8 @@ namespace ClientCompany
         {
             InitializeComponent();
 
+            listView1.FullRowSelect = true;
+
             om = new OrderManagerSampleData();
             Customer = new CustomerInfo();
 
@@ -35,6 +37,7 @@ namespace ClientCompany
             foreach (Product p in product)
             {
                 item = new ListViewItem(p.ProductName);
+                item.Tag = (object)p;
                 item.SubItems.Add(p.Price.ToString());
 
                 listView1.Items.Add(item);
@@ -44,6 +47,17 @@ namespace ClientCompany
         private void frmMain_Load(object sender, EventArgs e)
         {
             UpdateProductList();
+        }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            Product product;
+            ListViewItem item;
+
+            item = listView1.SelectedItems[0];
+            product = (Product)item.Tag;
+
+            om.InsertOrder(Customer, product);
         }
     }
 }

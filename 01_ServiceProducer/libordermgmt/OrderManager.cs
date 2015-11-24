@@ -152,7 +152,7 @@ namespace libordermgmt
             return bFound;
         }
 
-        private CustomerInfo GetCustomerById(int customerID)
+        public CustomerInfo GetCustomerById(int customerID)
         {
             MySqlDataReader reader;
             CustomerInfo info;
@@ -262,7 +262,7 @@ namespace libordermgmt
             return productList.ToArray();
         }
 
-        private Product GetProductById(int productID)
+        public Product GetProductById(int productID)
         {
             MySqlDataReader reader;
             Product product;
@@ -270,7 +270,7 @@ namespace libordermgmt
             product = new Product();
 
             _cmd.CommandText = String.Format(
-@"SELECT * FROM Customer WHERE ProductID = {0}"
+@"SELECT * FROM Product WHERE ProductID = {0}"
             , productID);
 
             reader = _cmd.ExecuteReader();
@@ -279,6 +279,7 @@ namespace libordermgmt
             {
                 while (reader.Read())
                 {
+                    product.ProductID = reader.GetInt32("ProductID");
                     product.ProductName = reader.GetString("ProductName");
                     product.Price = reader.GetDouble("Price");
                 }
@@ -289,7 +290,7 @@ namespace libordermgmt
             return product;
         }
 
-        public void CreateOrder(CustomerInfo info, Product product)
+        public void InsertOrder(CustomerInfo info, Product product)
         {
             // Return Order info as an invoice
             // Send email for order confirmation
@@ -306,7 +307,7 @@ namespace libordermgmt
 @"INSERT INTO OrderInfo (CustomerID, ProductID, OrderStatus)
     VALUES ({0}, {1}, '{2}')
 "
-            , info.CustomerID, product);
+            , info.CustomerID, product.ProductID, "Placed");
 
             _cmd.ExecuteNonQuery();
         }

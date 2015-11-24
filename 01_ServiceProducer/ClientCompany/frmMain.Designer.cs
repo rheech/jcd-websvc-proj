@@ -74,6 +74,7 @@
             this.btnSubmit.TabIndex = 8;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // frmMain
             // 
@@ -84,6 +85,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSubmit);
             this.Name = "frmMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Client Company";
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.ResumeLayout(false);

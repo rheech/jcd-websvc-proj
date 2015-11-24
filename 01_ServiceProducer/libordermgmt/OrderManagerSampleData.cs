@@ -25,9 +25,28 @@ namespace libordermgmt
 
             this.InsertCustomer(info);
 
+            // http://www.bluelinemedia.com/bus-advertising
             Product product = new Product();
-            product.ProductName = "Lightable Ad";
+            product.ProductName = "Bus Exterior";
             product.Price = 20000;
+
+            this.InsertProduct(product);
+
+            product = new Product();
+            product.ProductName = "Bus Interior";
+            product.Price = 25000;
+
+            this.InsertProduct(product);
+
+            product = new Product();
+            product.ProductName = "Bus Stop / Bus Shelter";
+            product.Price = 50000;
+
+            this.InsertProduct(product);
+
+            product = new Product();
+            product.ProductName = "Bench";
+            product.Price = 15000;
 
             this.InsertProduct(product);
         }
