@@ -73,6 +73,7 @@
   <ItemGroup>
     <Content Include="ApprovalService.asmx" />
     <Content Include="DesignRequestService.asmx" />
+    <Content Include="index.html" />
     <Content Include="OrderManagerService.asmx" />
     <Content Include="PurchasingService.asmx" />
     <Content Include="TextFile1.txt" />

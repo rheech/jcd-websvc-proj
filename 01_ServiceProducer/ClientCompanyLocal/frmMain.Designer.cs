@@ -40,17 +40,17 @@
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2});
-            this.listView1.Location = new System.Drawing.Point(14, 35);
+            this.listView1.Location = new System.Drawing.Point(14, 37);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(270, 154);
-            this.listView1.TabIndex = 10;
+            this.listView1.TabIndex = 16;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader1
             // 
             this.columnHeader1.Text = "Product Name";
-            this.columnHeader1.Width = 116;
+            this.columnHeader1.Width = 148;
             // 
             // columnHeader2
             // 
@@ -60,27 +60,26 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 11);
+            this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(143, 12);
-            this.label1.TabIndex = 9;
+            this.label1.TabIndex = 15;
             this.label1.Text = "Please select a product.";
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(290, 250);
+            this.btnSubmit.Location = new System.Drawing.Point(209, 197);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(75, 23);
-            this.btnSubmit.TabIndex = 8;
+            this.btnSubmit.TabIndex = 14;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
-            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(377, 285);
+            this.ClientSize = new System.Drawing.Size(303, 232);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSubmit);

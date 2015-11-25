@@ -1,6 +1,6 @@
-﻿namespace AdvertisingCompanyLocal
+﻿namespace ClientCompanyLocal
 {
-    partial class frmMain
+    partial class frmCreateOrder
     {
         /// <summary>
         /// Required designer variable.
@@ -28,79 +28,74 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnOrderList = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnSubmit = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // btnOrderList
-            // 
-            this.btnOrderList.Location = new System.Drawing.Point(278, 259);
-            this.btnOrderList.Name = "btnOrderList";
-            this.btnOrderList.Size = new System.Drawing.Size(75, 23);
-            this.btnOrderList.TabIndex = 0;
-            this.btnOrderList.Text = "button1";
-            this.btnOrderList.UseVisualStyleBackColor = true;
-            this.btnOrderList.Click += new System.EventHandler(this.btnOrderList_Click);
             // 
             // listView1
             // 
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4});
-            this.listView1.Location = new System.Drawing.Point(12, 24);
+            this.columnHeader2});
+            this.listView1.Location = new System.Drawing.Point(80, 47);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(341, 229);
-            this.listView1.TabIndex = 1;
+            this.listView1.Size = new System.Drawing.Size(270, 154);
+            this.listView1.TabIndex = 13;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader1
             // 
-            this.columnHeader1.Text = "Company Name";
-            this.columnHeader1.Width = 114;
+            this.columnHeader1.Text = "Product Name";
+            this.columnHeader1.Width = 148;
             // 
             // columnHeader2
             // 
-            this.columnHeader2.Text = "Product Name";
-            this.columnHeader2.Width = 109;
+            this.columnHeader2.Text = "Price";
+            this.columnHeader2.Width = 95;
             // 
-            // columnHeader3
+            // label1
             // 
-            this.columnHeader3.Text = "Price";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(78, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(143, 12);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Please select a product.";
             // 
-            // columnHeader4
+            // btnSubmit
             // 
-            this.columnHeader4.Text = "Order Status";
-            this.columnHeader4.Width = 86;
+            this.btnSubmit.Location = new System.Drawing.Point(180, 225);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(75, 23);
+            this.btnSubmit.TabIndex = 11;
+            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.UseVisualStyleBackColor = true;
             // 
-            // frmMain
+            // frmCreateOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(376, 293);
+            this.ClientSize = new System.Drawing.Size(428, 266);
             this.Controls.Add(this.listView1);
-            this.Controls.Add(this.btnOrderList);
-            this.Name = "frmMain";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Advertising Company";
-            this.Load += new System.EventHandler(this.frmMain_Load);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnSubmit);
+            this.Name = "frmCreateOrder";
+            this.Text = "frmCreateOrder";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btnOrderList;
-        private System.Windows.Forms.ListView listView1;
+        protected System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.Label label1;
+        protected System.Windows.Forms.Button btnSubmit;
     }
 }
