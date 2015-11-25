@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://lab.cheonghyun.com:8888/AdvertisingService/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://lab.cheonghyun.com:8888/AdvertisingService/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://lab.cheonghyun.com:8888/AdvertisingService/">
+      <s:element name="InsertCustomer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="info" type="tns:CustomerInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CustomerInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CustomerID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CompanyName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EMail" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PhoneNumber" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="InsertCustomerResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="FindCustomer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="info" type="tns:CustomerInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FindCustomerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FindCustomerResult" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="info" type="tns:CustomerInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCustomerById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="customerID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCustomerByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetCustomerByIdResult" type="tns:CustomerInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertProduct">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="product" type="tns:Product" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Product">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ProductID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProductName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Price" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="InsertProductResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="FindProduct">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="productName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="product" type="tns:Product" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FindProductResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FindProductResult" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="product" type="tns:Product" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveProduct">
+        <s:complexType />
+      </s:element>
+      <s:element name="RetrieveProductResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveProductResult" type="tns:ArrayOfProduct" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfProduct">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Product" type="tns:Product" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetProductById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="productID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProductByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetProductByIdResult" type="tns:Product" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="info" type="tns:CustomerInfo" />
+            <s:element minOccurs="1" maxOccurs="1" name="product" type="tns:Product" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertOrderResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="RetrieveOrder">
+        <s:complexType />
+      </s:element>
+      <s:element name="RetrieveOrderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveOrderResult" type="tns:ArrayOfOrderInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfOrderInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="OrderInfo" type="tns:OrderInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OrderInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="OrderID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Product" type="tns:Product" />
+          <s:element minOccurs="0" maxOccurs="1" name="OrderStatus" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Customer" type="tns:CustomerInfo" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="InsertCustomerSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertCustomer" />
+  </wsdl:message>
+  <wsdl:message name="InsertCustomerSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="FindCustomerSoapIn">
+    <wsdl:part name="parameters" element="tns:FindCustomer" />
+  </wsdl:message>
+  <wsdl:message name="FindCustomerSoapOut">
+    <wsdl:part name="parameters" element="tns:FindCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomerByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCustomerById" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomerByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCustomerByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertProductSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertProduct" />
+  </wsdl:message>
+  <wsdl:message name="InsertProductSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="FindProductSoapIn">
+    <wsdl:part name="parameters" element="tns:FindProduct" />
+  </wsdl:message>
+  <wsdl:message name="FindProductSoapOut">
+    <wsdl:part name="parameters" element="tns:FindProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveProductSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveProduct" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveProductSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProductByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProductById" />
+  </wsdl:message>
+  <wsdl:message name="GetProductByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProductByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertOrder" />
+  </wsdl:message>
+  <wsdl:message name="InsertOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveOrder" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveOrderResponse" />
+  </wsdl:message>
+  <wsdl:portType name="OrderManagerServiceSoap">
+    <wsdl:operation name="InsertCustomer">
+      <wsdl:input message="tns:InsertCustomerSoapIn" />
+      <wsdl:output message="tns:InsertCustomerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FindCustomer">
+      <wsdl:input message="tns:FindCustomerSoapIn" />
+      <wsdl:output message="tns:FindCustomerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerById">
+      <wsdl:input message="tns:GetCustomerByIdSoapIn" />
+      <wsdl:output message="tns:GetCustomerByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertProduct">
+      <wsdl:input message="tns:InsertProductSoapIn" />
+      <wsdl:output message="tns:InsertProductSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FindProduct">
+      <wsdl:input message="tns:FindProductSoapIn" />
+      <wsdl:output message="tns:FindProductSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveProduct">
+      <wsdl:input message="tns:RetrieveProductSoapIn" />
+      <wsdl:output message="tns:RetrieveProductSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductById">
+      <wsdl:input message="tns:GetProductByIdSoapIn" />
+      <wsdl:output message="tns:GetProductByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertOrder">
+      <wsdl:input message="tns:InsertOrderSoapIn" />
+      <wsdl:output message="tns:InsertOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveOrder">
+      <wsdl:input message="tns:RetrieveOrderSoapIn" />
+      <wsdl:output message="tns:RetrieveOrderSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="OrderManagerServiceSoap" type="tns:OrderManagerServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InsertCustomer">
+      <soap:operation soapAction="http://lab.cheonghyun.com:8888/AdvertisingService/InsertCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindCustomer">
+      <soap:operation soapAction="http://lab.cheonghyun.com:8888/AdvertisingService/FindCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerById">
+      <soap:operation soapAction="http://lab.cheonghyun.com:8888/AdvertisingService/GetCustomerById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertProduct">
+      <soap:operation soapAction="http://lab.cheonghyun.com:8888/AdvertisingService/InsertProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindProduct">
+      <soap:operation soapAction="http://lab.cheonghyun.com:8888/AdvertisingService/FindProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveProduct">
+      <soap:operation soapAction="http://lab.cheonghyun.com:8888/AdvertisingService/RetrieveProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductById">
+      <soap:operation soapAction="http://lab.cheonghyun.com:8888/AdvertisingService/GetProductById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertOrder">
+      <soap:operation soapAction="http://lab.cheonghyun.com:8888/AdvertisingService/InsertOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveOrder">
+      <soap:operation soapAction="http://lab.cheonghyun.com:8888/AdvertisingService/RetrieveOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="OrderManagerServiceSoap12" type="tns:OrderManagerServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InsertCustomer">
+      <soap12:operation soapAction="http://lab.cheonghyun.com:8888/AdvertisingService/InsertCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindCustomer">
+      <soap12:operation soapAction="http://lab.cheonghyun.com:8888/AdvertisingService/FindCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerById">
+      <soap12:operation soapAction="http://lab.cheonghyun.com:8888/AdvertisingService/GetCustomerById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertProduct">
+      <soap12:operation soapAction="http://lab.cheonghyun.com:8888/AdvertisingService/InsertProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindProduct">
+      <soap12:operation soapAction="http://lab.cheonghyun.com:8888/AdvertisingService/FindProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveProduct">
+      <soap12:operation soapAction="http://lab.cheonghyun.com:8888/AdvertisingService/RetrieveProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductById">
+      <soap12:operation soapAction="http://lab.cheonghyun.com:8888/AdvertisingService/GetProductById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertOrder">
+      <soap12:operation soapAction="http://lab.cheonghyun.com:8888/AdvertisingService/InsertOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveOrder">
+      <soap12:operation soapAction="http://lab.cheonghyun.com:8888/AdvertisingService/RetrieveOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="OrderManagerService">
+    <wsdl:port name="OrderManagerServiceSoap" binding="tns:OrderManagerServiceSoap">
+      <soap:address location="http://lab.cheonghyun.com:8888/AdvertisingService/OrderManagerService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="OrderManagerServiceSoap12" binding="tns:OrderManagerServiceSoap12">
+      <soap12:address location="http://lab.cheonghyun.com:8888/AdvertisingService/OrderManagerService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

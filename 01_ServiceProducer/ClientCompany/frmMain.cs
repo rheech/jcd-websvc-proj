@@ -6,13 +6,13 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using libordermgmt;
+using ClientCompany.AdvertisingService;
 
 namespace ClientCompany
 {
     public partial class frmMain : Form
     {
-        OrderManager om;
+        OrderManagerServiceSoapClient om;
         CustomerInfo Customer;
 
         public frmMain()
@@ -21,7 +21,7 @@ namespace ClientCompany
 
             listView1.FullRowSelect = true;
 
-            om = new OrderManager();
+            om = new OrderManagerServiceSoapClient();
             Customer = new CustomerInfo();
 
             om.FindCustomer("sample@email.com", ref Customer);

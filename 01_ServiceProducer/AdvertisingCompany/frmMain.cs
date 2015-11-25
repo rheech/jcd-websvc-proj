@@ -6,25 +6,28 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using libordermgmt;
+using AdvertisingCompany.AdvertisingService;
 
 namespace AdvertisingCompany
 {
     public partial class frmMain : Form
     {
-        OrderManager om;
+        OrderManagerServiceSoapClient om;
 
         public frmMain()
         {
             InitializeComponent();
             listView1.FullRowSelect = true;
-            om = new OrderManager();
+            om = new OrderManagerServiceSoapClient();
         }
 
         private void btnOrderList_Click(object sender, EventArgs e)
         {
-            OrderInfo[] orders = om.RetrieveOrder();
+            OrderInfo[] orders;
             ListViewItem item;
+
+            listView1.Items.Clear();
+            orders = om.RetrieveOrder();
 
             foreach (OrderInfo o in orders)
             {

@@ -17,6 +17,31 @@ namespace AdvertisingService
     // [System.Web.Script.Services.ScriptService]
     public class PurchasingService : System.Web.Services.WebService
     {
+        OrderManager _om;
+
+        public PurchasingService()
+        {
+            _om = new OrderManager();
+        }
+
+        [WebMethod]
+        public void CreateOrder(CustomerInfo info, Product product)
+        {
+            _om.InsertOrder(info, product);
+        }
+
+        [WebMethod]
+        public Product[] RetrieveProduct()
+        {
+            return _om.RetrieveProduct();
+        }
+
+        [WebMethod]
+        public bool FindCustomer(string email, ref CustomerInfo info)
+        {
+            return _om.FindCustomer(email, ref info);
+        }
+
         [WebMethod]
         public void SendOrderDetails()
         {
@@ -26,13 +51,13 @@ namespace AdvertisingService
         [WebMethod]
         public string RequestOrder(OrderInfo info)
         {
-            return info.Requirement;
+            return "Succeed2";
         }
 
         [WebMethod]
         public string CheckOrderStatus(OrderInfo info)
         {
-            return info.Requirement;
+            return "Succeed";
         }
     }
 }

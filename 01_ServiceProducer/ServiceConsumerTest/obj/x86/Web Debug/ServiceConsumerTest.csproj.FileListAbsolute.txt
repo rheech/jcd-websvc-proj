@@ -1,0 +1,11 @@
+D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\ServiceConsumerTest\bin\x86\Web Debug\ServiceConsumerTest.exe.config
+D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\ServiceConsumerTest\bin\x86\Web Debug\ServiceConsumerTest.exe
+D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\ServiceConsumerTest\bin\x86\Web Debug\ServiceConsumerTest.pdb
+D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\ServiceConsumerTest\bin\x86\Web Debug\libordermgmt.dll
+D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\ServiceConsumerTest\bin\x86\Web Debug\libordermgmt.pdb
+D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\ServiceConsumerTest\obj\x86\Web Debug\ServiceConsumerTest.csprojResolveAssemblyReference.cache
+D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\ServiceConsumerTest\obj\x86\Web Debug\ServiceConsumerTest.frmMain.resources
+D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\ServiceConsumerTest\obj\x86\Web Debug\ServiceConsumerTest.Properties.Resources.resources
+D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\ServiceConsumerTest\obj\x86\Web Debug\ServiceConsumerTest.csproj.GenerateResource.Cache
+D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\ServiceConsumerTest\obj\x86\Web Debug\ServiceConsumerTest.exe
+D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\ServiceConsumerTest\obj\x86\Web Debug\ServiceConsumerTest.pdb

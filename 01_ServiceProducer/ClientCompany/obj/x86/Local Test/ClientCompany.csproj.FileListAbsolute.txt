@@ -1,2 +1,0 @@
-D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\ClientCompany\bin\x86\Local Test\ClientCompany.exe.config
-D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\bin\Debug\ClientCompany.exe.config
