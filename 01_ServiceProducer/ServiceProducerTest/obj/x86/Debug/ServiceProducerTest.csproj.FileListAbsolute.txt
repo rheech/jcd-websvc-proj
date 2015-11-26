@@ -41,3 +41,4 @@ D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\ServiceProducerTest
 D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\ServiceProducerTest\obj\x86\Debug\ServiceProducerTest.csproj.GenerateResource.Cache
 D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\ServiceProducerTest\obj\x86\Debug\ServiceProducerTest.exe
 D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\ServiceProducerTest\obj\x86\Debug\ServiceProducerTest.pdb
+D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\bin\Debug\bus_stops_data.txt

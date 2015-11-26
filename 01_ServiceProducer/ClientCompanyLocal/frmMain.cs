@@ -1,4 +1,6 @@
-﻿using System;
+﻿#define RESET_DB
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,7 +23,11 @@ namespace ClientCompanyLocal
 
             listView1.FullRowSelect = true;
 
+#if RESET_DB
+            om = new OrderManagerSampleData();
+#else
             om = new OrderManager();
+#endif
             Customer = new CustomerInfo();
 
             om.FindCustomer("sample@email.com", ref Customer);

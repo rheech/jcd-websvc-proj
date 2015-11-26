@@ -60,8 +60,12 @@ namespace libordermgmt
                 _cmd.CommandText = "DROP DATABASE IF EXISTS advertising_company;";
                 _cmd.ExecuteNonQuery();
             }
+            
+            _cmd.CommandText = 
+@"CREATE DATABASE IF NOT EXISTS advertising_company
+    DEFAULT CHARACTER SET utf8
+    DEFAULT COLLATE utf8_general_ci;";
 
-            _cmd.CommandText = "CREATE DATABASE IF NOT EXISTS advertising_company;";
             _cmd.ExecuteNonQuery();
 
             _cmd.CommandText = "USE advertising_company;";
@@ -127,7 +131,7 @@ namespace libordermgmt
         {
             get
             {
-                return "Server=127.0.0.1;Uid=root;Pwd=teddybear;";
+                return "Server=127.0.0.1;Uid=root;Pwd=teddybear;Charset=utf8;";
             }
         }
 

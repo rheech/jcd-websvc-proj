@@ -49,6 +49,44 @@ namespace libordermgmt
             product.Price = 15000;
 
             this.InsertProduct(product);
+
+            BusStopInfo[] bus = GetBusStopList();
+
+            foreach (BusStopInfo b in bus)
+            {
+                InsertBusStop(b);
+            }
+        }
+
+        private BusStopInfo[] GetBusStopList()
+        {
+            BusStopInfo busStop;
+            List<BusStopInfo> busStopList;
+            string[] list;
+            string[] line;
+
+            list = System.IO.File.ReadAllLines("bus_stops_data.txt", System.Text.Encoding.UTF8);
+            busStopList = new List<BusStopInfo>();
+
+            foreach (string s in list)
+            {
+                line = s.Split('|');
+
+                //04-236|뚝섬역8번출구|Ttukseom Station Exit 8
+                busStop = new BusStopInfo();
+                busStop.StationID = line[0];
+                busStop.NameKor = line[1];
+
+                // if english name exists
+                if (line.Length > 2)
+                {
+                    busStop.NameEng = line[2];
+                }
+
+                busStopList.Add(busStop);
+            }
+
+            return busStopList.ToArray();
         }
     }
 }

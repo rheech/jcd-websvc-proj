@@ -2,8 +2,15 @@
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="libordermgmt.OrderManager">
     <Position X="0.5" Y="1.75" Width="2" />
+    <NestedTypes>
+      <Delegate Name="libordermgmt.OrderManager.dReadAction&lt;T&gt;" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>OrderManager.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AAACACEAAACCAAAAAAAAAAAEAAAAAAEAABAEAAAAAQA=</HashCode>
+      <HashCode>AAACACEAAgGCAAAAAAAAAAAEAAAAAAECAZAEABAEAQA=</HashCode>
       <FileName>OrderManager.cs</FileName>
     </TypeIdentifier>
   </Class>

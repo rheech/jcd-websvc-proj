@@ -5,3 +5,4 @@ D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\AdvertisingService\
 D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\AdvertisingService\bin\libordermgmt.pdb
 D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\AdvertisingService\obj\Debug\AdvertisingService.dll
 D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\AdvertisingService\obj\Debug\AdvertisingService.pdb
+D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\AdvertisingService\bin\bus_stops_data.txt

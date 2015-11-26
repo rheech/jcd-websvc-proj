@@ -1,0 +1,11 @@
+서울시 버스 정류소 노선도 다국어 목록
+http://data.seoul.go.kr/openinf/sheetview.jsp?infId=OA-12830&tMenu=11
+
+서울시 통계 시내버스 정류소 현황
+http://data.seoul.go.kr/openinf/linkview.jsp?infId=OA-686&tMenu=11
+
+서울시 버스 정류소 정보조회
+http://data.seoul.go.kr/openinf/linkview.jsp?infId=OA-1094&tMenu=11
+
+Google Suggestions API
+http://clients1.google.com/complete/search?hl=en&output=toolbar&q=YOURSEARCHTERM
