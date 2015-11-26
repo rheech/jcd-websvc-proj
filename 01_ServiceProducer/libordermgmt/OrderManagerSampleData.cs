@@ -74,13 +74,13 @@ namespace libordermgmt
 
                 //04-236|뚝섬역8번출구|Ttukseom Station Exit 8
                 busStop = new BusStopInfo();
-                busStop.StationID = line[0];
+                busStop.BusStopID = line[0];
                 busStop.NameKor = line[1];
 
                 // if english name exists
                 if (line.Length > 2)
                 {
-                    busStop.NameEng = line[2];
+                    busStop.NameEng = line[2].ToLower();
                 }
 
                 busStopList.Add(busStop);

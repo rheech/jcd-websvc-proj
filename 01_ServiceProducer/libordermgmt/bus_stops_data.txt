@@ -20,8 +20,8 @@
 04-719|성동구청|Seongdong-gu Office
 04-720|성동구청|Seongdong-gu Office
 05-004|용마초등학교|Seoul Yongma Elementary School
-05-006|어린이대공원후문아차산역|Children\'s Grand Park Back Gate, Achasan Station
-05-007|어린이대공원후문아차산역|Children\'s Grand Park Back Gate, Achasan Station
+05-006|어린이대공원후문아차산역|Children's Grand Park Back Gate, Achasan Station
+05-007|어린이대공원후문아차산역|Children's Grand Park Back Gate, Achasan Station
 05-104|메리놀교회앞|Maryknoll Church
 05-115|국립서울병원앞|Seoul National Hospital
 05-131|용암사입구|Yongamsa
@@ -50,10 +50,10 @@
 05-234|화양천주교회앞|Hwayang Catholic Church
 05-238|외환은행군자지점앞|Korea Exchange Bank (Gunja Branch)
 05-239|외환은행군자지점앞|Korea Exchange Bank (Gunja Branch)
-05-251|어린이대공원앞,세종대학교|Children\'s Grand Park, Sejong Univ.
+05-251|어린이대공원앞,세종대학교|Children's Grand Park, Sejong Univ.
 05-253|능동사거리|Neungdong Sageori 
 05-254|능동우편취급소앞-->능동우편취급국|Neungdong Post Office 
-05-258|어린이대공원후문|Children\'s Grand Park Back Gate
+05-258|어린이대공원후문|Children's Grand Park Back Gate
 05-263|건대입구역사거리|Konkuk Univ. Station Sageori 
 05-264|자양4동차고지|Jayang 4(sa)dong Garage
 05-266|강변역(B)|Gangbyeon Station (B)
@@ -96,8 +96,8 @@
 06-173|고려대역.고대앞삼거리|Korea Univ. Station, Korea Univ. Samgeori
 06-174|고려대역.고대앞삼거리|Korea Univ. Station, Korea Univ. Samgeori
 06-175|고려대학교앞|Korea Univ. 
-06-216|성바오로병원앞|The Catholic Univ. of Korea, St. Paul\'s Hospital
-06-217|성바오로병원앞|The Catholic Univ. of Korea, St. Paul\'s Hospital
+06-216|성바오로병원앞|The Catholic Univ. of Korea, St. Paul's Hospital
+06-217|성바오로병원앞|The Catholic Univ. of Korea, St. Paul's Hospital
 06-250|북한연구소앞|Institute of North Korean Studies 
 06-251|장한평역|Janghanpyeong Station
 06-252|장한평역|Janghanpyeong Station
@@ -170,8 +170,8 @@
 07-297|봉화산역3번출구|Bonghwasan Station Exit 3
 07-331|양원역입구|Yangwon Station 
 07-332|양원역입구|Yangwon Station 
-07-355|송곡여고.양원역|Song-gok Girls\' High School, Yangwon Station
-07-356|송곡여고.양원역|Song-gok Girls\' High School, Yangwon Station
+07-355|송곡여고.양원역|Song-gok Girls' High School, Yangwon Station
+07-356|송곡여고.양원역|Song-gok Girls' High School, Yangwon Station
 07-367|신내6단지아파트|Sinnae Apt. 6danji 
 07-369|이수아파트앞시장입구|Isu Apt. Market 
 08-306|돈암시장입구|Donam Market
@@ -196,8 +196,8 @@
 07-429|태릉고등학교앞|Taereung High School 
 08-003|길음뉴타운|Gireum New Town 
 08-004|길음뉴타운|Gireum New Town 
-08-007|돈암사거리.성신여대입구|Donamsageori, Sungshin Women\'s Univ. 
-08-008|돈암사거리.성신여대입구|Donamsageori, Sungshin Women\'s Univ.
+08-007|돈암사거리.성신여대입구|Donamsageori, Sungshin Women's Univ. 
+08-008|돈암사거리.성신여대입구|Donamsageori, Sungshin Women's Univ.
 08-010|삼선교.한성대학교|Samseongyo, Hansung Univ. 
 08-123|돈암동삼성아파트입구|Donamdong Samsung Apt. 
 08-124|길음역|Gireum Station
@@ -206,7 +206,7 @@
 08-131|성북구보건소|Seongbuk-gu Community Health Center
 08-132|월곡역|Wolgok Station
 08-133|월곡역|Wolgok Station
-08-134|동덕여대앞|Dongduk Women\'s Univ.
+08-134|동덕여대앞|Dongduk Women's Univ.
 08-136|상월곡역|Sangwolgok Station
 08-137|월곡중학교|Seoul Wolgok Middle School
 08-138|월곡중학교|Seoul Wolgok Middle School
@@ -231,8 +231,8 @@
 08-246|길음시장|Gireum Market
 08-247|길음역|Gireum Station
 08-248|길음역|Gireum Station
-08-269|성신여대입구|Sungshin Women\'s Univ.
-08-270|성신여대입구|Sungshin Women\'s Univ.
+08-269|성신여대입구|Sungshin Women's Univ.
+08-270|성신여대입구|Sungshin Women's Univ.
 08-272|대농빌라앞|Daenong Villa
 08-295|보문역|Bomun Station
 08-296|보문역|Bomun Station
@@ -274,8 +274,8 @@
 09-314|대한병원|Daehan Hospital
 10-001|도봉산역|Dobongsan Station
 10-002|도봉산역|Dobongsan Station
-10-005|서울북부지방법원.검찰청.도봉역성황당|Seoul Northern District Court, Public Prosecutors\' Office, Dobong Station Seonghwangdang
-10-006|서울북부지방법원.검찰청.도봉역성황당|Seoul Northern District Court, Public Prosecutors\' Office, Dobong Station Seonghwangdang
+10-005|서울북부지방법원.검찰청.도봉역성황당|Seoul Northern District Court, Public Prosecutors' Office, Dobong Station Seonghwangdang
+10-006|서울북부지방법원.검찰청.도봉역성황당|Seoul Northern District Court, Public Prosecutors' Office, Dobong Station Seonghwangdang
 10-009|도봉소방서|Dobong Fire Station
 10-010|도봉소방서|Dobong Fire Station
 10-015|쌍문역|Ssangmun Station
@@ -283,8 +283,8 @@
 10-019|신도봉시장.도봉구청입구|Sindobong Market, Dobong-gu Office
 10-020|신도봉시장.도봉구청입구|Sindobong Market, Dobong-gu Office
 10-104|도봉동한신아파트|Dobongdong Hanshin Apt.
-10-107|"서울북부지방법원 경찰청-->검찰청도봉역"|Seoul Northern District Court & Public Prosecutors\' Office, Dobong Station
-10-108|"서울북부지방.법원. 검찰청도봉역(성황당)"|Seoul Northern District Court & Public Prosecutors\' Office, Dobong Station
+10-107|"서울북부지방법원 경찰청-->검찰청도봉역"|Seoul Northern District Court & Public Prosecutors' Office, Dobong Station
+10-108|"서울북부지방.법원. 검찰청도봉역(성황당)"|Seoul Northern District Court & Public Prosecutors' Office, Dobong Station
 10-111|방학역|Banghak Station
 10-113|도봉소방서|Dobong Fire Station
 10-124|쌍문역|Ssangmun Station
@@ -323,8 +323,8 @@
 11-165|공릉대동2차아파트|Gongneung Daedong 2cha Apt.
 11-177|공릉역|Gongneung Station
 11-180|상계주공9단지|Sanggye Jugong Apt. 9danji 
-11-185|도봉면허시험장|Dobong Driver\'s License Test Center 
-11-186|도봉면허시험장|Dobong Driver\'s License Test Center 
+11-185|도봉면허시험장|Dobong Driver's License Test Center 
+11-186|도봉면허시험장|Dobong Driver's License Test Center 
 11-191|상계주공9단지|Sanggye Jugong Apt. 9danji 
 11-194|상계동두산아파트|Sanggyedong Doosan Apt.
 11-195|상계동두산아파트|Sanggyedong Doosan Apt.
@@ -363,7 +363,7 @@
 11-329|월계역|Wolgye Station
 11-336|월계삼거리|Wolgyesamgeori
 11-366|중계역|Junggye Station 
-11-372|어린이교통공원|Children\'s Transportation Park
+11-372|어린이교통공원|Children's Transportation Park
 11-373|중계역|Junggye Station 
 11-375|중계건영2차아파트|Junggye Kunyoung 2cha Apt.
 11-376|중계역2번출구|Junggye Station Exit 2
@@ -416,8 +416,8 @@
 12-130|응암역(신사오거리)|Eungam Station (Sinsaogeori)
 12-131|응암역(신사오거리)|Eungam Station (Sinsaogeori)
 12-138|역촌역(역촌오거리)|Yeokchon Station (Yeokchonogeori) 
-12-140|예일여고|Yale Girls\' High School
-12-151|예일여고|Yale Girls\' High School
+12-140|예일여고|Yale Girls' High School
+12-151|예일여고|Yale Girls' High School
 12-153|역촌역(역촌오거리)|Yeokchon Station (Yeokchonogeori) 
 12-158|신사초등학교|Seoul Shinsa Elementary School
 12-161|신사초등학교|Seoul Shinsa Elementary School
@@ -435,7 +435,7 @@
 14-142|공덕시장|Gongdeok Market
 14-149|공덕오거리|Gongdeokogeori
 14-150|공덕오거리|Gongdeokogeori
-14-152|서울대동창회관|Seoul Nat\'l Univ. Alumni Hall
+14-152|서울대동창회관|Seoul Nat'l Univ. Alumni Hall
 14-153|공덕역|Gongdeok Station
 14-168|신촌로터리|Sinchon Rotary
 14-169|신촌로터리|Sinchon Rotary
@@ -449,7 +449,7 @@
 14-182|청기와주유소|Cheonggiwa Gas Station 
 14-194|마포구청역|Mapo-gu Office Station
 14-195|마포구청역|Mapo-gu Office Station
-21-104|봉천사거리,서울대입구역|Bongcheonsageori, Seoul Nat\'l Univ. Station 
+21-104|봉천사거리,서울대입구역|Bongcheonsageori, Seoul Nat'l Univ. Station 
 21-106|봉천역, 관악초등학교|Bongcheon Station, Seoul Kwanak Elementary School
 21-108|신림사거리|Sillimsageori 
 21-117|신림사거리|Sillimsageori 
@@ -466,9 +466,9 @@
 21-224|신대방역|Sindaebang Station
 21-225|신대방역|Sindaebang Station
 21-248|구로디지털단지역|Guro Digital Complex Station 
-21-252|서울대입구역|Seoul Nat\'l Univ. Station 
+21-252|서울대입구역|Seoul Nat'l Univ. Station 
 21-258|봉천역|Bongcheon Station
-21-330|서울대입구역|Seoul Nat\'l Univ. Station 
+21-330|서울대입구역|Seoul Nat'l Univ. Station 
 21-350|신림사거리|Sillimsageori 
 21-353|신대방역|Sindaebang Station
 21-356|신대방역|Sindaebang Station
@@ -490,21 +490,21 @@
 22-024|구반포역.심산문화센터|Gubanpo Station, Simsan Cultural Center
 22-029|남성시장|Namseong Market
 22-031|경문고교앞|Kyungmoon High School
-22-101|지하철3호선교대역|Line 3 Seoul Nat\'l Univ. of Education Station 
-22-102|서울교대|Seoul Nat\'l Univ. of Education 
-22-103|지하철2호선교대역|Line 2 Seoul Nat\'l Univ. of Education Station 
+22-101|지하철3호선교대역|Line 3 Seoul Nat'l Univ. of Education Station 
+22-102|서울교대|Seoul Nat'l Univ. of Education 
+22-103|지하철2호선교대역|Line 2 Seoul Nat'l Univ. of Education Station 
 22-109|남부터미널|Nambu Bus Terminal
 22-129|서초구청|Seocho-gu Office
 22-130|서초구청|Seocho-gu Office
-22-134|교대역|Seoul Nat\'l Univ. of Education Station
+22-134|교대역|Seoul Nat'l Univ. of Education Station
 22-135|서초역|Seocho Station
 22-136|서초역|Seocho Station
 22-156|BC카드앞|BC Card
 22-157|남부터미널|Nambu Bus Terminal
-22-158|서울교대|Seoul Nat\'l University of Education 
-22-161|지하철3호선교대역|Line 3 Seoul Nat\'l Univ. of Education Station 
+22-158|서울교대|Seoul Nat'l University of Education 
+22-161|지하철3호선교대역|Line 3 Seoul Nat'l Univ. of Education Station 
 22-167|강남역사거리|Gangnam Station Sageori
-22-170|지하철2호선교대역|Line 2 Seoul Nat\'l Univ. of Education Station 
+22-170|지하철2호선교대역|Line 2 Seoul Nat'l Univ. of Education Station 
 22-172|신논현역|Sinnonhyeon Station 
 22-173|강남역|Gangnam Station
 22-183|영동사거리|Yeongdongsageori
@@ -518,7 +518,7 @@
 22-196|사평역|Sapyeong Station
 22-211|고속터미널|Express Bus Terminal
 22-213|센트럴시티|Central City
-22-215|서울성모병원|Seoul ST. Mary\'s Hospital
+22-215|서울성모병원|Seoul ST. Mary's Hospital
 22-219|고속터미널(경부선)|Express Bus Terminal (Gyeongbu Line)
 22-220|고속터미널(호남선)|Express Bus Terminal (Honam Line)
 22-230|방배보건분소|Bangbae Community Health Center  
@@ -555,7 +555,7 @@
 22-415|양재역환승주차장|Yangjae Station Transfer Parking Lot 
 22-419|양재역.엘타워빌딩|Yangjae Station, EL Tower Bldg.
 22-600|강남역.도시에빛|Gangnam Station, Dosiebit 
-22-825|교대역|Seoul Nat\'l Univ. of Education Station
+22-825|교대역|Seoul Nat'l Univ. of Education Station
 22-997|강남역 서초현대타워앞|Gangnam Station, Seocho Hyundai Tower
 23-101|신사중학교|Sinsa Middle School
 23-102|신사중학교|Sinsa Middle School
@@ -606,11 +606,11 @@
 23-188|경기고|Kyunggi High School
 23-190|봉은사,코엑스 북문|Bongeunsa, COEX North Gate
 23-191|봉은사,코엑스 북문|Bongeunsa, COEX North Gate
-23-196|강남경찰서,면허시험장|Gangnam Police Station, Gangnam Driver\'s License Test Center
+23-196|강남경찰서,면허시험장|Gangnam Police Station, Gangnam Driver's License Test Center
 23-197|한국전력공사|KEPCO
 23-198|한국무역센타|World Trade Center Seoul 
 23-199|한국무역센터|World Trade Center Seoul 
-23-200|강남구립국제교육원|Gangnam UC Riverside Int\'l Education Center
+23-200|강남구립국제교육원|Gangnam UC Riverside Int'l Education Center
 23-201|한국무역센타삼성역|Samseong Station, World Trade Center Seoul
 23-202|포스코사거리|Posco Sageori 
 23-203|한별구립어린이집|Hanbyeol Public Nursery School 
@@ -637,7 +637,7 @@
 23-244|삼성역|Samseong Station
 23-251|무역센터.삼성역|World Trade Center Seoul, Samseong Station
 23-252|한티역|Hanti Station
-23-258|대치동진선여고앞|Daechidong Jinseon Girls\' High School
+23-258|대치동진선여고앞|Daechidong Jinseon Girls' High School
 23-259|선릉역|Seolleung Station
 23-265|한티역.서울지방고용노동청강남지청|Hanti Station, Ministry of Employment and Labor (Gangnam Branch)
 23-266|신논현역|Sinnonhyeon Station 
@@ -651,16 +651,16 @@
 23-286|신논현역|Sinnonhyeon Station 
 23-287|강남역|Gangnam Station
 23-288|역삼역.포스코P&S타워|Yeoksam Station, POSCO P&S Tower
-23-290|강남구립국제교육원|Gangnam UC Riverside Int\'l Education Center
+23-290|강남구립국제교육원|Gangnam UC Riverside Int'l Education Center
 23-305|한서병원|Hansuh Medical 
-23-307|진선여고앞|Jinseon Girls\' High School
+23-307|진선여고앞|Jinseon Girls' High School
 23-309|한티역|Hanti Station
 23-310|한티역|Hanti Station
-23-316|매봉삼성아파트SK리더스뷰|Maebong Samsung Apt. SK Leader\'s View
+23-316|매봉삼성아파트SK리더스뷰|Maebong Samsung Apt. SK Leader's View
 23-317|매봉역,양재최의원|Maebong Station, Yangjae Choe Clinic
 23-323|매봉역|Maebong Station
 23-324|도곡개포한신아파트|Dogok Gaepo Hanshin Apt.
-23-329|숙명여고|Sookmyung Girls\' High School
+23-329|숙명여고|Sookmyung Girls' High School
 23-331|한티역|Hanti Station
 23-332|도곡아파트앞|Dogok Apt.
 23-333|중대부고앞|High School Attatched to Collage of Education Chung-Ang Univ.
@@ -720,8 +720,8 @@
 24-009|가락시장가락시장역|Garak Market, Garak Market Station
 03-253|신용산역|Sinyongsan Station
 03-255|용산역|Yongsan Station
-03-256|용사의집|Yongsauijip (Veteran\'s Lodge)
-03-257|용사의집|Yongsauijip (Veteran\'s Lodge)
+03-256|용사의집|Yongsauijip (Veteran's Lodge)
+03-257|용사의집|Yongsauijip (Veteran's Lodge)
 03-258|용산역광장앞|Yongsan Station Plaza
 03-263|이촌역|Ichon Station
 03-264|이촌역|Ichon Station
@@ -735,10 +735,10 @@
 03-320|남산서울타워|N Seoul Tower
 03-325|서빙고역|Seobinggo Station
 03-326|문배동이안아파트앞|Munbaedong Iaan Apt.
-03-327|갈월동4호선숙대입구|Garwoldong Line 4 Sookmyung Women\'s Univ. Station
+03-327|갈월동4호선숙대입구|Garwoldong Line 4 Sookmyung Women's Univ. Station
 03-328|삼각지역|Samgakji Satation
-03-330|숙대입구|Sookmyung Women\'s Univ.
-03-335|숙대입구|Sookmyung Women\'s Univ.
+03-330|숙대입구|Sookmyung Women's Univ.
+03-335|숙대입구|Sookmyung Women's Univ.
 03-336|서빙고초등학교|Seoul Seobinggo Elementary School
 03-342|용암초등학교, 이태원2동주민센터|Seoul Yongam Elementary School, Itaewon 2(i)dong Community Service Center
 03-343|용암초등학교, 이태원2동주민센터|Seoul Yongam Elementary School, Itaewon 3(i)dong Community Service Center
@@ -777,7 +777,7 @@
 16-364|양서1단지우장산아이파크이편한세상|"Yangseo 1danji, Ujangsan I Park e-pyeonhansesang Apt."
 16-368|등촌9단지sbs공개홀|Deungchon 9danji, Deungchondong SBS Open Hall 
 16-369|가양4,5단지상가|Gayang 4,5danji Shopping Center
-16-392|김포공항국제선|Gimpo Int\'l Airport (International)
+16-392|김포공항국제선|Gimpo Int'l Airport (International)
 16-393|발산역7번출구|Balsan Station Exit 7
 16-407|송정역|Songjeong Station
 16-422|마곡역|Magok Station
@@ -785,15 +785,15 @@
 16-429|발산역9번출구|Balsan Station Exit 9
 16-434|개화역광역환승센터|Gaehwa Station Metro Area Bus Transfer Center
 16-435|개화역광역환승센터|Gaehwa Station Metro Area Bus Transfer Center
-16-451|롯데몰.김포공항|Lotte Mall, Gimpo Int\'l Airport 
-16-605|김포공항국내선|Gimpo Int\'l Airport (Domestic)
+16-451|롯데몰.김포공항|Lotte Mall, Gimpo Int'l Airport 
+16-605|김포공항국내선|Gimpo Int'l Airport (Domestic)
 16-639|화곡역|Hwagok Station
 16-642|개화검문소|Gaehwa Checkpoint
 16-720|송정역|Songjeong Station
 16-745|송정역|Songjeong Station
-16-781|김포공항국내선|Gimpo Int\'l Airport (Domestic)
+16-781|김포공항국내선|Gimpo Int'l Airport (Domestic)
 16-851|염창역서울도시가스|Yeomchang Station, Seoul City Gas Corp.
-16-997|김포공항국제선|Gimpo Int\'l Airport (International)
+16-997|김포공항국제선|Gimpo Int'l Airport (International)
 17-001|신도림역|Sindorim Station
 17-002|신도림역|Sindorim Station
 17-004|신도림동.구로역|Sindorimdong, Guro Station
@@ -976,7 +976,7 @@
 24-016|장지역.가든파이브|Jangji Station, Garden 5
 24-101|천호역|Cheonho Station
 24-108|풍납토성|Pungnaptoseong
-24-109|영파여고|Youngpa Girls\' High School
+24-109|영파여고|Youngpa Girls' High School
 24-123|잠실파크리오아파트상가.올림픽회관|Jamsil Parkrio Apt. Shopping Center, Olympic Center 
 24-125|잠실나루역|Jamsillaru Station
 24-127|몽촌토성역|Mongchontoseong Station
@@ -991,7 +991,7 @@
 24-138|잠실롯데월드|Jamsil Lotte World
 24-139|잠실5단지|Jamsil 5danji 
 24-141|잠실2동주민센터신천역8번출구앞|Jamsil 2(i)dong Community Service Center, Sincheon Station Exit 8
-24-142|잠실엘스아파트앞|Jamsil LLL\'s Apt. 
+24-142|잠실엘스아파트앞|Jamsil LLL's Apt. 
 24-144|잠실운동장|Jamsil Sports Complex 
 24-146|잠실롯데월드|Jamsil Lotte World
 24-147|갤러리아팰리스 |Galleria Palace 
@@ -1098,7 +1098,7 @@
 25-156|암사역(암사청과물도매시장)|Amsa Station (Amsa Vegetable & Fruit Market)
 25-161|천호역현대백화점|Cheonho Station, Hyundai Dept. Store
 25-162|천호역현대백화점|Cheonho Station, Hyundai Dept. Store
-25-164|영파여자고등학교|Youngpa Girls\' High School
+25-164|영파여자고등학교|Youngpa Girls' High School
 25-165|신한은행|Shinhan Bank 
 25-166|신한은행|Shinhan Bank 
 25-177|강동경희대병원(명일동이마트)|Kyung Hee Univ. Hospital at Gangdong (Myeongildong emart)
@@ -1128,8 +1128,8 @@
 25-349|굽은다리역 구민회관 강동홈플러스|Gubeundari Station Community Center, Gangdong Home Plus 
 25-356|상일동역, 고덕우체국|Sangildong Station, Godeok Post Office
 25-617|강동구청|Gangdong-gu Office
-25-643|성덕여중, 성덕고|Seongdeok Girls\' Middle School, Seongdeok High School  
-25-644|성덕여중, 성덕고|Seongdeok Girls\' Middle School, Seongdeok High School  
+25-643|성덕여중, 성덕고|Seongdeok Girls' Middle School, Seongdeok High School  
+25-644|성덕여중, 성덕고|Seongdeok Girls' Middle School, Seongdeok High School  
 20-108|대방역|Daebang Station
 20-114|노량진역|Noryangjin Station
 20-115|노량진역|Noryangjin Station
@@ -1195,7 +1195,7 @@
 14-209|이대역|Ewha Womans Univ. Station
 14-215|굴레방다리|Gullebangdari 
 14-216|양화진성지공원입구|Yanghwajin Holy Land Park
-14-218|홀트아동복지회|Holt Children\'s Services Inc.
+14-218|홀트아동복지회|Holt Children's Services Inc.
 14-219|합정역|Hapjeong Station
 14-220|합정역|Hapjeong Station
 14-224|홍대입구역|Hongik Univ. Station
@@ -1209,8 +1209,8 @@
 14-243|마포대교입구|Mapodaegyo
 14-244|합정역|Hapjeong Station
 14-245|합정역|Hapjeong Station
-14-248|"기업은행, 서교동지점 (최규하대통령가옥)"|Industrial Bank of Korea, Former President Kyu-hah Choi\'s House 
-14-249|"기업은행, 서교동지점 (최규하대통령가옥)"|Industrial Bank of Korea, Former President Kyu-hah Choi\'s House 
+14-248|"기업은행, 서교동지점 (최규하대통령가옥)"|Industrial Bank of Korea, Former President Kyu-hah Choi's House 
+14-249|"기업은행, 서교동지점 (최규하대통령가옥)"|Industrial Bank of Korea, Former President Kyu-hah Choi's House 
 14-250|성산시장입구|Seongsan Market 
 14-251|성산시장입구|Seongsan Market
 14-261|영풍가든|Yeongpung Garden  
@@ -1255,11 +1255,11 @@
 15-250|신정네거리역|Sinjeongnegeori Station
 15-251|신정네거리역|Sinjeongnegeori Station
 15-254|목동역|Mokdong Station
-15-258|진명여고|Jinmyeong Girls\' High School
+15-258|진명여고|Jinmyeong Girls' High School
 15-261|오목교역,청학스포츠타운|Omokgyo Station, Cheonghak Sports Town
 15-264|목동대학학원|Mokdong Daehak Academy
 15-265|목동역.목동7단지|Mokdong Station, Mokdong 7danji
-15-270|진명여고|Jinmyeong Girls\' High School
+15-270|진명여고|Jinmyeong Girls' High School
 15-272|목동역목동오거리|Mokdong Station, Mokdong Ogeori
 15-274|신정역.은행정역|Sinjeong Station, Eunhaengjeong Station
 15-280|신정네거리역|Sinjeongnegeori Station
@@ -1344,14 +1344,14 @@
 16-356|등촌주공1.2단지|Deungchon Jugong Apt. 1,2danji 
 03-007|삼각지역|Samgakji Satation
 03-008|삼각지역|Samgakji Satation
-03-009|숙대입구역|Sookmyung Women\'s Univ. Station
-03-010|숙대입구역|Sookmyung Women\'s Univ. Station
+03-009|숙대입구역|Sookmyung Women's Univ. Station
+03-010|숙대입구역|Sookmyung Women's Univ. Station
 03-011|갈월동|Garwoldong
 03-110|남영역|Namyeong Station
 03-111|남영역|Namyeong Station
 03-119|용산역|Yongsan Station
-03-128|숙대입구역|Sookmyung Women\'s Univ. Station
-03-129|숙대입구|Sookmyung Women\'s Univ.
+03-128|숙대입구역|Sookmyung Women's Univ. Station
+03-129|숙대입구|Sookmyung Women's Univ.
 03-130|남영역|Namyeong Station
 03-131|남영역|Namyeong Station
 03-139|용산경찰서|Yongsan Police Station
@@ -1367,8 +1367,8 @@
 03-168|남산도서관|Namsan Public Library
 03-169|후암약수터|Huam Mineral Spring
 03-170|후암약수터|Huam Mineral Spring
-03-171|보성여중고입구|Seoul Bosung Girls\' Middle & High School
-03-172|보성여중고입구|Seoul Bosung Girls\' Middle & High School
+03-171|보성여중고입구|Seoul Bosung Girls' Middle & High School
+03-172|보성여중고입구|Seoul Bosung Girls' Middle & High School
 03-173|남산체육관|Namsan Gymnasium 
 03-174|남산체육관|Namsan Gymnasium 
 03-175|하얏트호텔|Grand Hyatt Seoul
@@ -1392,7 +1392,7 @@
 03-198|서울역|Seoul Station
 03-208|남영우체국|Namyeong Post Office
 03-209|남영우체국|Namyeong Post Office
-03-229|숙대입구역|Sookmyung Women\'s Univ. Station
+03-229|숙대입구역|Sookmyung Women's Univ. Station
 03-230|남영역|Namyeong Station
 03-242|효창공원역|Hyochang Park Station
 03-245|중앙하이츠빌라앞|Joongang Heights Villa 
@@ -1402,14 +1402,14 @@
 21-102|낙성대입구|Nakseongdae
 12-176|새절역(숭실고입구)|Saejeol Station (Soongsil High School)
 12-178|응암역(신사오거리)|Eungam Station (Sinsaogeori)
-12-181|예일여고|Yale Girls\' High School
-12-182|예일여고사거리|Yale Girls\' High School Sageori
+12-181|예일여고|Yale Girls' High School
+12-182|예일여고사거리|Yale Girls' High School Sageori
 12-184|연신내역|Yeonsinnae Station
 12-185|연서시장|Yeonseo Market
 12-202|연서시장|Yeonseo Market
 12-203|연신내역|Yeonsinnae Station
-12-205|예일여고사거리|Yale Girls\' High School Sageori
-12-206|예일여고|Yale Girls\' High School
+12-205|예일여고사거리|Yale Girls' High School Sageori
+12-206|예일여고|Yale Girls' High School
 12-209|새서울의원앞|Saeseoul Clinic  
 12-245|역촌역1번출구|Yeokchon Station Exit 1
 12-246|역촌역(역촌오거리)|Yeokchon Station (Yeokchonogeori)
@@ -1502,14 +1502,10 @@
 14-014|서교동예식장타운|Seogyodong Wedding Hall Town
 14-015|홍대입구역|Hongik Univ. Station
 14-016|홍대입구역|Hongik Univ. Station
-14-101|"마포구청, 
-성산자동차검사소"|Mapo-gu Office, Seongsan Vehicle Inspection Station
-14-102|"마포구청, 
-마포장애인복지관"|Mapo-gu Office, Mapo Welfare Center for the Disabled
-14-103|"마포농수산물시장, 
-월드컵공원"|Mapo Agriculture & Fishery Market, World Cup Park
-14-104|"월드컵경기장 남측, 
-월드컵공원"|World Cup Stadium South, World Cup Park
+14-101|"마포구청, 성산자동차검사소"|Mapo-gu Office, Seongsan Vehicle Inspection Station
+14-102|"마포구청, 마포장애인복지관"|Mapo-gu Office, Mapo Welfare Center for the Disabled
+14-103|"마포농수산물시장, 월드컵공원"|Mapo Agriculture & Fishery Market, World Cup Park
+14-104|"월드컵경기장 남측, 월드컵공원"|World Cup Stadium South, World Cup Park
 14-105|월드컵경기장 서측|World Cup Stadium West
 14-106|월드컵경기장 서측|World Cup Stadium West
 14-111|DMC첨단산업센터|DMC High Tech Industrial Complex
@@ -1518,7 +1514,7 @@
 14-119|합정역|Hapjeong Station
 14-120|합정역|Hapjeong Station
 01-001|종로2가사거리|Jongno 2(i)ga Sageori
-01-002|창경궁서울대학교병원|Changgyeonggung, Seoul Nat\'l Univ. Hospital 
+01-002|창경궁서울대학교병원|Changgyeonggung, Seoul Nat'l Univ. Hospital 
 01-003|명륜3가성대입구|Myeongnyun 3(sam)ga, Sungkyunkwan Univ.  
 01-004|종로2가삼일교|Jongno 2(i)ga, Samilgyo
 01-037|동대문(흥인지문)|Dongdaemun (Heunginjimun)
@@ -1537,8 +1533,8 @@
 01-126|세종문화회관|Sejong Center for the Performing Arts 
 01-127|서울지방경찰청|Seoul Metropolitan Police Agency
 01-129|광화문빌딩|Gwanghwamun Bldg.
-01-130|풍문여고,덕성여중고|Pungmoon Girl\'s High School, Duksung Girls\' Middle & High School 
-01-131|"종로경찰서, 윤보선가옥"|Jongno Police Station, Yun Po-sun\'s House
+01-130|풍문여고,덕성여중고|Pungmoon Girl's High School, Duksung Girls' Middle & High School 
+01-131|"종로경찰서, 윤보선가옥"|Jongno Police Station, Yun Po-sun's House
 01-167|독립문역|Dongnimmun Station
 01-169|"서대문사거리, 적십자병원"|Seodaemun Sageori, Red Cross Hospital
 01-172|창덕궁|Changdeokgung 
@@ -1581,11 +1577,11 @@
 01-214|동대문|Dongdaemun
 01-216|종로6가|Jongno 6(yuk)ga
 01-220|혜화역,마로니에공원|Hyehwa Station, Marronnier Park
-01-221|혜화역(서울대병원)|Hyehwa Station (Seoul Nat\'l Univ. Hospital)
+01-221|혜화역(서울대병원)|Hyehwa Station (Seoul Nat'l Univ. Hospital)
 01-224|창경궁|Changgyeonggung  
 01-227|명륜2가,성대입구|Myeongnyun 2(i)ga, Sungkyunkwan Univ. 
-01-228|"혜화역,서울연극센터 (장면총리가옥)"|Hyehwa Station, Seoul Theater Center (Former Prime Minister John Myun Chang\'s House)
-01-229|"혜화역,동성중고 (장면총리가옥)"|Hyehwa Station, Seoul Dongsung Middle & High School (Former Prime Minister John Myun Chang\'s House)
+01-228|"혜화역,서울연극센터 (장면총리가옥)"|Hyehwa Station, Seoul Theater Center (Former Prime Minister John Myun Chang's House)
+01-229|"혜화역,동성중고 (장면총리가옥)"|Hyehwa Station, Seoul Dongsung Middle & High School (Former Prime Minister John Myun Chang's House)
 01-231|창신동,두산아파트|Changsindong, Doosan Apt.
 01-233|동대문|Dongdaemun
 01-234|동대문|Dongdaemun
@@ -1684,7 +1680,7 @@
 02-183|성동고등학교|Sungdong High School
 02-184|성동고등학교|Sungdong High School
 02-187|신당동떡볶이타운|Sindangdong Tteokbokki Town  
-02-188|신당동(박정희가옥)|Sindangdong (Park Chung-hee\'s House)
+02-188|신당동(박정희가옥)|Sindangdong (Park Chung-hee's House)
 02-189|신당동(청구역)|Sindangdong (Cheonggu Station)
 02-190|신당동(청구역)|Sindangdong (Cheonggu Station)
 02-191|약수역|Yaksu Station
@@ -1710,7 +1706,7 @@
 02-218|남대문경찰서|Namdaemun Police Station
 02-219|남대문시장|Namdaemun Market
 02-220|남산산책로입구B코스|Namsan Walk B Course
-02-221|서울애니메이션센터,숭의여대|Seoul Animation Center, Soongeui Women\'s College
+02-221|서울애니메이션센터,숭의여대|Seoul Animation Center, Soongeui Women's College
 02-222|동대입구역(장충동)|Dongguk Univ. Station (Jangchungdong)
 02-224|청계1가(광교)|Cheonggye 1(il)ga (Gwanggyo)
 02-225|청계2가(삼일교)|Cheonggye 2(i)ga (Samilgyo)

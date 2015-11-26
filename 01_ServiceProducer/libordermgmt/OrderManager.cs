@@ -5,6 +5,8 @@ using System.Text;
 using System.Data.OleDb;
 using System.Data.SqlClient;
 using MySql.Data.MySqlClient;
+using libwebsvcprod;
+using Microsoft.VisualBasic;
 
 namespace libordermgmt
 {
@@ -47,8 +49,7 @@ namespace libordermgmt
 
     public struct BusStopInfo
     {
-        public int BusStopID;
-        public string StationID;
+        public string BusStopID;
         public string StationName;
         public string NameKor;
         public string NameEng;
@@ -124,7 +125,7 @@ namespace libordermgmt
     CONSTRAINT FK_OrderInfo_CustomerID FOREIGN KEY (CustomerID)
     REFERENCES Customer(CustomerID),
     CONSTRAINT FK_OrderInfo_ProductID FOREIGN KEY (ProductID)
-    REFERENCEs Product(ProductID)
+    REFERENCES Product(ProductID)
 )");
             _cmd.ExecuteNonQuery();
 
@@ -145,8 +146,7 @@ namespace libordermgmt
             _cmd.CommandText = String.Format(
 @"CREATE TABLE IF NOT EXISTS BusStop
 (
-    BusStopID INT NOT NULL AUTO_INCREMENT,
-    StationID VARCHAR(255) NOT NULL,
+    BusStopID VARCHAR(255) NOT NULL,
     NameKor VARCHAR(255) NOT NULL,
     NameEng VARCHAR(255),
     PRIMARY KEY (BusStopID)
@@ -158,34 +158,36 @@ namespace libordermgmt
 @"CREATE TABLE IF NOT EXISTS TagList
 (
     TagID INT NOT NULL AUTO_INCREMENT,
-    TagNameKor VARCHAR(255),
-    TagNameEng VARCHAR(255),
-    PRIMARY KEY (TagID)
+    BusStopID VARCHAR(255) NOT NULL,
+    TagName VARCHAR(255),
+    PRIMARY KEY (TagID),
+    CONSTRAINT FK_TagList_BusStop_BusStopID FOREIGN KEY (BusStopID)
+    REFERENCES BusStop(BusStopID)
 )");
             _cmd.ExecuteNonQuery();
 
-            // BusStop List
+            /*// BusStop List
             _cmd.CommandText = String.Format(
 @"CREATE TABLE IF NOT EXISTS TagList_BusStop
 (
     TagID INT NOT NULL,
     BusStopID INT NOT NULL,
     CONSTRAINT FK_TagList_BusStop_BusStop_BusStopID FOREIGN KEY (BusStopID)
-    REFERENCEs BusStop(BusStopID)
+    REFERENCES BusStop(BusStopID)
 )");
-            _cmd.ExecuteNonQuery();
+            _cmd.ExecuteNonQuery();*/
 
             // Advertisement Placement
             _cmd.CommandText = String.Format(
 @"CREATE TABLE IF NOT EXISTS AdPlacement
 (
     OrderID INT NOT NULL,
-    BusStopID INT NOT NULL,
+    BusStopID VARCHAR(255) NOT NULL,
     PlacementTime DATETIME,
     CONSTRAINT FK_AdPlacement_BusStop_OrderID FOREIGN KEY (OrderID)
     REFERENCES OrderInfo(OrderID),
     CONSTRAINT FK_OrderInfo_BusStop_BusStopID FOREIGN KEY (BusStopID)
-    REFERENCEs BusStop(BusStopID)
+    REFERENCES BusStop(BusStopID)
 )");
             _cmd.ExecuteNonQuery();
         }
@@ -295,6 +297,17 @@ namespace libordermgmt
         #endregion
 
         #region Insert Functions
+        private string ReplaceSQLWord(string word)
+        {
+            string rtnData;
+
+            rtnData = word.ToLower();
+            rtnData = Strings.Replace(rtnData, @"'", @"\'");
+            rtnData = Strings.Replace(rtnData, @"\\", @"\");
+
+            return rtnData;
+        }
+
         public void InsertCustomer(CustomerInfo info)
         {
             string query;
@@ -336,13 +349,62 @@ namespace libordermgmt
 
         public void InsertBusStop(BusStopInfo info)
         {
+            GoogleSuggester suggester;
+            string query;
+            string splitWord;
+            string[] tagList;
+
+            query = String.Format(
+@"INSERT INTO BusStop (BusStopID, NameKor, NameEng)
+    VALUES ('{0}', '{1}', '{2}')
+"
+            , info.BusStopID, ReplaceSQLWord(info.NameKor), ReplaceSQLWord(info.NameEng));
+
+            InsertData(query);
+
+            char[] delimiters = new[] { ',', ';', ' ', '.', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0'};  // List of your delimiters
+            splitWord = info.NameKor.Split(delimiters, StringSplitOptions.RemoveEmptyEntries)[0];
+
+            suggester = new GoogleSuggester();
+            tagList = suggester.GetSuggestionsList(splitWord);
+
+            InsertTagInfo(info, ReplaceSQLWord(splitWord));
+
+            foreach (string s in tagList)
+            {
+                if (s != splitWord)
+                {
+                    InsertTagInfo(info, ReplaceSQLWord(s));
+                }
+            }
+
+            if (info.NameEng != "")
+            {
+                splitWord = info.NameEng.Split(delimiters, StringSplitOptions.RemoveEmptyEntries)[0];
+
+                tagList = suggester.GetSuggestionsList(splitWord);
+
+                InsertTagInfo(info, ReplaceSQLWord(splitWord));
+
+                foreach (string s in tagList)
+                {
+                    if (s != splitWord)
+                    {
+                        InsertTagInfo(info, ReplaceSQLWord(s));
+                    }
+                }
+            }
+        }
+
+        public void InsertTagInfo(BusStopInfo info, string tag)
+        {
             string query;
 
             query = String.Format(
-@"INSERT INTO BusStop (StationID, NameKor, NameEng)
-    VALUES ('{0}', '{1}', '{2}')
+@"INSERT INTO TagList (BusStopID, TagName)
+VALUES ('{0}', '{1}')
 "
-            , info.StationID, info.NameKor, info.NameEng);
+            , info.BusStopID, tag);
 
             InsertData(query);
         }

@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Net;
 using System.IO;
+using System.Xml;
 
 namespace libwebsvcprod
 {
-    class GoogleSuggester
+    public class GoogleSuggester
     {
         private const string SUGGESTION_API_URL = "http://clients1.google.com/complete/search?hl=en&output=toolbar&q={0}";
 
@@ -44,13 +45,42 @@ namespace libwebsvcprod
             return data;
         }
 
-        public string[] GetSuggestionsList(string keyword, bool includeKeyword)
+        public string[] GetSuggestionsList(string keyword)
         {
             string source;
+            string[] splitWord;
+            List<string> sList;
+            XmlTextReader reader;
 
             source = GetURLSource(String.Format(SUGGESTION_API_URL, keyword));
 
-            return null;
+            // Parse XML
+            reader = new XmlTextReader(new StringReader(source));
+            sList = new List<string>();
+
+
+            while (reader.Read())
+            {
+                if (reader.NodeType == XmlNodeType.Element)
+                {
+                    switch (reader.Name)
+                    {
+                        case "suggestion":
+                            splitWord = reader.GetAttribute("data").Split(' ');
+
+                            foreach (string s in splitWord)
+                            {
+                                sList.Add(s);
+                            }
+                            
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
+
+            return sList.ToArray();
         }
     }
 }
