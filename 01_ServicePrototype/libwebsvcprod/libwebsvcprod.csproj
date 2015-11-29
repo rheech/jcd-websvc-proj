@@ -62,13 +62,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CurrencyConverter.cs" />
     <Compile Include="GoogleSuggester.cs" />
-    <Compile Include="Service References\GlobalWeather\Reference.cs">
+    <Compile Include="Service References\CurrencyConverterSvc\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Service References\Weather2\Reference.cs">
+    <Compile Include="Service References\GlobalWeatherSvc\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\WeatherSvc\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -81,42 +87,60 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Service References\GlobalWeather\globalweather.wsdl" />
-    <None Include="Service References\Weather2\libwebsvcprod.Weather2.ForecastReturn.datasource">
+    <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <None Include="Service References\CurrencyConverterSvc\converter.wsdl" />
+    <None Include="Service References\GlobalWeatherSvc\globalweather.wsdl" />
+    <None Include="Service References\WeatherSvc\libwebsvcprod.WeatherSvc.ForecastReturn.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\Weather2\libwebsvcprod.Weather2.WeatherDescription.datasource">
+    <None Include="Service References\WeatherSvc\libwebsvcprod.WeatherSvc.WeatherDescription.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\Weather2\libwebsvcprod.Weather2.WeatherReturn.datasource">
+    <None Include="Service References\WeatherSvc\libwebsvcprod.WeatherSvc.WeatherReturn.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\Weather2\Weather.wsdl" />
+    <None Include="Service References\WeatherSvc\Weather.wsdl" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\GlobalWeather\" />
-    <WCFMetadataStorage Include="Service References\Weather2\" />
+    <WCFMetadataStorage Include="Service References\CurrencyConverterSvc\" />
+    <WCFMetadataStorage Include="Service References\GlobalWeatherSvc\" />
+    <WCFMetadataStorage Include="Service References\WeatherSvc\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\GlobalWeather\configuration91.svcinfo" />
+    <None Include="Service References\GlobalWeatherSvc\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\GlobalWeather\configuration.svcinfo" />
+    <None Include="Service References\GlobalWeatherSvc\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\GlobalWeather\Reference.svcmap">
+    <None Include="Service References\GlobalWeatherSvc\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\Weather2\configuration91.svcinfo" />
+    <None Include="Service References\WeatherSvc\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\Weather2\configuration.svcinfo" />
+    <None Include="Service References\WeatherSvc\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\Weather2\Reference.svcmap">
+    <None Include="Service References\WeatherSvc\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CurrencyConverterSvc\converter.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CurrencyConverterSvc\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CurrencyConverterSvc\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CurrencyConverterSvc\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

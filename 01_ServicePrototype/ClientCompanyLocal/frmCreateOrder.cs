@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using libordermgmt;
+using libwebsvcprod;
 
 namespace ClientCompanyLocal
 {
@@ -16,12 +17,13 @@ namespace ClientCompanyLocal
     {
         OrderManager om;
         CustomerInfo Customer;
+        CurrencyConverter _converter;
 
-        public frmCreateOrder()
+        public frmCreateOrder(CurrencyConverter converter)
         {
             InitializeComponent();
 
-            lstProduct.FullRowSelect = true;
+            lvProduct.FullRowSelect = true;
 
 #if RESET_DB
             om = new OrderManagerSampleData();
@@ -30,6 +32,7 @@ namespace ClientCompanyLocal
 #endif
             Customer = new CustomerInfo();
 
+            _converter = converter;
             om.FindCustomer("sample@email.com", ref Customer);
         }
 
@@ -38,7 +41,7 @@ namespace ClientCompanyLocal
             Product[] product = om.RetrieveProduct();
             ListViewItem item;
 
-            lstProduct.Items.Clear();
+            lvProduct.Items.Clear();
 
             foreach (Product p in product)
             {
@@ -46,7 +49,7 @@ namespace ClientCompanyLocal
                 item.Tag = (object)p;
                 item.SubItems.Add(p.Price.ToString());
 
-                lstProduct.Items.Add(item);
+                lvProduct.Items.Add(item);
             }
         }
 
@@ -60,10 +63,28 @@ namespace ClientCompanyLocal
             Product product;
             ListViewItem item;
 
-            item = lstProduct.SelectedItems[0];
+            item = lvProduct.SelectedItems[0];
             product = (Product)item.Tag;
 
             om.InsertOrder(Customer, product);
+        }
+
+        private void lstProduct_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ListViewItem item;
+            Product product;
+
+            if (lvProduct.SelectedItems.Count > 0)
+            {
+                item = lvProduct.SelectedItems[0];
+                product = (Product)item.Tag;
+
+                if (_converter != null)
+                {
+                    lblAmount.Text = String.Format("Amount Due: ${0:#,##0.00} ({1:N0} Won)",
+                            product.Price, (int)_converter.DollarToWon((decimal)product.Price));
+                }
+            }
         }
     }
 }

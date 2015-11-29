@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.lstProduct = new System.Windows.Forms.ListView();
+            this.lvProduct = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnSubmit = new System.Windows.Forms.Button();
@@ -44,23 +44,25 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.lblAmount = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lstProduct
+            // lvProduct
             // 
-            this.lstProduct.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lvProduct.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2});
-            this.lstProduct.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lstProduct.Location = new System.Drawing.Point(3, 16);
-            this.lstProduct.Name = "lstProduct";
-            this.lstProduct.Size = new System.Drawing.Size(527, 224);
-            this.lstProduct.TabIndex = 16;
-            this.lstProduct.UseCompatibleStateImageBehavior = false;
-            this.lstProduct.View = System.Windows.Forms.View.Details;
+            this.lvProduct.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvProduct.Location = new System.Drawing.Point(3, 16);
+            this.lvProduct.Name = "lvProduct";
+            this.lvProduct.Size = new System.Drawing.Size(527, 224);
+            this.lvProduct.TabIndex = 16;
+            this.lvProduct.UseCompatibleStateImageBehavior = false;
+            this.lvProduct.View = System.Windows.Forms.View.Details;
+            this.lvProduct.SelectedIndexChanged += new System.EventHandler(this.lstProduct_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -84,7 +86,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.lstProduct);
+            this.groupBox1.Controls.Add(this.lvProduct);
             this.groupBox1.Location = new System.Drawing.Point(12, 37);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(533, 243);
@@ -183,11 +185,21 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Please write the product description below.";
             // 
+            // lblAmount
+            // 
+            this.lblAmount.AutoSize = true;
+            this.lblAmount.Location = new System.Drawing.Point(21, 474);
+            this.lblAmount.Name = "lblAmount";
+            this.lblAmount.Size = new System.Drawing.Size(72, 13);
+            this.lblAmount.TabIndex = 21;
+            this.lblAmount.Text = "Amount Due: ";
+            // 
             // frmCreateOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(560, 510);
+            this.Controls.Add(this.lblAmount);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label1);
@@ -211,7 +223,7 @@
 
         #endregion
 
-        protected System.Windows.Forms.ListView lstProduct;
+        protected System.Windows.Forms.ListView lvProduct;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         protected System.Windows.Forms.Button btnSubmit;
@@ -226,5 +238,6 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblAmount;
     }
 }

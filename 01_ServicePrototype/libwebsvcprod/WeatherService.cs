@@ -169,11 +169,11 @@ namespace libwebsvcprod
 
     public class WeatherService
     {
-        GlobalWeather.GlobalWeatherSoapClient client;
+        GlobalWeatherSvc.GlobalWeatherSoapClient client;
         
         public WeatherService()
         {
-            client = new GlobalWeather.GlobalWeatherSoapClient();
+            client = new GlobalWeatherSvc.GlobalWeatherSoapClient();
         }
 
         public string[] GetCitiesByCountry(string CountryName)

@@ -100,6 +100,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="..\libwebsvcprod\app.config">
+      <Link>app.config</Link>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -114,6 +117,10 @@
     <ProjectReference Include="..\libordermgmt\libordermgmt.csproj">
       <Project>{C2BEC6F6-845A-47D1-B46C-33F3A6C5090C}</Project>
       <Name>libordermgmt</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\libwebsvcprod\libwebsvcprod.csproj">
+      <Project>{75AADAA7-EF9F-4616-B075-7EDC7C3437AC}</Project>
+      <Name>libwebsvcprod</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

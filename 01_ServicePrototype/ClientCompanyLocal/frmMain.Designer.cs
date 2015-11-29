@@ -32,6 +32,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnViewOrders = new System.Windows.Forms.Button();
             this.btnCreateOrder = new System.Windows.Forms.Button();
+            this.bw1 = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
             // 
             // label1
@@ -74,6 +75,11 @@
             this.btnCreateOrder.UseVisualStyleBackColor = true;
             this.btnCreateOrder.Click += new System.EventHandler(this.btnCreateOrder_Click);
             // 
+            // bw1
+            // 
+            this.bw1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bw1_DoWork);
+            this.bw1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bw1_RunWorkerCompleted);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -88,6 +94,7 @@
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Client Company";
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -99,5 +106,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnViewOrders;
         private System.Windows.Forms.Button btnCreateOrder;
+        private System.ComponentModel.BackgroundWorker bw1;
     }
 }
