@@ -17,14 +17,21 @@ namespace AdvertisingCompanyLocal
         public frmMain()
         {
             InitializeComponent();
-            listView1.FullRowSelect = true;
+            lvOrders.FullRowSelect = true;
             om = new OrderManager();
         }
 
         private void btnOrderList_Click(object sender, EventArgs e)
         {
+            RefreshOrderList();
+        }
+
+        private void RefreshOrderList()
+        {
             OrderInfo[] orders = om.RetrieveOrder();
             ListViewItem item;
+
+            lvOrders.Items.Clear();
 
             foreach (OrderInfo o in orders)
             {
@@ -33,13 +40,13 @@ namespace AdvertisingCompanyLocal
                 item.SubItems.Add(o.Product.Price.ToString());
                 item.SubItems.Add(o.OrderStatus);
 
-                listView1.Items.Add(item);
+                lvOrders.Items.Add(item);
             }
         }
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-
+            RefreshOrderList();
         }
     }
 }

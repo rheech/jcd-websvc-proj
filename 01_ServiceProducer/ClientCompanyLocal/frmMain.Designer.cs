@@ -28,66 +28,66 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
-            this.btnSubmit = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnViewOrders = new System.Windows.Forms.Button();
+            this.btnCreateOrder = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // listView1
-            // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2});
-            this.listView1.Location = new System.Drawing.Point(14, 37);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(270, 154);
-            this.listView1.TabIndex = 16;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Product Name";
-            this.columnHeader1.Width = 148;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Price";
-            this.columnHeader2.Width = 95;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(12, 62);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(143, 12);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "Please select a product.";
+            this.label1.Size = new System.Drawing.Size(260, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Logged in as: Dell Corporation (API Key: 1A-0039482)";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // btnSubmit
+            // label2
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(209, 197);
-            this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(75, 23);
-            this.btnSubmit.TabIndex = 14;
-            this.btnSubmit.Text = "Submit";
-            this.btnSubmit.UseVisualStyleBackColor = true;
-            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(105, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(164, 25);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "Client Company";
+            // 
+            // btnViewOrders
+            // 
+            this.btnViewOrders.Location = new System.Drawing.Point(45, 115);
+            this.btnViewOrders.Name = "btnViewOrders";
+            this.btnViewOrders.Size = new System.Drawing.Size(105, 41);
+            this.btnViewOrders.TabIndex = 20;
+            this.btnViewOrders.Text = "&View Order";
+            this.btnViewOrders.UseVisualStyleBackColor = true;
+            this.btnViewOrders.Click += new System.EventHandler(this.btnViewOrders_Click);
+            // 
+            // btnCreateOrder
+            // 
+            this.btnCreateOrder.Location = new System.Drawing.Point(202, 115);
+            this.btnCreateOrder.Name = "btnCreateOrder";
+            this.btnCreateOrder.Size = new System.Drawing.Size(105, 41);
+            this.btnCreateOrder.TabIndex = 21;
+            this.btnCreateOrder.Text = "&Create Order";
+            this.btnCreateOrder.UseVisualStyleBackColor = true;
+            this.btnCreateOrder.Click += new System.EventHandler(this.btnCreateOrder_Click);
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(303, 232);
-            this.Controls.Add(this.listView1);
+            this.ClientSize = new System.Drawing.Size(354, 187);
+            this.Controls.Add(this.btnCreateOrder);
+            this.Controls.Add(this.btnViewOrders);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnSubmit);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Client Company";
-            this.Load += new System.EventHandler(this.frmMain_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -95,10 +95,9 @@
 
         #endregion
 
-        protected System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.Label label1;
-        protected System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnViewOrders;
+        private System.Windows.Forms.Button btnCreateOrder;
     }
 }
