@@ -23,7 +23,7 @@ namespace ClientCompanyLocal
         {
             InitializeComponent();
 
-            lvProduct.FullRowSelect = true;
+            lvServices.FullRowSelect = true;
 
 #if RESET_DB
             om = new OrderManagerSampleData();
@@ -36,53 +36,80 @@ namespace ClientCompanyLocal
             om.FindCustomer("sample@email.com", ref Customer);
         }
 
-        private void UpdateProductList()
+        private void UpdateAdServiceList()
         {
-            Product[] product = om.RetrieveProduct();
+            AdService[] services = om.RetrieveAdService();
             ListViewItem item;
 
-            lvProduct.Items.Clear();
+            lvServices.Items.Clear();
 
-            foreach (Product p in product)
+            foreach (AdService p in services)
             {
-                item = new ListViewItem(p.ProductName);
+                item = new ListViewItem(p.ServiceName);
                 item.Tag = (object)p;
                 item.SubItems.Add(p.Price.ToString());
 
-                lvProduct.Items.Add(item);
+                lvServices.Items.Add(item);
             }
+        }
+
+        private void SubmitOrder()
+        {
+            AdService service;
+            Product product;
+            OrderInfo order;
+            ListViewItem item;
+            int orderID;
+
+            item = lvServices.SelectedItems[0];
+            service = (AdService)item.Tag;
+
+            order = new OrderInfo();
+            order.OrderDate = DateTime.Now;
+            order.OrderStatus = ORDERSTATUS.Placed;
+
+            order.Service = service;
+            order.Customer = Customer;
+
+            orderID = om.InsertOrder(order);
+
+            //orderID = om.InsertOrder(Customer, service);
+
+            // insert product
+            product = new Product();
+            product.ProductName = txtProductName.Text;
+            product.Description = txtDescription.Text;
+            product.TagList = txtTags.Text;
+
+            om.InsertProduct(orderID, product);
         }
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            UpdateProductList();
+            UpdateAdServiceList();
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            Product product;
-            ListViewItem item;
-
-            item = lvProduct.SelectedItems[0];
-            product = (Product)item.Tag;
-
-            om.InsertOrder(Customer, product);
+            SubmitOrder();
+            MessageBox.Show("Order complete.", "Order", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.Close();
         }
 
-        private void lstProduct_SelectedIndexChanged(object sender, EventArgs e)
+        private void lvServices_SelectedIndexChanged(object sender, EventArgs e)
         {
             ListViewItem item;
-            Product product;
+            AdService service;
 
-            if (lvProduct.SelectedItems.Count > 0)
+            if (lvServices.SelectedItems.Count > 0)
             {
-                item = lvProduct.SelectedItems[0];
-                product = (Product)item.Tag;
+                item = lvServices.SelectedItems[0];
+                service = (AdService)item.Tag;
 
                 if (_converter != null)
                 {
                     lblAmount.Text = String.Format("Amount Due: ${0:#,##0.00} ({1:N0} Won)",
-                            product.Price, (int)_converter.DollarToWon((decimal)product.Price));
+                            service.Price, (int)_converter.DollarToWon((decimal)service.Price));
                 }
             }
         }

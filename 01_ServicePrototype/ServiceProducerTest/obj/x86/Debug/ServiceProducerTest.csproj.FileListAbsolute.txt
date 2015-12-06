@@ -42,3 +42,13 @@ D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\ServiceProducerTest
 D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\ServiceProducerTest\obj\x86\Debug\ServiceProducerTest.exe
 D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\ServiceProducerTest\obj\x86\Debug\ServiceProducerTest.pdb
 D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\bin\Debug\bus_stops_data.txt
+D:\Users\Cheong\Desktop\New folder\01_ServicePrototype\bin\Debug\bus_stops_data.txt
+D:\Users\Cheong\Desktop\New folder\01_ServicePrototype\bin\Debug\ServiceProducerTest.exe.config
+D:\Users\Cheong\Desktop\New folder\01_ServicePrototype\bin\Debug\ServiceProducerTest.exe
+D:\Users\Cheong\Desktop\New folder\01_ServicePrototype\bin\Debug\ServiceProducerTest.pdb
+D:\Users\Cheong\Desktop\New folder\01_ServicePrototype\ServiceProducerTest\obj\x86\Debug\ServiceProducerTest.csprojResolveAssemblyReference.cache
+D:\Users\Cheong\Desktop\New folder\01_ServicePrototype\ServiceProducerTest\obj\x86\Debug\ServiceProducerTest.frmMain.resources
+D:\Users\Cheong\Desktop\New folder\01_ServicePrototype\ServiceProducerTest\obj\x86\Debug\ServiceProducerTest.Properties.Resources.resources
+D:\Users\Cheong\Desktop\New folder\01_ServicePrototype\ServiceProducerTest\obj\x86\Debug\ServiceProducerTest.csproj.GenerateResource.Cache
+D:\Users\Cheong\Desktop\New folder\01_ServicePrototype\ServiceProducerTest\obj\x86\Debug\ServiceProducerTest.exe
+D:\Users\Cheong\Desktop\New folder\01_ServicePrototype\ServiceProducerTest\obj\x86\Debug\ServiceProducerTest.pdb

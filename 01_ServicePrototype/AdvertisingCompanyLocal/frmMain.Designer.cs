@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnOrderList = new System.Windows.Forms.Button();
+            this.components = new System.ComponentModel.Container();
             this.lvOrders = new System.Windows.Forms.ListView();
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -38,33 +39,33 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnRequestDesign = new System.Windows.Forms.Button();
             this.btnAdvertise = new System.Windows.Forms.Button();
+            this.tmrUpdateList = new System.Windows.Forms.Timer(this.components);
+            this.btnViewDetails = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnOrderList
-            // 
-            this.btnOrderList.Location = new System.Drawing.Point(15, 351);
-            this.btnOrderList.Name = "btnOrderList";
-            this.btnOrderList.Size = new System.Drawing.Size(94, 36);
-            this.btnOrderList.TabIndex = 0;
-            this.btnOrderList.Text = "&Refresh";
-            this.btnOrderList.UseVisualStyleBackColor = true;
-            this.btnOrderList.Click += new System.EventHandler(this.btnOrderList_Click);
             // 
             // lvOrders
             // 
             this.lvOrders.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader5,
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4});
             this.lvOrders.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvOrders.FullRowSelect = true;
+            this.lvOrders.HideSelection = false;
             this.lvOrders.Location = new System.Drawing.Point(3, 16);
             this.lvOrders.Name = "lvOrders";
             this.lvOrders.Size = new System.Drawing.Size(455, 273);
             this.lvOrders.TabIndex = 1;
             this.lvOrders.UseCompatibleStateImageBehavior = false;
             this.lvOrders.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Order Date";
+            this.columnHeader5.Width = 81;
             // 
             // columnHeader1
             // 
@@ -73,8 +74,8 @@
             // 
             // columnHeader2
             // 
-            this.columnHeader2.Text = "Product Name";
-            this.columnHeader2.Width = 157;
+            this.columnHeader2.Text = "Service Type";
+            this.columnHeader2.Width = 113;
             // 
             // columnHeader3
             // 
@@ -113,6 +114,7 @@
             this.btnRequestDesign.TabIndex = 21;
             this.btnRequestDesign.Text = "Design Request";
             this.btnRequestDesign.UseVisualStyleBackColor = true;
+            this.btnRequestDesign.Click += new System.EventHandler(this.btnRequestDesign_Click);
             // 
             // btnAdvertise
             // 
@@ -123,16 +125,31 @@
             this.btnAdvertise.Text = "Advertise";
             this.btnAdvertise.UseVisualStyleBackColor = true;
             // 
+            // tmrUpdateList
+            // 
+            this.tmrUpdateList.Interval = 1000;
+            this.tmrUpdateList.Tick += new System.EventHandler(this.tmrUpdateList_Tick);
+            // 
+            // btnViewDetails
+            // 
+            this.btnViewDetails.Location = new System.Drawing.Point(15, 351);
+            this.btnViewDetails.Name = "btnViewDetails";
+            this.btnViewDetails.Size = new System.Drawing.Size(94, 36);
+            this.btnViewDetails.TabIndex = 23;
+            this.btnViewDetails.Text = "View Details";
+            this.btnViewDetails.UseVisualStyleBackColor = true;
+            this.btnViewDetails.Click += new System.EventHandler(this.btnViewDetails_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(485, 405);
+            this.Controls.Add(this.btnViewDetails);
             this.Controls.Add(this.btnAdvertise);
             this.Controls.Add(this.btnRequestDesign);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnOrderList);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "frmMain";
@@ -147,7 +164,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnOrderList;
         private System.Windows.Forms.ListView lvOrders;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
@@ -157,5 +173,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnRequestDesign;
         private System.Windows.Forms.Button btnAdvertise;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.Timer tmrUpdateList;
+        private System.Windows.Forms.Button btnViewDetails;
     }
 }

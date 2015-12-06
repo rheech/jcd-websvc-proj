@@ -43,31 +43,31 @@ namespace AdvertisingService
         }
 
         [WebMethod]
-        public void InsertProduct(Product product)
+        public void InsertProduct(AdService product)
         {
-            _om.InsertProduct(product);
+            _om.InsertAdService(product);
         }
 
         [WebMethod]
-        public bool FindProduct(string productName, ref Product product)
+        public bool FindProduct(string productName, ref AdService product)
         {
-            return _om.FindProduct(productName, ref product);
+            return _om.FindAdService(productName, ref product);
         }
 
         [WebMethod]
-        public Product[] RetrieveProduct()
+        public AdService[] RetrieveProduct()
         {
-            return _om.RetrieveProduct();
+            return _om.RetrieveAdService();
         }
 
         [WebMethod]
-        public Product GetProductById(int productID)
+        public AdService GetAdServiceById(int productID)
         {
-            return _om.GetProductById(productID);
+            return _om.GetAdServiceById(productID);
         }
 
         [WebMethod]
-        public void InsertOrder(CustomerInfo info, Product product)
+        public void InsertOrder(CustomerInfo info, AdService product)
         {
             _om.InsertOrder(info, product);
         }

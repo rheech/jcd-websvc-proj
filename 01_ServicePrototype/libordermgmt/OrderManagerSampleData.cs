@@ -26,29 +26,29 @@ namespace libordermgmt
             this.InsertCustomer(info);
 
             // http://www.bluelinemedia.com/bus-advertising
-            Product product = new Product();
-            product.ProductName = "Bus Exterior";
-            product.Price = 20000;
+            AdService service = new AdService();
+            service.ServiceName = "Bus Exterior";
+            service.Price = 20000;
 
-            this.InsertProduct(product);
+            this.InsertAdService(service);
 
-            product = new Product();
-            product.ProductName = "Bus Interior";
-            product.Price = 25000;
+            service = new AdService();
+            service.ServiceName = "Bus Interior";
+            service.Price = 25000;
 
-            this.InsertProduct(product);
+            this.InsertAdService(service);
 
-            product = new Product();
-            product.ProductName = "Bus Stop / Bus Shelter";
-            product.Price = 50000;
+            service = new AdService();
+            service.ServiceName = "Bus Stop / Bus Shelter";
+            service.Price = 50000;
 
-            this.InsertProduct(product);
+            this.InsertAdService(service);
 
-            product = new Product();
-            product.ProductName = "Bench";
-            product.Price = 15000;
+            service = new AdService();
+            service.ServiceName = "Bench";
+            service.Price = 15000;
 
-            this.InsertProduct(product);
+            this.InsertAdService(service);
 
             BusStopInfo[] bus = GetBusStopList();
 

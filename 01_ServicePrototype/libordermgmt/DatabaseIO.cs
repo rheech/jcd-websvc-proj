@@ -14,9 +14,13 @@ namespace libordermgmt
 {
     public abstract class DatabaseIO
     {
+        protected const string DATABASE_NAME = "advertising_company";
+
         protected MySqlConnection _con;
         protected MySqlCommand _cmd;
         private bool _isOpen;
+
+        protected const string SQL_DATE_FORMAT = "%m-%d-%Y %H:%i:%s";
 
         protected DatabaseIO()
         {
@@ -57,18 +61,18 @@ namespace libordermgmt
             // Create Database
             if (resetDB)
             {
-                _cmd.CommandText = "DROP DATABASE IF EXISTS advertising_company;";
+                _cmd.CommandText = String.Format("DROP DATABASE IF EXISTS {0};", DATABASE_NAME);
                 _cmd.ExecuteNonQuery();
             }
             
-            _cmd.CommandText = 
-@"CREATE DATABASE IF NOT EXISTS advertising_company
+            _cmd.CommandText = String.Format(
+@"CREATE DATABASE IF NOT EXISTS {0}
     DEFAULT CHARACTER SET utf8
-    DEFAULT COLLATE utf8_general_ci;";
+    DEFAULT COLLATE utf8_general_ci;", DATABASE_NAME);
 
             _cmd.ExecuteNonQuery();
 
-            _cmd.CommandText = "USE advertising_company;";
+            _cmd.CommandText = String.Format("USE {0};", DATABASE_NAME);
             _cmd.ExecuteNonQuery();
 
             //Close();
@@ -134,6 +138,18 @@ namespace libordermgmt
                 return "Server=127.0.0.1;Uid=root;Pwd=teddybear;Charset=utf8;";
             }
         }
+
+        protected static string SQLDate(DateTime date)
+        {
+            //STR_TO_DATE('{2}','%m-%d-%Y %H:%i:%s'
+            //12-01-2014 00:00:00
+            return date.ToString("MM-dd-yyyy HH:mm:ss");
+        }
+
+        /*protected static DateTime ReadSQLDate(string sqlDate)
+        {
+            return DateTime.ParseExact(sqlDate, "MM-dd-yyyy HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
+        }*/
 
         public bool isOpen
         {

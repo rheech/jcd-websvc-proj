@@ -25,15 +25,15 @@ namespace AdvertisingService
         }
 
         [WebMethod]
-        public void CreateOrder(CustomerInfo info, Product product)
+        public void CreateOrder(CustomerInfo info, AdService product)
         {
             _om.InsertOrder(info, product);
         }
 
         [WebMethod]
-        public Product[] RetrieveProduct()
+        public AdService[] RetrieveProduct()
         {
-            return _om.RetrieveProduct();
+            return _om.RetrieveAdService();
         }
 
         [WebMethod]

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.lvProduct = new System.Windows.Forms.ListView();
+            this.lvServices = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnSubmit = new System.Windows.Forms.Button();
@@ -39,10 +39,10 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtTags = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtTargetProduct = new System.Windows.Forms.TextBox();
+            this.txtProductName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtDescription = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.lblAmount = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
@@ -50,23 +50,24 @@
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lvProduct
+            // lvServices
             // 
-            this.lvProduct.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lvServices.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2});
-            this.lvProduct.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvProduct.Location = new System.Drawing.Point(3, 16);
-            this.lvProduct.Name = "lvProduct";
-            this.lvProduct.Size = new System.Drawing.Size(527, 224);
-            this.lvProduct.TabIndex = 16;
-            this.lvProduct.UseCompatibleStateImageBehavior = false;
-            this.lvProduct.View = System.Windows.Forms.View.Details;
-            this.lvProduct.SelectedIndexChanged += new System.EventHandler(this.lstProduct_SelectedIndexChanged);
+            this.lvServices.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvServices.HideSelection = false;
+            this.lvServices.Location = new System.Drawing.Point(3, 16);
+            this.lvServices.Name = "lvServices";
+            this.lvServices.Size = new System.Drawing.Size(527, 224);
+            this.lvServices.TabIndex = 16;
+            this.lvServices.UseCompatibleStateImageBehavior = false;
+            this.lvServices.View = System.Windows.Forms.View.Details;
+            this.lvServices.SelectedIndexChanged += new System.EventHandler(this.lvServices_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
-            this.columnHeader1.Text = "Product Name";
+            this.columnHeader1.Text = "Service Name";
             this.columnHeader1.Width = 148;
             // 
             // columnHeader2
@@ -86,13 +87,13 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.lvProduct);
+            this.groupBox1.Controls.Add(this.lvServices);
             this.groupBox1.Location = new System.Drawing.Point(12, 37);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(533, 243);
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Please select a product.";
+            this.groupBox1.Text = "Please select a service.";
             // 
             // imageList1
             // 
@@ -114,7 +115,7 @@
             // 
             this.groupBox2.Controls.Add(this.txtTags);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.txtTargetProduct);
+            this.groupBox2.Controls.Add(this.txtProductName);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Location = new System.Drawing.Point(15, 286);
             this.groupBox2.Name = "groupBox2";
@@ -140,25 +141,25 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Please fill out related tags about the target product. (Separated by semi-colon)";
             // 
-            // txtTargetProduct
+            // txtProductName
             // 
-            this.txtTargetProduct.Location = new System.Drawing.Point(93, 27);
-            this.txtTargetProduct.Name = "txtTargetProduct";
-            this.txtTargetProduct.Size = new System.Drawing.Size(167, 20);
-            this.txtTargetProduct.TabIndex = 3;
+            this.txtProductName.Location = new System.Drawing.Point(93, 27);
+            this.txtProductName.Name = "txtProductName";
+            this.txtProductName.Size = new System.Drawing.Size(167, 20);
+            this.txtProductName.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(6, 30);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 13);
+            this.label2.Size = new System.Drawing.Size(78, 13);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Target Product:";
+            this.label2.Text = "Product Name:";
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.textBox3);
+            this.groupBox3.Controls.Add(this.txtDescription);
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Location = new System.Drawing.Point(287, 286);
             this.groupBox3.Name = "groupBox3";
@@ -167,14 +168,14 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Description";
             // 
-            // textBox3
+            // txtDescription
             // 
-            this.textBox3.Location = new System.Drawing.Point(6, 32);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox3.Size = new System.Drawing.Size(243, 130);
-            this.textBox3.TabIndex = 6;
+            this.txtDescription.Location = new System.Drawing.Point(6, 32);
+            this.txtDescription.Multiline = true;
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtDescription.Size = new System.Drawing.Size(243, 130);
+            this.txtDescription.TabIndex = 6;
             // 
             // label4
             // 
@@ -223,7 +224,7 @@
 
         #endregion
 
-        protected System.Windows.Forms.ListView lvProduct;
+        protected System.Windows.Forms.ListView lvServices;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         protected System.Windows.Forms.Button btnSubmit;
@@ -233,10 +234,10 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtTags;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtTargetProduct;
+        private System.Windows.Forms.TextBox txtProductName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblAmount;
     }

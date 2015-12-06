@@ -23,21 +23,120 @@ namespace libordermgmt
         public string Address;
         public string EMail;
         public string PhoneNumber;
+
+        public override bool Equals(object obj)
+        {
+            CustomerInfo info;
+            bool bEquals;
+
+            if (obj.GetType() == typeof(CustomerInfo))
+            {
+                info = (CustomerInfo)obj;
+                bEquals = (CustomerID == info.CustomerID);
+                bEquals &= (CompanyName.Equals(info.CompanyName));
+                bEquals &= (Address.Equals(info.Address));
+                bEquals &= (EMail.Equals(info.EMail));
+                bEquals &= (PhoneNumber.Equals(info.PhoneNumber));
+
+                return bEquals;
+            }
+
+            return base.Equals(obj);
+        }
+    }
+
+    public enum ORDERSTATUS
+    {
+        Placed, Processing, Complete
     }
 
     public struct OrderInfo
     {
         public int OrderID;
-        public Product Product;
-        public string OrderStatus;
         public CustomerInfo Customer;
+        public AdService Service;
+        public DateTime OrderDate;
+        public ORDERSTATUS OrderStatus;
+        public DateTime CompletionDate;
+
+        public override bool Equals(object obj)
+        {
+            OrderInfo info;
+            bool bEquals;
+
+            if (obj.GetType() == typeof(OrderInfo))
+            {
+                info = (OrderInfo)obj;
+                bEquals = (OrderID == info.OrderID);
+                bEquals &= (Service.Equals(info.Service));
+                bEquals &= (OrderDate == info.OrderDate);
+                bEquals &= (OrderStatus == info.OrderStatus);
+                bEquals &= (CompletionDate == info.CompletionDate);
+
+                return bEquals;
+            }
+
+            return base.Equals(obj);
+        }
+    }
+
+    public struct AdService
+    {
+        public int ServiceID;
+        public string ServiceName;
+        public double Price;
+
+        public override bool Equals(object obj)
+        {
+            AdService info;
+            bool bEquals;
+
+            try
+            {
+                if (obj.GetType() == typeof(AdService))
+                {
+                    info = (AdService)obj;
+                    bEquals = (ServiceID == info.ServiceID);
+                    bEquals &= (ServiceName.Equals(info.ServiceName));
+                    bEquals &= (Price == info.Price);
+
+                    return bEquals;
+                }
+            }
+            catch (Exception)
+            {
+            }
+
+            return base.Equals(obj);
+        }
     }
 
     public struct Product
     {
         public int ProductID;
+        public OrderInfo Order;
         public string ProductName;
-        public double Price;
+        public string Description;
+        public string TagList;
+
+        public override bool Equals(object obj)
+        {
+            Product info;
+            bool bEquals;
+
+            if (obj.GetType() == typeof(Product))
+            {
+                info = (Product)obj;
+                bEquals = (ProductID == info.ProductID);
+                bEquals &= (Order.Equals(info.Order));
+                bEquals &= (Description.Equals(info.Description));
+                bEquals &= (TagList.Equals(info.TagList));
+
+                return bEquals;
+            }
+
+            return base.Equals(obj);
+        }
     }
 
     public struct DesignRequest
@@ -45,6 +144,24 @@ namespace libordermgmt
         public int RequestID;
         public OrderInfo Order;
         public string DesignDetails;
+
+        public override bool Equals(object obj)
+        {
+            DesignRequest info;
+            bool bEquals;
+
+            if (obj.GetType() == typeof(DesignRequest))
+            {
+                info = (DesignRequest)obj;
+                bEquals = (RequestID == info.RequestID);
+                bEquals &= (Order.Equals(info.Order));
+                bEquals &= (DesignDetails.Equals(info.DesignDetails));
+
+                return bEquals;
+            }
+
+            return base.Equals(obj);
+        }
     }
 
     public struct BusStopInfo
@@ -55,6 +172,27 @@ namespace libordermgmt
         public string NameEng;
         public List<string> TagsKor;
         public List<string> TagsEng;
+
+        public override bool Equals(object obj)
+        {
+            BusStopInfo info;
+            bool bEquals;
+
+            if (obj.GetType() == typeof(BusStopInfo))
+            {
+                info = (BusStopInfo)obj;
+                bEquals = (BusStopID == info.BusStopID);
+                bEquals &= (StationName.Equals(info.StationName));
+                bEquals &= (NameKor.Equals(info.NameKor));
+                bEquals &= (NameEng.Equals(info.NameEng));
+                //bEquals &= (TagsKor.Equals(info.TagsKor));
+                //bEquals &= (TagsEng.Equals(info.TagsEng));
+
+                return bEquals;
+            }
+
+            return base.Equals(obj);
+        }
     }
 
     public struct AdPlacement
@@ -70,8 +208,9 @@ namespace libordermgmt
         public delegate T dReadAction<T>(MySqlDataReader reader);
 
         dReadAction<CustomerInfo> FUNC_GET_CUSTOMER;
-        dReadAction<Product> FUNC_GET_PRODUCT;
+        dReadAction<AdService> FUNC_GET_ADSERVICE;
         dReadAction<OrderInfo> FUNC_GET_ORDER;
+        dReadAction<Product> FUNC_GET_PRODUCT;
 
         public OrderManager() : base()
         {
@@ -98,14 +237,14 @@ namespace libordermgmt
 )");
             _cmd.ExecuteNonQuery();
 
-            // Product Table
+            // AdService Table
             _cmd.CommandText = String.Format(
-@"CREATE TABLE IF NOT EXISTS Product
+@"CREATE TABLE IF NOT EXISTS AdService
 (
-    ProductID INT NOT NULL AUTO_INCREMENT,
-    ProductName VARCHAR(255),
+    ServiceID INT NOT NULL AUTO_INCREMENT,
+    ServiceName VARCHAR(255),
     Price DECIMAL,
-    PRIMARY KEY (ProductID)
+    PRIMARY KEY (ServiceID)
 )");
             _cmd.ExecuteNonQuery();
 
@@ -115,17 +254,30 @@ namespace libordermgmt
 (
     OrderID INT NOT NULL AUTO_INCREMENT,
     CustomerID INT NOT NULL,
-    ProductID INT NOT NULL,
-    OrderDate DATETIME,
-    OrderStatus VARCHAR(255),
+    ServiceID INT NOT NULL,
+    OrderDate DATETIME NOT NULL,
+    OrderStatus INT NOT NULL,
     CompletionDate DATETIME,
-    Description VARCHAR(255),
-    TagInfo VARCHAR(255),
     PRIMARY KEY (OrderID),
     CONSTRAINT FK_OrderInfo_CustomerID FOREIGN KEY (CustomerID)
     REFERENCES Customer(CustomerID),
-    CONSTRAINT FK_OrderInfo_ProductID FOREIGN KEY (ProductID)
-    REFERENCES Product(ProductID)
+    CONSTRAINT FK_OrderInfo_ServiceID FOREIGN KEY (ServiceID)
+    REFERENCES AdService(ServiceID)
+)");
+            _cmd.ExecuteNonQuery();
+
+            // Product Table
+            _cmd.CommandText = String.Format(
+@"CREATE TABLE IF NOT EXISTS Product
+(
+    ProductID INT NOT NULL AUTO_INCREMENT,
+    OrderID INT NOT NULL,
+    ProductName VARCHAR(255),
+    Description VARCHAR(255),
+    TagList VARCHAR(255),
+    PRIMARY KEY (ProductID),
+    CONSTRAINT FK_Product_OrderID FOREIGN KEY (OrderID)
+    REFERENCES OrderInfo(OrderID)
 )");
             _cmd.ExecuteNonQuery();
 
@@ -208,13 +360,13 @@ namespace libordermgmt
                 return data;
             });
 
-            // Get Product
-            FUNC_GET_PRODUCT = new dReadAction<Product>((reader) =>
+            // Get AdService
+            FUNC_GET_ADSERVICE = new dReadAction<AdService>((reader) =>
             {
-                Product data = new Product();
+                AdService data = new AdService();
 
-                data.ProductID = reader.GetInt32("ProductID");
-                data.ProductName = reader.GetString("ProductName");
+                data.ServiceID = reader.GetInt32("ServiceID");
+                data.ServiceName = reader.GetString("ServiceName");
                 data.Price = reader.GetDouble("Price");
 
                 return data;
@@ -229,10 +381,29 @@ namespace libordermgmt
 
                 data.Customer = new CustomerInfo();
                 data.Customer.CustomerID = reader.GetInt32("CustomerID");
+                
+                data.Service = new AdService();
+                data.Service.ServiceID = reader.GetInt32("ServiceID");
 
-                data.Product = new Product();
-                data.Product.ProductID = reader.GetInt32("ProductID");
-                data.OrderStatus = reader.GetString("OrderStatus");
+                data.OrderDate = reader.GetDateTime("OrderDate");
+                data.OrderStatus = (ORDERSTATUS)reader.GetInt32("OrderStatus");
+
+                return data;
+            });
+
+            // Get Product
+            FUNC_GET_PRODUCT = new dReadAction<Product>((reader) =>
+            {
+                Product data = new Product();
+
+                data.ProductID = reader.GetInt32("ProductID");
+
+                data.Order = new OrderInfo();
+                data.Order.OrderID = reader.GetInt32("OrderID");
+
+                data.ProductName = reader.GetString("ProductName");
+                data.Description = reader.GetString("Description");
+                data.TagList = reader.GetString("TagList");
 
                 return data;
             });
@@ -241,6 +412,12 @@ namespace libordermgmt
 
         #region Generic Functions
         private void InsertData(string query)
+        {
+            _cmd.CommandText = query;
+            _cmd.ExecuteNonQuery();
+        }
+
+        private void UpdateData(string query)
         {
             _cmd.CommandText = query;
             _cmd.ExecuteNonQuery();
@@ -294,6 +471,30 @@ namespace libordermgmt
 
             return dataList.ToArray();
         }
+
+        private int GetNextIndex(string tableName)
+        {
+            MySqlDataReader reader;
+
+            _cmd.CommandText = String.Format(
+@"SELECT AUTO_INCREMENT
+FROM INFORMATION_SCHEMA.TABLES
+WHERE TABLE_SCHEMA = '{0}'
+AND TABLE_NAME = '{1}'", DATABASE_NAME, tableName);
+
+            using (reader = _cmd.ExecuteReader())
+            {
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        return reader.GetInt32("AUTO_INCREMENT");
+                    }
+                }
+            }
+
+            return -1;
+        }
         #endregion
 
         #region Insert Functions
@@ -308,43 +509,91 @@ namespace libordermgmt
             return rtnData;
         }
 
-        public void InsertCustomer(CustomerInfo info)
+        public int InsertCustomer(CustomerInfo info)
         {
             string query;
+            int index;
+
+            index = GetNextIndex("Customer");
 
             query = String.Format(
 @"INSERT INTO Customer (CompanyName, Address, EMail, PhoneNumber)
-    VALUES ('{0}', '{1}', '{2}', '{3}')
-"
+    VALUES ('{0}', '{1}', '{2}', '{3}')"
             , info.CompanyName, info.Address, info.EMail, info.PhoneNumber);
 
             InsertData(query);
+
+            return index;
         }
 
-        public void InsertProduct(Product product)
+        public int InsertAdService(AdService service)
         {
             string query;
+            int index;
+
+            index = GetNextIndex("AdService");
 
             query = String.Format(
-@"INSERT INTO Product (ProductName, Price)
-    VALUES ('{0}', {1})
-"
-            , product.ProductName, product.Price);
+@"INSERT INTO AdService (ServiceName, Price)
+    VALUES ('{0}', {1})"
+            , service.ServiceName, service.Price);
 
             InsertData(query);
+
+            return index;
         }
 
-        public void InsertOrder(CustomerInfo info, Product product)
+        public int InsertOrder(OrderInfo info)
         {
             string query;
+            int index;
 
+            index = GetNextIndex("OrderInfo");
+
+            //12-01-2014 00:00:00
             query = String.Format(
-@"INSERT INTO OrderInfo (CustomerID, ProductID, OrderStatus)
-    VALUES ({0}, {1}, '{2}')
-"
-            , info.CustomerID, product.ProductID, "Placed");
+@"INSERT INTO OrderInfo (CustomerID, ServiceID, OrderDate, OrderStatus)
+    VALUES ({0}, {1}, STR_TO_DATE('{2}', '{3}'), '{4}')"
+            , info.Customer.CustomerID, info.Service.ServiceID,
+            SQLDate(info.OrderDate), SQL_DATE_FORMAT, (int)info.OrderStatus);
 
             InsertData(query);
+
+            return index;
+        }
+
+        /*public int InsertOrder(CustomerInfo info, AdService service)
+        {
+            string query;
+            int index;
+
+            index = GetNextIndex("OrderInfo");
+
+            query = String.Format(
+@"INSERT INTO OrderInfo (CustomerID, ServiceID, OrderStatus)
+    VALUES ({0}, {1}, '{2}')"
+            , info.CustomerID, service.ServiceID, (int)ORDERSTATUS.Placed);
+
+            InsertData(query);
+
+            return index;
+        }*/
+
+        public int InsertProduct(int orderID, Product product)
+        {
+            string query;
+            int index;
+
+            index = GetNextIndex("Product");
+
+            query = String.Format(
+@"INSERT INTO Product (OrderID, ProductName, Description, TagList)
+    VALUES ({0}, '{1}', '{2}', '{3}')"
+            , orderID, product.ProductName, product.Description, product.TagList);
+
+            InsertData(query);
+
+            return index;
         }
 
         public void InsertBusStop(BusStopInfo info)
@@ -356,8 +605,7 @@ namespace libordermgmt
 
             query = String.Format(
 @"INSERT INTO BusStop (BusStopID, NameKor, NameEng)
-    VALUES ('{0}', '{1}', '{2}')
-"
+    VALUES ('{0}', '{1}', '{2}')"
             , info.BusStopID, ReplaceSQLWord(info.NameKor), ReplaceSQLWord(info.NameEng));
 
             InsertData(query);
@@ -365,7 +613,7 @@ namespace libordermgmt
             char[] delimiters = new[] { ',', ';', ' ', '.', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0'};  // List of your delimiters
             splitWord = info.NameKor.Split(delimiters, StringSplitOptions.RemoveEmptyEntries)[0];
 
-            suggester = new GoogleSuggester();
+            /*suggester = new GoogleSuggester();
             tagList = suggester.GetSuggestionsList(splitWord);
 
             InsertTagInfo(info, ReplaceSQLWord(splitWord));
@@ -393,12 +641,15 @@ namespace libordermgmt
                         InsertTagInfo(info, ReplaceSQLWord(s));
                     }
                 }
-            }
+            }*/
         }
 
-        public void InsertTagInfo(BusStopInfo info, string tag)
+        public int InsertTagInfo(BusStopInfo info, string tag)
         {
             string query;
+            int index;
+
+            index = GetNextIndex("TagList");
 
             query = String.Format(
 @"INSERT INTO TagList (BusStopID, TagName)
@@ -407,6 +658,41 @@ VALUES ('{0}', '{1}')
             , info.BusStopID, tag);
 
             InsertData(query);
+
+            return index;
+        }
+        #endregion
+
+        #region Update Functions
+        public void UpdateOrder(OrderInfo info)
+        {
+            string query;
+
+            //UPDATE table_name
+            //SET column1=value, column2=value2,...
+            //WHERE some_column=some_value  
+
+            //12-01-2014 00:00:00
+
+            if (info.CompletionDate != DateTime.MinValue)
+            {
+                query = String.Format(
+@"UPDATE OrderInfo
+SET OrderStatus={0}, CompletionDate=STR_TO_DATE('{1}', '{2}')
+WHERE OrderID={3}"
+                , (int)info.OrderStatus, SQLDate(info.CompletionDate), SQL_DATE_FORMAT,
+                info.OrderID);
+            }
+            else
+            {
+                query = String.Format(
+@"UPDATE OrderInfo
+SET OrderStatus={0}
+WHERE OrderID={1}"
+                , (int)info.OrderStatus, info.OrderID);
+            }
+
+            UpdateData(query);
         }
         #endregion
 
@@ -422,13 +708,24 @@ VALUES ('{0}', '{1}')
             return QueryData<CustomerInfo>(query, ref info, FUNC_GET_CUSTOMER);
         }
 
-        public bool FindProduct(string productName, ref Product product)
+        public bool FindAdService(string serviceName, ref AdService service)
         {
             string query;
 
             query = String.Format(
-@"SELECT * FROM Customer WHERE UPPER(ProductName) = '{0}'"
-            , productName.ToUpper());
+@"SELECT * FROM Customer WHERE UPPER(ServiceName) = '{0}'"
+            , serviceName.ToUpper());
+
+            return QueryData<AdService>(query, ref service, FUNC_GET_ADSERVICE);
+        }
+
+        public bool FindProduct(int orderID, ref Product product)
+        {
+            string query;
+
+            query = String.Format(
+@"SELECT * FROM Product WHERE OrderID = {0}"
+            , orderID);
 
             return QueryData<Product>(query, ref product, FUNC_GET_PRODUCT);
         }
@@ -451,27 +748,27 @@ VALUES ('{0}', '{1}')
             return info;
         }
 
-        public Product GetProductById(int productID)
+        public AdService GetAdServiceById(int serviceID)
         {
-            Product product;
+            AdService service;
             string query;
 
-            product = new Product();
+            service = new AdService();
 
             query = String.Format(
-@"SELECT * FROM Product WHERE ProductID = {0}"
-            , productID);
+@"SELECT * FROM AdService WHERE ServiceID = {0}"
+            , serviceID);
 
-            QueryData<Product>(query, ref product, FUNC_GET_PRODUCT);
+            QueryData<AdService>(query, ref service, FUNC_GET_ADSERVICE);
 
-            return product;
+            return service;
         }
         #endregion
 
         #region Retrieve List
-        public Product[] RetrieveProduct()
+        public AdService[] RetrieveAdService()
         {
-            return RetrieveMultipleData<Product>("SELECT * FROM Product", FUNC_GET_PRODUCT);
+            return RetrieveMultipleData<AdService>("SELECT * FROM AdService", FUNC_GET_ADSERVICE);
         }
 
         public OrderInfo[] RetrieveOrder()
@@ -482,7 +779,23 @@ VALUES ('{0}', '{1}')
             for (int i = 0; i < orderArray.Length; i++)
             {
                 orderArray[i].Customer = GetCustomerById(orderArray[i].Customer.CustomerID);
-                orderArray[i].Product = GetProductById(orderArray[i].Product.ProductID);
+                orderArray[i].Service = GetAdServiceById(orderArray[i].Service.ServiceID);
+            }
+
+            return orderArray;
+        }
+
+        public OrderInfo[] RetrieveOrder(ORDERSTATUS status)
+        {
+            OrderInfo[] orderArray;
+            orderArray = RetrieveMultipleData<OrderInfo>(
+                String.Format("SELECT * FROM OrderInfo WHERE OrderStatus >= {0}", (int)status)
+                , FUNC_GET_ORDER);
+
+            for (int i = 0; i < orderArray.Length; i++)
+            {
+                orderArray[i].Customer = GetCustomerById(orderArray[i].Customer.CustomerID);
+                orderArray[i].Service = GetAdServiceById(orderArray[i].Service.ServiceID);
             }
 
             return orderArray;

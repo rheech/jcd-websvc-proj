@@ -17,36 +17,126 @@ namespace AdvertisingCompanyLocal
         public frmMain()
         {
             InitializeComponent();
-            lvOrders.FullRowSelect = true;
             om = new OrderManager();
         }
 
-        private void btnOrderList_Click(object sender, EventArgs e)
-        {
-            RefreshOrderList();
-        }
-
-        private void RefreshOrderList()
+        private void UpdateOrderList()
         {
             OrderInfo[] orders = om.RetrieveOrder();
-            ListViewItem item;
+            OrderInfo tmpOrder;
+            Func<OrderInfo, ListViewItem> funcGetListView;
 
-            lvOrders.Items.Clear();
 
-            foreach (OrderInfo o in orders)
+            // *******************
+            // Get List View Items
+            // *******************
+            funcGetListView = new Func<OrderInfo, ListViewItem>(
+                (o) =>
+                {
+                    ListViewItem i;
+
+                    i = new ListViewItem(o.OrderDate.ToString("yyyy-MM-dd"));
+                    i.SubItems.Add(o.Customer.CompanyName);
+                    i.SubItems.Add(o.Service.ServiceName);
+                    i.SubItems.Add(o.Service.Price.ToString());
+                    i.SubItems.Add(o.OrderStatus.ToString());
+                    i.Tag = (object)o;
+
+                    return i;
+                });
+            // *******************
+            // End Function 
+            // *******************
+
+            if (lvOrders.Items.Count == 0 ||
+                    orders.Length != lvOrders.Items.Count)
             {
-                item = new ListViewItem(o.Customer.CompanyName);
-                item.SubItems.Add(o.Product.ProductName);
-                item.SubItems.Add(o.Product.Price.ToString());
-                item.SubItems.Add(o.OrderStatus);
+                lvOrders.Items.Clear();
 
-                lvOrders.Items.Add(item);
+                foreach (OrderInfo o in orders)
+                {
+                    lvOrders.Items.Add(funcGetListView(o));
+                }
+            }
+            else
+            {
+                for (int i = 0; i < orders.Length; i++)
+                {
+                    tmpOrder = (OrderInfo)lvOrders.Items[i].Tag;
+
+                    if (!orders[i].Equals(tmpOrder))
+                    {
+                        lvOrders.Items[i] = funcGetListView(orders[i]);
+                    }
+                }
             }
         }
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            RefreshOrderList();
+            UpdateOrderList();
+            tmrUpdateList.Enabled = true;
+        }
+
+        private void tmrUpdateList_Tick(object sender, EventArgs e)
+        {
+            UpdateOrderList();
+        }
+
+        private bool GetSelectedOrder(ref OrderInfo order, ref Product product)
+        {
+            if (lvOrders.SelectedItems.Count > 0)
+            {
+                order = (OrderInfo)lvOrders.SelectedItems[0].Tag;
+                product = new Product();
+
+                if (om.FindProduct(order.OrderID, ref product))
+                {
+                    return true;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select an order.", "Order", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+
+            return false;
+        }
+
+        private void btnViewDetails_Click(object sender, EventArgs e)
+        {
+            OrderInfo order;
+            Product product;
+
+            order = new OrderInfo();
+            product = new Product();
+
+            if (GetSelectedOrder(ref order, ref product))
+            {
+                frmViewDetails frmDetails = new frmViewDetails(order, product);
+                frmDetails.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Error occurred while reading the database.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnRequestDesign_Click(object sender, EventArgs e)
+        {
+            OrderInfo info;
+            Product product;
+
+            info = new OrderInfo();
+            product = new Product();
+
+            GetSelectedOrder(ref info, ref product);
+
+            info.OrderStatus = ORDERSTATUS.Processing;
+
+            om.UpdateOrder(info);
+
+            UpdateOrderList();
         }
     }
 }

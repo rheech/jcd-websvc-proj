@@ -28,16 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.lvOrders = new System.Windows.Forms.ListView();
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnOrderList = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnProcessOrder = new System.Windows.Forms.Button();
+            this.tmrUpdateList = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,38 +54,46 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.listView1);
+            this.groupBox1.Controls.Add(this.lvOrders);
             this.groupBox1.Location = new System.Drawing.Point(12, 49);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(446, 201);
+            this.groupBox1.Size = new System.Drawing.Size(465, 302);
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Design Requests";
             // 
-            // listView1
+            // lvOrders
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lvOrders.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader5,
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4});
-            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listView1.Location = new System.Drawing.Point(3, 16);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(440, 182);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.lvOrders.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvOrders.FullRowSelect = true;
+            this.lvOrders.HideSelection = false;
+            this.lvOrders.Location = new System.Drawing.Point(3, 16);
+            this.lvOrders.Name = "lvOrders";
+            this.lvOrders.Size = new System.Drawing.Size(459, 283);
+            this.lvOrders.TabIndex = 2;
+            this.lvOrders.UseCompatibleStateImageBehavior = false;
+            this.lvOrders.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Order Date";
+            this.columnHeader5.Width = 81;
             // 
             // columnHeader1
             // 
             this.columnHeader1.Text = "Company Name";
-            this.columnHeader1.Width = 104;
+            this.columnHeader1.Width = 114;
             // 
             // columnHeader2
             // 
-            this.columnHeader2.Text = "Product Name";
-            this.columnHeader2.Width = 148;
+            this.columnHeader2.Text = "Service Type";
+            this.columnHeader2.Width = 113;
             // 
             // columnHeader3
             // 
@@ -93,43 +102,28 @@
             // columnHeader4
             // 
             this.columnHeader4.Text = "Order Status";
-            this.columnHeader4.Width = 97;
+            this.columnHeader4.Width = 86;
             // 
-            // btnOrderList
+            // btnProcessOrder
             // 
-            this.btnOrderList.Location = new System.Drawing.Point(112, 256);
-            this.btnOrderList.Name = "btnOrderList";
-            this.btnOrderList.Size = new System.Drawing.Size(94, 36);
-            this.btnOrderList.TabIndex = 22;
-            this.btnOrderList.Text = "&View Details";
-            this.btnOrderList.UseVisualStyleBackColor = true;
+            this.btnProcessOrder.Location = new System.Drawing.Point(379, 357);
+            this.btnProcessOrder.Name = "btnProcessOrder";
+            this.btnProcessOrder.Size = new System.Drawing.Size(94, 36);
+            this.btnProcessOrder.TabIndex = 22;
+            this.btnProcessOrder.Text = "&Process Order";
+            this.btnProcessOrder.UseVisualStyleBackColor = true;
+            this.btnProcessOrder.Click += new System.EventHandler(this.btnViewDetails_Click);
             // 
-            // button1
+            // tmrUpdateList
             // 
-            this.button1.Location = new System.Drawing.Point(12, 256);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 36);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "&Refresh";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(212, 256);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(94, 36);
-            this.button2.TabIndex = 24;
-            this.button2.Text = "&Process Order";
-            this.button2.UseVisualStyleBackColor = true;
+            this.tmrUpdateList.Tick += new System.EventHandler(this.tmrUpdateList_Tick);
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(470, 304);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnOrderList);
+            this.ClientSize = new System.Drawing.Size(485, 405);
+            this.Controls.Add(this.btnProcessOrder);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -137,6 +131,7 @@
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Design Company";
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -147,14 +142,14 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.Button btnProcessOrder;
+        private System.Windows.Forms.ListView lvOrders;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.Button btnOrderList;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Timer tmrUpdateList;
 
     }
 }
