@@ -7,44 +7,73 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using libordermgmt;
+using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
 
 namespace DesignCompanyLocal
 {
     public partial class frmProcessOrder : Form
     {
-        private OrderInfo _order;
-        private Product _product;
-
-        public frmProcessOrder(OrderInfo order, Product product)
+        public frmProcessOrder()
         {
             InitializeComponent();
-
-            _order = order;
-            _product = product;
         }
 
-        private void frmViewDetails_Load(object sender, EventArgs e)
+        private void btnBrowse_Click(object sender, EventArgs e)
         {
-            DisplayInformation();
+            OpenFileDialog ofd = new OpenFileDialog();
+
+            //ofd.InitialDirectory = "c:\\" ;
+            ofd.Filter = "JPG files (*.jpg)|*.jpg|PNG files (*.png)|*.png|All files (*.*)|*.*" ;
+            ofd.FilterIndex = 1;
+            ofd.RestoreDirectory = true ;
+
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    txtFile.Text = ofd.FileName;
+                    Image img = Image.FromFile(ofd.FileName);
+                    img = ResizeImage(img, pictureBox.Width, pictureBox.Height);
+
+                    pictureBox.Image = img;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message);
+                }
+            }
         }
 
-        private void DisplayInformation()
+        public static Bitmap ResizeImage(Image image, int width, int height)
         {
-            lblCustAddressDisplay.Text = _order.Customer.Address;
-            lblCustCompanyName.Text = String.Format(lblCustCompanyName.Tag.ToString(), _order.Customer.CompanyName);
-            lblCustEmail.Text = String.Format(lblCustEmail.Tag.ToString(), _order.Customer.EMail);
-            lblCustPhoneNumber.Text = String.Format(lblCustPhoneNumber.Tag.ToString(), _order.Customer.PhoneNumber);
+            var destRect = new Rectangle(0, 0, width, height);
+            var destImage = new Bitmap(width, height);
 
-            lblOrderDate.Text = String.Format(lblOrderDate.Tag.ToString(), _order.OrderDate);
-            lblServiceType.Text = String.Format(lblServiceType.Tag.ToString(), _order.Service.ServiceName);
-            lblServicePrice.Text = String.Format(lblServicePrice.Tag.ToString(), _order.Service.Price);
+            destImage.SetResolution(image.HorizontalResolution, image.VerticalResolution);
 
-            txtTags.Text = _product.TagList;
-            txtDescription.Text = _product.Description;
+            using (var graphics = Graphics.FromImage(destImage))
+            {
+                graphics.CompositingMode = CompositingMode.SourceCopy;
+                graphics.CompositingQuality = CompositingQuality.HighQuality;
+                graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                graphics.SmoothingMode = SmoothingMode.HighQuality;
+                graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
+
+                using (var wrapMode = new ImageAttributes())
+                {
+                    wrapMode.SetWrapMode(WrapMode.TileFlipXY);
+                    graphics.DrawImage(image, destRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, wrapMode);
+                }
+            }
+
+            return destImage;
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private void btnProcessOrder_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Submitted!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.DialogResult = DialogResult.OK;
             this.Close();
         }
     }

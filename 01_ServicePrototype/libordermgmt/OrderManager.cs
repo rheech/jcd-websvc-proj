@@ -47,7 +47,7 @@ namespace libordermgmt
 
     public enum ORDERSTATUS
     {
-        Placed, Processing, Complete
+        Placed, Processing, Designed
     }
 
     public struct OrderInfo

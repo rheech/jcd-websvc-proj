@@ -113,8 +113,17 @@ namespace DesignCompanyLocal
 
             if (GetSelectedOrder(ref order, ref product))
             {
-                frmProcessOrder frmDetails = new frmProcessOrder(order, product);
-                frmDetails.ShowDialog();
+                frmOrderDetails frmDetails = new frmOrderDetails(order, product);
+                
+                if (frmDetails.ShowDialog() == DialogResult.OK)
+                {
+                    order.OrderStatus = ORDERSTATUS.Designed;
+                    order.CompletionDate = DateTime.Now;
+
+                    om.UpdateOrder(order);
+
+                    UpdateOrderList();
+                }
             }
             else
             {
