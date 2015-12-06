@@ -1,4 +1,4 @@
-﻿#define RESET_DB
+﻿//#define RESET_DB
 
 using System;
 using System.Collections.Generic;

@@ -12,17 +12,17 @@ namespace AdvertisingCompanyLocal
 {
     public partial class frmMain : Form
     {
-        OrderManager om;
+        OrderManager _om;
 
         public frmMain()
         {
             InitializeComponent();
-            om = new OrderManager();
+            _om = new OrderManager();
         }
 
         private void UpdateOrderList()
         {
-            OrderInfo[] orders = om.RetrieveOrder();
+            OrderInfo[] orders = _om.RetrieveOrder();
             OrderInfo tmpOrder;
             Func<OrderInfo, ListViewItem> funcGetListView;
 
@@ -90,7 +90,7 @@ namespace AdvertisingCompanyLocal
                 order = (OrderInfo)lvOrders.SelectedItems[0].Tag;
                 product = new Product();
 
-                if (om.FindProduct(order.OrderID, ref product))
+                if (_om.FindProduct(order.OrderID, ref product))
                 {
                     return true;
                 }
@@ -114,6 +114,12 @@ namespace AdvertisingCompanyLocal
             if (GetSelectedOrder(ref order, ref product))
             {
                 frmViewDetails frmDetails = new frmViewDetails(order, product);
+
+                if (order.OrderStatus >= ORDERSTATUS.Designed)
+                {
+                    frmDetails.EnablePicture = true;
+                }
+
                 frmDetails.ShowDialog();
             }
             else
@@ -127,16 +133,21 @@ namespace AdvertisingCompanyLocal
             OrderInfo info;
             Product product;
 
-            info = new OrderInfo();
-            product = new Product();
+            if (MessageBox.Show("Are you sure you want to process the design request?", "Design Request", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                info = new OrderInfo();
+                product = new Product();
 
-            GetSelectedOrder(ref info, ref product);
+                GetSelectedOrder(ref info, ref product);
 
-            info.OrderStatus = ORDERSTATUS.Processing;
+                info.OrderStatus = ORDERSTATUS.Processing;
 
-            om.UpdateOrder(info);
+                _om.UpdateOrder(info);
 
-            UpdateOrderList();
+                MessageBox.Show("Request complete", "Design Request", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                UpdateOrderList();
+            }
         }
 
         private void lvOrders_SelectedIndexChanged(object sender, EventArgs e)
@@ -169,6 +180,27 @@ namespace AdvertisingCompanyLocal
             btnViewDetails.Enabled = bViewDetails;
             btnRequestDesign.Enabled = bRequestDesign;
             btnAdvertise.Enabled = bAdvertise;*/
+        }
+
+        private void btnAdvertise_Click(object sender, EventArgs e)
+        {
+            OrderInfo info;
+            Product product;
+
+            info = new OrderInfo();
+            product = new Product();
+
+            GetSelectedOrder(ref info, ref product);
+
+            frmAdvertise fAdvertise = new frmAdvertise(_om, info, product);
+
+            if (fAdvertise.ShowDialog() == DialogResult.OK)
+            {
+                info.OrderStatus = ORDERSTATUS.Advertising;
+                _om.UpdateOrder(info);
+            }
+
+            UpdateOrderList();
         }
     }
 }

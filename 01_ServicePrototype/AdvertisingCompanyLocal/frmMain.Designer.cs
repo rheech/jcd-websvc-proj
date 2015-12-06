@@ -125,6 +125,7 @@
             this.btnAdvertise.TabIndex = 22;
             this.btnAdvertise.Text = "Advertise";
             this.btnAdvertise.UseVisualStyleBackColor = true;
+            this.btnAdvertise.Click += new System.EventHandler(this.btnAdvertise_Click);
             // 
             // tmrUpdateList
             // 

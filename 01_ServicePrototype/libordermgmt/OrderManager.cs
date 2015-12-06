@@ -49,7 +49,7 @@ namespace libordermgmt
 
     public enum ORDERSTATUS
     {
-        Placed, Processing, Designed, Ready, Advertising
+        Placed, Processing, Designed, CustomerOK, Advertising
     }
 
     public struct OrderInfo
@@ -203,6 +203,35 @@ namespace libordermgmt
         public BusStopInfo BusStop;
         public DateTime PlacementTime;
     }
+
+    public struct TagInfo
+    {
+        public string BusStopID;
+        public string NameKor;
+        public string NameEng;
+        public string TagName;
+
+        public override bool Equals(object obj)
+        {
+            TagInfo info;
+            bool bEquals;
+
+            if (obj.GetType() == typeof(TagInfo))
+            {
+                info = (TagInfo)obj;
+                bEquals = (BusStopID == info.BusStopID);
+                bEquals &= (NameKor.Equals(info.NameKor));
+                bEquals &= (NameEng.Equals(info.NameEng));
+                bEquals &= (TagName.Equals(info.TagName));
+                //bEquals &= (TagsKor.Equals(info.TagsKor));
+                //bEquals &= (TagsEng.Equals(info.TagsEng));
+
+                return bEquals;
+            }
+
+            return base.Equals(obj);
+        }
+    }
     #endregion
 
     public class OrderManager : DatabaseIO
@@ -213,6 +242,7 @@ namespace libordermgmt
         dReadAction<AdService> FUNC_GET_ADSERVICE;
         dReadAction<OrderInfo> FUNC_GET_ORDER;
         dReadAction<Product> FUNC_GET_PRODUCT;
+        dReadAction<TagInfo> FUNC_GET_TAG;
 
         public OrderManager() : base()
         {
@@ -406,6 +436,20 @@ namespace libordermgmt
                 data.ProductName = reader.GetString("ProductName");
                 data.Description = reader.GetString("Description");
                 data.TagList = reader.GetString("TagList");
+
+                return data;
+            });
+            
+            // Get Tag
+            FUNC_GET_TAG = new dReadAction<TagInfo>((reader) =>
+            {
+                TagInfo data = new TagInfo();
+
+                data.BusStopID = reader.GetString("BusStopID");
+
+                data.NameKor = reader.GetString("NameKor");
+                data.NameEng = reader.GetString("NameEng");
+                data.TagName = reader.GetString("TagName");
 
                 return data;
             });
@@ -821,6 +865,20 @@ WHERE OrderID={1}"
             }
 
             return orderArray;
+        }
+
+        public TagInfo[] RetriveTags(string word)
+        {
+            TagInfo[] tagArray;
+            tagArray = RetrieveMultipleData<TagInfo>(
+                String.Format(
+@"SELECT BusStop.BusStopID, BusStop.NameKor, BusStop.NameEng, TagList.TagName
+FROM BusStop, TagList
+WHERE BusStop.BusStopID = TagList.BusStopID AND TagList.TagName LIKE '%{0}%'
+GROUP BY BusStop.BusStopID", word)
+                , FUNC_GET_TAG);
+
+            return tagArray;
         }
         #endregion
 

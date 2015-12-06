@@ -30,22 +30,24 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblCustAddressDisplay = new System.Windows.Forms.Label();
             this.lblCustPhoneNumber = new System.Windows.Forms.Label();
             this.lblCustEmail = new System.Windows.Forms.Label();
             this.lblCustAddress = new System.Windows.Forms.Label();
             this.lblCustCompanyName = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblOrderDate = new System.Windows.Forms.Label();
+            this.lblServicePrice = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.txtTags = new System.Windows.Forms.TextBox();
             this.lblTagList = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.lblServiceType = new System.Windows.Forms.Label();
-            this.lblServicePrice = new System.Windows.Forms.Label();
-            this.lblCustAddressDisplay = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
-            this.lblOrderDate = new System.Windows.Forms.Label();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -71,6 +73,13 @@
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Customer Information";
+            // 
+            // lblCustAddressDisplay
+            // 
+            this.lblCustAddressDisplay.Location = new System.Drawing.Point(235, 25);
+            this.lblCustAddressDisplay.Name = "lblCustAddressDisplay";
+            this.lblCustAddressDisplay.Size = new System.Drawing.Size(182, 35);
+            this.lblCustAddressDisplay.TabIndex = 4;
             // 
             // lblCustPhoneNumber
             // 
@@ -114,6 +123,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.pictureBox);
             this.groupBox2.Controls.Add(this.lblOrderDate);
             this.groupBox2.Controls.Add(this.lblServicePrice);
             this.groupBox2.Controls.Add(this.txtDescription);
@@ -127,6 +137,26 @@
             this.groupBox2.TabIndex = 22;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Order Information";
+            // 
+            // lblOrderDate
+            // 
+            this.lblOrderDate.AutoSize = true;
+            this.lblOrderDate.Location = new System.Drawing.Point(6, 22);
+            this.lblOrderDate.Name = "lblOrderDate";
+            this.lblOrderDate.Size = new System.Drawing.Size(62, 13);
+            this.lblOrderDate.TabIndex = 6;
+            this.lblOrderDate.Tag = "Order Date: {0:yyyy-MM-dd}";
+            this.lblOrderDate.Text = "Order Date:";
+            // 
+            // lblServicePrice
+            // 
+            this.lblServicePrice.AutoSize = true;
+            this.lblServicePrice.Location = new System.Drawing.Point(6, 66);
+            this.lblServicePrice.Name = "lblServicePrice";
+            this.lblServicePrice.Size = new System.Drawing.Size(34, 13);
+            this.lblServicePrice.TabIndex = 5;
+            this.lblServicePrice.Tag = "Price: {0}";
+            this.lblServicePrice.Text = "Price:";
             // 
             // txtDescription
             // 
@@ -177,23 +207,6 @@
             this.lblServiceType.Tag = "Service Type: {0}";
             this.lblServiceType.Text = "Service Type: ";
             // 
-            // lblServicePrice
-            // 
-            this.lblServicePrice.AutoSize = true;
-            this.lblServicePrice.Location = new System.Drawing.Point(6, 66);
-            this.lblServicePrice.Name = "lblServicePrice";
-            this.lblServicePrice.Size = new System.Drawing.Size(34, 13);
-            this.lblServicePrice.TabIndex = 5;
-            this.lblServicePrice.Tag = "Price: {0}";
-            this.lblServicePrice.Text = "Price:";
-            // 
-            // lblCustAddressDisplay
-            // 
-            this.lblCustAddressDisplay.Location = new System.Drawing.Point(235, 25);
-            this.lblCustAddressDisplay.Name = "lblCustAddressDisplay";
-            this.lblCustAddressDisplay.Size = new System.Drawing.Size(182, 35);
-            this.lblCustAddressDisplay.TabIndex = 4;
-            // 
             // btnClose
             // 
             this.btnClose.Location = new System.Drawing.Point(345, 402);
@@ -204,15 +217,13 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // lblOrderDate
+            // pictureBox
             // 
-            this.lblOrderDate.AutoSize = true;
-            this.lblOrderDate.Location = new System.Drawing.Point(6, 22);
-            this.lblOrderDate.Name = "lblOrderDate";
-            this.lblOrderDate.Size = new System.Drawing.Size(62, 13);
-            this.lblOrderDate.TabIndex = 6;
-            this.lblOrderDate.Tag = "Order Date: {0:yyyy-MM-dd}";
-            this.lblOrderDate.Text = "Order Date:";
+            this.pictureBox.Location = new System.Drawing.Point(258, 12);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(159, 85);
+            this.pictureBox.TabIndex = 7;
+            this.pictureBox.TabStop = false;
             // 
             // frmViewDetails
             // 
@@ -232,6 +243,7 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -255,5 +267,6 @@
         private System.Windows.Forms.Label lblCustAddressDisplay;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label lblOrderDate;
+        private System.Windows.Forms.PictureBox pictureBox;
     }
 }

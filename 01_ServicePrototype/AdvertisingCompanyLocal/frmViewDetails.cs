@@ -25,6 +25,12 @@ namespace AdvertisingCompanyLocal
             _product = product;
         }
 
+        public bool EnablePicture
+        {
+            get;
+            set;
+        }
+
         private void frmViewDetails_Load(object sender, EventArgs e)
         {
             DisplayInformation();
@@ -43,6 +49,14 @@ namespace AdvertisingCompanyLocal
 
             txtTags.Text = _product.TagList;
             txtDescription.Text = _product.Description;
+
+            if (EnablePicture)
+            {
+                Image img = Image.FromFile("Resources\\dell_xps_jbl.jpg");
+                img = ImageProcess.ResizeImage(img, pictureBox.Width, pictureBox.Height);
+
+                pictureBox.Image = img;
+            }
         }
 
         private void btnClose_Click(object sender, EventArgs e)

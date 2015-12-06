@@ -28,12 +28,18 @@ namespace ClientCompanyLocal
 
         private void btnAccept_Click(object sender, EventArgs e)
         {
-
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
 
         private void frmViewDesign_Load(object sender, EventArgs e)
         {
             LoadImage();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

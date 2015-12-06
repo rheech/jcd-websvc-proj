@@ -89,7 +89,25 @@ namespace ClientCompanyLocal
         private void btnViewDesign_Click(object sender, EventArgs e)
         {
             frmViewDesign frmDesign = new frmViewDesign();
-            frmDesign.ShowDialog();
+
+            if (lvOrders.SelectedItems.Count > 0)
+            {
+                if (frmDesign.ShowDialog() == DialogResult.OK)
+                {
+                    OrderInfo info;
+
+                    info = (OrderInfo)lvOrders.SelectedItems[0].Tag;
+
+                    info.OrderStatus = ORDERSTATUS.CustomerOK;
+
+                    _om.UpdateOrder(info);
+                }
+            }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
