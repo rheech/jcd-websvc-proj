@@ -1,4 +1,6 @@
-﻿using System;
+﻿#define RESET_DB
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,16 +9,29 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using libwebsvcprod;
+using libordermgmt;
 
 namespace ClientCompanyLocal
 {
     public partial class frmMain : Form
     {
+        OrderManager _om;
+        CustomerInfo _customer;
         CurrencyConverter _converter;
 
         public frmMain()
         {
             InitializeComponent();
+
+#if RESET_DB
+            _om = new OrderManagerSampleData();
+#else
+            _om = new OrderManager();
+#endif
+            _customer = new CustomerInfo();
+
+            _om.FindCustomer("sample@email.com", ref _customer);
+
             btnCreateOrder.Enabled = false;
             bw1.RunWorkerAsync();
         }
@@ -28,13 +43,13 @@ namespace ClientCompanyLocal
 
         private void btnCreateOrder_Click(object sender, EventArgs e)
         {
-            frmCreateOrder orderForm = new frmCreateOrder(_converter);
+            frmCreateOrder orderForm = new frmCreateOrder(_converter, _om, _customer);
             orderForm.ShowDialog();
         }
 
         private void btnViewOrders_Click(object sender, EventArgs e)
         {
-            frmViewOrders viewOrdersForm = new frmViewOrders();
+            frmViewOrders viewOrdersForm = new frmViewOrders(_om, _customer);
             viewOrdersForm.ShowDialog();
         }
 

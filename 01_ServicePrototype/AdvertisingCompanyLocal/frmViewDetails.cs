@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using libordermgmt;
+using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
 
 namespace AdvertisingCompanyLocal
 {

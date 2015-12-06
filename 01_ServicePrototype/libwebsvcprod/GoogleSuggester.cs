@@ -66,12 +66,14 @@ namespace libwebsvcprod
                     switch (reader.Name)
                     {
                         case "suggestion":
-                            splitWord = reader.GetAttribute("data").Split(' ');
+                            //splitWord = reader.GetAttribute("data").Split(' ');
+                            sList.Add(reader.GetAttribute("data"));
 
+                            /*
                             foreach (string s in splitWord)
                             {
                                 sList.Add(s);
-                            }
+                            }*/
                             
                             break;
                         default:

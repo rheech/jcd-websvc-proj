@@ -61,6 +61,7 @@
             this.lvOrders.TabIndex = 1;
             this.lvOrders.UseCompatibleStateImageBehavior = false;
             this.lvOrders.View = System.Windows.Forms.View.Details;
+            this.lvOrders.SelectedIndexChanged += new System.EventHandler(this.lvOrders_SelectedIndexChanged);
             // 
             // columnHeader5
             // 

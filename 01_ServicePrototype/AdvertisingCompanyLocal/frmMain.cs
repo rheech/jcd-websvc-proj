@@ -138,5 +138,37 @@ namespace AdvertisingCompanyLocal
 
             UpdateOrderList();
         }
+
+        private void lvOrders_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            /*ListViewItem item;
+            OrderInfo info;
+            bool bViewDetails = false, bRequestDesign = false, bAdvertise = false;
+
+            if (lvOrders.SelectedItems.Count > 0)
+            {
+                item = lvOrders.SelectedItems[0];
+                info = (OrderInfo)item.Tag;
+
+                bViewDetails = true;
+
+                if (info.OrderStatus == ORDERSTATUS.Placed)
+                {
+                    bRequestDesign = true;
+                }
+                else if (info.OrderStatus == ORDERSTATUS.Processing)
+                {
+                    bRequestDesign = true;
+                }
+                else if (info.OrderStatus == ORDERSTATUS.Designed)
+                {
+                    bAdvertise = true;
+                }
+            }
+
+            btnViewDetails.Enabled = bViewDetails;
+            btnRequestDesign.Enabled = bRequestDesign;
+            btnAdvertise.Enabled = bAdvertise;*/
+        }
     }
 }

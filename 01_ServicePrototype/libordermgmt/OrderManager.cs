@@ -1,4 +1,6 @@
-﻿using System;
+﻿#define GOOGLE_SUGGESTER
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -47,7 +49,7 @@ namespace libordermgmt
 
     public enum ORDERSTATUS
     {
-        Placed, Processing, Designed
+        Placed, Processing, Designed, Ready, Advertising
     }
 
     public struct OrderInfo
@@ -610,12 +612,14 @@ AND TABLE_NAME = '{1}'", DATABASE_NAME, tableName);
 
             InsertData(query);
 
+#if GOOGLE_SUGGESTER
             char[] delimiters = new[] { ',', ';', ' ', '.', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0'};  // List of your delimiters
             splitWord = info.NameKor.Split(delimiters, StringSplitOptions.RemoveEmptyEntries)[0];
 
-            /*suggester = new GoogleSuggester();
+            suggester = new GoogleSuggester();
             tagList = suggester.GetSuggestionsList(splitWord);
 
+            InsertTagInfo(info, ReplaceSQLWord(info.NameKor));
             InsertTagInfo(info, ReplaceSQLWord(splitWord));
 
             foreach (string s in tagList)
@@ -632,6 +636,7 @@ AND TABLE_NAME = '{1}'", DATABASE_NAME, tableName);
 
                 tagList = suggester.GetSuggestionsList(splitWord);
 
+                InsertTagInfo(info, ReplaceSQLWord(info.NameEng));
                 InsertTagInfo(info, ReplaceSQLWord(splitWord));
 
                 foreach (string s in tagList)
@@ -641,7 +646,8 @@ AND TABLE_NAME = '{1}'", DATABASE_NAME, tableName);
                         InsertTagInfo(info, ReplaceSQLWord(s));
                     }
                 }
-            }*/
+            }
+#endif
         }
 
         public int InsertTagInfo(BusStopInfo info, string tag)
@@ -790,6 +796,22 @@ WHERE OrderID={1}"
             OrderInfo[] orderArray;
             orderArray = RetrieveMultipleData<OrderInfo>(
                 String.Format("SELECT * FROM OrderInfo WHERE OrderStatus >= {0}", (int)status)
+                , FUNC_GET_ORDER);
+
+            for (int i = 0; i < orderArray.Length; i++)
+            {
+                orderArray[i].Customer = GetCustomerById(orderArray[i].Customer.CustomerID);
+                orderArray[i].Service = GetAdServiceById(orderArray[i].Service.ServiceID);
+            }
+
+            return orderArray;
+        }
+
+        public OrderInfo[] RetrieveOrder(CustomerInfo customer)
+        {
+            OrderInfo[] orderArray;
+            orderArray = RetrieveMultipleData<OrderInfo>(
+                String.Format("SELECT * FROM OrderInfo WHERE CustomerID = {0}", customer.CustomerID)
                 , FUNC_GET_ORDER);
 
             for (int i = 0; i < orderArray.Length; i++)

@@ -28,10 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.btnProcessOrder = new System.Windows.Forms.Button();
-            this.tmrUpdateList = new System.Windows.Forms.Timer(this.components);
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.txtFile = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -119,7 +117,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnProcessOrder;
-        private System.Windows.Forms.Timer tmrUpdateList;
         private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.TextBox txtFile;
         private System.Windows.Forms.Label label2;

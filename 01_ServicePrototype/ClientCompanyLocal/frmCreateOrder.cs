@@ -1,6 +1,4 @@
-﻿//#define RESET_DB
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,30 +13,23 @@ namespace ClientCompanyLocal
 {
     public partial class frmCreateOrder : Form
     {
-        OrderManager om;
-        CustomerInfo Customer;
+        OrderManager _om;
+        CustomerInfo _customer;
         CurrencyConverter _converter;
 
-        public frmCreateOrder(CurrencyConverter converter)
+        public frmCreateOrder(CurrencyConverter converter, OrderManager om, CustomerInfo customer)
         {
             InitializeComponent();
 
-            lvServices.FullRowSelect = true;
-
-#if RESET_DB
-            om = new OrderManagerSampleData();
-#else
-            om = new OrderManager();
-#endif
-            Customer = new CustomerInfo();
-
+            _om = om;
+            _customer = customer;
             _converter = converter;
-            om.FindCustomer("sample@email.com", ref Customer);
+            lvServices.FullRowSelect = true;
         }
 
         private void UpdateAdServiceList()
         {
-            AdService[] services = om.RetrieveAdService();
+            AdService[] services = _om.RetrieveAdService();
             ListViewItem item;
 
             lvServices.Items.Clear();
@@ -69,9 +60,9 @@ namespace ClientCompanyLocal
             order.OrderStatus = ORDERSTATUS.Placed;
 
             order.Service = service;
-            order.Customer = Customer;
+            order.Customer = _customer;
 
-            orderID = om.InsertOrder(order);
+            orderID = _om.InsertOrder(order);
 
             //orderID = om.InsertOrder(Customer, service);
 
@@ -81,7 +72,7 @@ namespace ClientCompanyLocal
             product.Description = txtDescription.Text;
             product.TagList = txtTags.Text;
 
-            om.InsertProduct(orderID, product);
+            _om.InsertProduct(orderID, product);
         }
 
         private void frmMain_Load(object sender, EventArgs e)
