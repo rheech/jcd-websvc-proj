@@ -120,4 +120,8 @@
   <metadata name="imageList1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="txtDescription.Text" xml:space="preserve">
+    <value>Dell XPS (Xtreme Performance System) is a line of gaming and performance computers manufactured by Dell.
+The product we plan to advertise is a XPS laptop series with a feature of JBL speakers to be launched by upcoming 2016.</value>
+  </data>
 </root>

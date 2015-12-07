@@ -30,7 +30,7 @@ namespace ClientCompanyLocal
 #endif
             _customer = new CustomerInfo();
 
-            _om.FindCustomer("sample@email.com", ref _customer);
+            _om.FindCustomer("email_kr@dell.com", ref _customer);
 
             btnCreateOrder.Enabled = false;
             bw1.RunWorkerAsync();

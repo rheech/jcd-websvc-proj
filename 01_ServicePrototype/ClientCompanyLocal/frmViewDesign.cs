@@ -28,8 +28,17 @@ namespace ClientCompanyLocal
 
         private void btnAccept_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+            string question_msg;
+
+            question_msg = "By accepting this, JCDecaux will advertise your product with the poster. Are you sure you want to continue?";
+
+            if (MessageBox.Show(question_msg, "Design", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                MessageBox.Show("Order complete. Thank you.", "Design", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
         }
 
         private void frmViewDesign_Load(object sender, EventArgs e)

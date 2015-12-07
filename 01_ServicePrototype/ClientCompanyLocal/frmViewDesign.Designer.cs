@@ -40,7 +40,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(134, 9);
+            this.label1.Location = new System.Drawing.Point(169, 8);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(131, 25);
             this.label1.TabIndex = 20;
@@ -48,17 +48,17 @@
             // 
             // pictureBox
             // 
-            this.pictureBox.Location = new System.Drawing.Point(12, 45);
+            this.pictureBox.Location = new System.Drawing.Point(14, 42);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(384, 243);
+            this.pictureBox.Size = new System.Drawing.Size(448, 224);
             this.pictureBox.TabIndex = 21;
             this.pictureBox.TabStop = false;
             // 
             // btnAccept
             // 
-            this.btnAccept.Location = new System.Drawing.Point(108, 298);
+            this.btnAccept.Location = new System.Drawing.Point(126, 275);
             this.btnAccept.Name = "btnAccept";
-            this.btnAccept.Size = new System.Drawing.Size(92, 36);
+            this.btnAccept.Size = new System.Drawing.Size(107, 33);
             this.btnAccept.TabIndex = 23;
             this.btnAccept.Text = "&Accept Design";
             this.btnAccept.UseVisualStyleBackColor = true;
@@ -66,18 +66,18 @@
             // 
             // btnDecline
             // 
-            this.btnDecline.Location = new System.Drawing.Point(206, 298);
+            this.btnDecline.Location = new System.Drawing.Point(240, 275);
             this.btnDecline.Name = "btnDecline";
-            this.btnDecline.Size = new System.Drawing.Size(92, 36);
+            this.btnDecline.Size = new System.Drawing.Size(107, 33);
             this.btnDecline.TabIndex = 24;
             this.btnDecline.Text = "&Decline Design";
             this.btnDecline.UseVisualStyleBackColor = true;
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(304, 298);
+            this.btnClose.Location = new System.Drawing.Point(355, 275);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(92, 36);
+            this.btnClose.Size = new System.Drawing.Size(107, 33);
             this.btnClose.TabIndex = 25;
             this.btnClose.Text = "&Close";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -85,9 +85,9 @@
             // 
             // frmViewDesign
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(408, 346);
+            this.ClientSize = new System.Drawing.Size(476, 319);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnDecline);
             this.Controls.Add(this.btnAccept);

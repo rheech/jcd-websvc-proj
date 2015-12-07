@@ -1,4 +1,4 @@
-﻿#define GOOGLE_SUGGESTER
+﻿//#define GOOGLE_SUGGESTER
 
 using System;
 using System.Collections.Generic;

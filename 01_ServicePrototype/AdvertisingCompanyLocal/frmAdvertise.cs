@@ -68,17 +68,25 @@ namespace AdvertisingCompanyLocal
         private void btnAdvertise_Click(object sender, EventArgs e)
         {
             string stopName;
-            stopName = lvBusStop.SelectedItems[0].SubItems[1].Text;
 
-            if (MessageBox.Show(
-                String.Format("Are you sure you want to display this advertisment to {0}?", stopName),
-                "Advertisement", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (lvBusStop.SelectedItems.Count > 0)
             {
-                MessageBox.Show(String.Format("Advertisement applied to {0}.", stopName),
-                    "Advertisement", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                stopName = lvBusStop.SelectedItems[0].SubItems[1].Text;
 
-                this.DialogResult = DialogResult.OK;
-                this.Close();
+                if (MessageBox.Show(
+                    String.Format("Are you sure you want to display this advertisment to {0}?", stopName),
+                    "Advertisement", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    MessageBox.Show(String.Format("Advertisement applied to {0}.", stopName),
+                        "Advertisement", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a bus stop.", "Advertisement", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
     }
