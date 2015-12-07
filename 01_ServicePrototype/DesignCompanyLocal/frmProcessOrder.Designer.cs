@@ -41,17 +41,17 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(113, 9);
+            this.label1.Location = new System.Drawing.Point(136, 8);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(150, 25);
+            this.label1.Size = new System.Drawing.Size(151, 25);
             this.label1.TabIndex = 20;
-            this.label1.Text = "Process Order";
+            this.label1.Text = "Submit Design";
             // 
             // btnProcessOrder
             // 
-            this.btnProcessOrder.Location = new System.Drawing.Point(257, 300);
+            this.btnProcessOrder.Location = new System.Drawing.Point(300, 277);
             this.btnProcessOrder.Name = "btnProcessOrder";
-            this.btnProcessOrder.Size = new System.Drawing.Size(94, 36);
+            this.btnProcessOrder.Size = new System.Drawing.Size(110, 33);
             this.btnProcessOrder.TabIndex = 22;
             this.btnProcessOrder.Text = "&Process Order";
             this.btnProcessOrder.UseVisualStyleBackColor = true;
@@ -59,33 +59,33 @@
             // 
             // pictureBox
             // 
-            this.pictureBox.Location = new System.Drawing.Point(15, 77);
+            this.pictureBox.Location = new System.Drawing.Point(17, 71);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(336, 217);
+            this.pictureBox.Size = new System.Drawing.Size(392, 200);
             this.pictureBox.TabIndex = 23;
             this.pictureBox.TabStop = false;
             // 
             // txtFile
             // 
-            this.txtFile.Location = new System.Drawing.Point(44, 51);
+            this.txtFile.Location = new System.Drawing.Point(51, 47);
             this.txtFile.Name = "txtFile";
-            this.txtFile.Size = new System.Drawing.Size(226, 20);
+            this.txtFile.Size = new System.Drawing.Size(263, 21);
             this.txtFile.TabIndex = 24;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 54);
+            this.label2.Location = new System.Drawing.Point(14, 50);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(26, 13);
+            this.label2.Size = new System.Drawing.Size(29, 12);
             this.label2.TabIndex = 25;
             this.label2.Text = "File:";
             // 
             // btnBrowse
             // 
-            this.btnBrowse.Location = new System.Drawing.Point(276, 49);
+            this.btnBrowse.Location = new System.Drawing.Point(322, 45);
             this.btnBrowse.Name = "btnBrowse";
-            this.btnBrowse.Size = new System.Drawing.Size(75, 23);
+            this.btnBrowse.Size = new System.Drawing.Size(87, 21);
             this.btnBrowse.TabIndex = 26;
             this.btnBrowse.Text = "&Browse";
             this.btnBrowse.UseVisualStyleBackColor = true;
@@ -93,9 +93,9 @@
             // 
             // frmProcessOrder
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(371, 346);
+            this.ClientSize = new System.Drawing.Size(433, 319);
             this.Controls.Add(this.btnBrowse);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtFile);

@@ -48,7 +48,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(173, 9);
+            this.label1.Location = new System.Drawing.Point(215, 8);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(112, 25);
             this.label1.TabIndex = 19;
@@ -57,9 +57,9 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.lvOrders);
-            this.groupBox1.Location = new System.Drawing.Point(12, 47);
+            this.groupBox1.Location = new System.Drawing.Point(14, 43);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(449, 267);
+            this.groupBox1.Size = new System.Drawing.Size(524, 246);
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Orders";
@@ -75,9 +75,9 @@
             this.lvOrders.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lvOrders.FullRowSelect = true;
             this.lvOrders.HideSelection = false;
-            this.lvOrders.Location = new System.Drawing.Point(3, 16);
+            this.lvOrders.Location = new System.Drawing.Point(3, 17);
             this.lvOrders.Name = "lvOrders";
-            this.lvOrders.Size = new System.Drawing.Size(443, 248);
+            this.lvOrders.Size = new System.Drawing.Size(518, 226);
             this.lvOrders.TabIndex = 2;
             this.lvOrders.UseCompatibleStateImageBehavior = false;
             this.lvOrders.View = System.Windows.Forms.View.Details;
@@ -113,18 +113,18 @@
             // 
             // btnModifyOrder
             // 
-            this.btnModifyOrder.Location = new System.Drawing.Point(15, 320);
+            this.btnModifyOrder.Location = new System.Drawing.Point(17, 295);
             this.btnModifyOrder.Name = "btnModifyOrder";
-            this.btnModifyOrder.Size = new System.Drawing.Size(92, 36);
+            this.btnModifyOrder.Size = new System.Drawing.Size(107, 33);
             this.btnModifyOrder.TabIndex = 21;
             this.btnModifyOrder.Text = "&Modify Order";
             this.btnModifyOrder.UseVisualStyleBackColor = true;
             // 
             // btnViewDesign
             // 
-            this.btnViewDesign.Location = new System.Drawing.Point(193, 320);
+            this.btnViewDesign.Location = new System.Drawing.Point(225, 295);
             this.btnViewDesign.Name = "btnViewDesign";
-            this.btnViewDesign.Size = new System.Drawing.Size(92, 36);
+            this.btnViewDesign.Size = new System.Drawing.Size(107, 33);
             this.btnViewDesign.TabIndex = 22;
             this.btnViewDesign.Text = "&View Design";
             this.btnViewDesign.UseVisualStyleBackColor = true;
@@ -132,9 +132,9 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(369, 320);
+            this.btnClose.Location = new System.Drawing.Point(430, 295);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(92, 36);
+            this.btnClose.Size = new System.Drawing.Size(107, 33);
             this.btnClose.TabIndex = 23;
             this.btnClose.Text = "&Close";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -142,9 +142,9 @@
             // 
             // frmViewOrders
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(473, 366);
+            this.ClientSize = new System.Drawing.Size(552, 338);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnViewDesign);
             this.Controls.Add(this.btnModifyOrder);

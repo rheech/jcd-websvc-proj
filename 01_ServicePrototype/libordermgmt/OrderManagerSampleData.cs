@@ -13,7 +13,7 @@ namespace libordermgmt
 
             CustomerInfo info = new CustomerInfo();
             info.CompanyName = "Dell Korea";
-            info.Address = "135-982 서울시 강남구 역삼동 838 푸르덴셜 타워 12층 델 인터내셔널 주식회사";
+            info.Address = "서울특별시 강남구 강남대로 298 푸르덴셜타워 12층 델 인터내셔널";
             info.EMail = "email_kr@dell.com";
 
             this.InsertCustomer(info);

@@ -69,7 +69,7 @@
             this.groupBox1.Controls.Add(this.lblCustCompanyName);
             this.groupBox1.Location = new System.Drawing.Point(14, 34);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(498, 76);
+            this.groupBox1.Size = new System.Drawing.Size(498, 79);
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Customer Information";
@@ -78,13 +78,13 @@
             // 
             this.lblCustAddressDisplay.Location = new System.Drawing.Point(274, 23);
             this.lblCustAddressDisplay.Name = "lblCustAddressDisplay";
-            this.lblCustAddressDisplay.Size = new System.Drawing.Size(212, 32);
+            this.lblCustAddressDisplay.Size = new System.Drawing.Size(212, 29);
             this.lblCustAddressDisplay.TabIndex = 4;
             // 
             // lblCustPhoneNumber
             // 
             this.lblCustPhoneNumber.AutoSize = true;
-            this.lblCustPhoneNumber.Location = new System.Drawing.Point(222, 55);
+            this.lblCustPhoneNumber.Location = new System.Drawing.Point(222, 57);
             this.lblCustPhoneNumber.Name = "lblCustPhoneNumber";
             this.lblCustPhoneNumber.Size = new System.Drawing.Size(94, 12);
             this.lblCustPhoneNumber.TabIndex = 3;
@@ -94,7 +94,7 @@
             // lblCustEmail
             // 
             this.lblCustEmail.AutoSize = true;
-            this.lblCustEmail.Location = new System.Drawing.Point(7, 55);
+            this.lblCustEmail.Location = new System.Drawing.Point(7, 57);
             this.lblCustEmail.Name = "lblCustEmail";
             this.lblCustEmail.Size = new System.Drawing.Size(47, 12);
             this.lblCustEmail.TabIndex = 2;
@@ -131,7 +131,7 @@
             this.groupBox2.Controls.Add(this.lblTagList);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.lblServiceType);
-            this.groupBox2.Location = new System.Drawing.Point(14, 115);
+            this.groupBox2.Location = new System.Drawing.Point(14, 119);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(498, 250);
             this.groupBox2.TabIndex = 22;
@@ -217,7 +217,7 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(402, 371);
+            this.btnClose.Location = new System.Drawing.Point(402, 375);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(110, 33);
             this.btnClose.TabIndex = 0;
@@ -229,7 +229,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(526, 414);
+            this.ClientSize = new System.Drawing.Size(526, 417);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);

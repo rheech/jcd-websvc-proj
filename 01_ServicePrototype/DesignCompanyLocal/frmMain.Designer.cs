@@ -46,7 +46,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(142, 9);
+            this.label1.Location = new System.Drawing.Point(186, 8);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(176, 25);
             this.label1.TabIndex = 20;
@@ -55,9 +55,9 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.lvOrders);
-            this.groupBox1.Location = new System.Drawing.Point(12, 49);
+            this.groupBox1.Location = new System.Drawing.Point(14, 45);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(465, 302);
+            this.groupBox1.Size = new System.Drawing.Size(542, 279);
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Design Requests";
@@ -73,9 +73,9 @@
             this.lvOrders.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lvOrders.FullRowSelect = true;
             this.lvOrders.HideSelection = false;
-            this.lvOrders.Location = new System.Drawing.Point(3, 16);
+            this.lvOrders.Location = new System.Drawing.Point(3, 17);
             this.lvOrders.Name = "lvOrders";
-            this.lvOrders.Size = new System.Drawing.Size(459, 283);
+            this.lvOrders.Size = new System.Drawing.Size(536, 259);
             this.lvOrders.TabIndex = 2;
             this.lvOrders.UseCompatibleStateImageBehavior = false;
             this.lvOrders.View = System.Windows.Forms.View.Details;
@@ -106,9 +106,9 @@
             // 
             // btnProcessOrder
             // 
-            this.btnProcessOrder.Location = new System.Drawing.Point(379, 357);
+            this.btnProcessOrder.Location = new System.Drawing.Point(442, 330);
             this.btnProcessOrder.Name = "btnProcessOrder";
-            this.btnProcessOrder.Size = new System.Drawing.Size(94, 36);
+            this.btnProcessOrder.Size = new System.Drawing.Size(110, 33);
             this.btnProcessOrder.TabIndex = 22;
             this.btnProcessOrder.Text = "&Process Order";
             this.btnProcessOrder.UseVisualStyleBackColor = true;
@@ -121,9 +121,9 @@
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(485, 405);
+            this.ClientSize = new System.Drawing.Size(566, 374);
             this.Controls.Add(this.btnProcessOrder);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);

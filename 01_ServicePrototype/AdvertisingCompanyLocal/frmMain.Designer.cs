@@ -55,9 +55,9 @@
             this.lvOrders.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lvOrders.FullRowSelect = true;
             this.lvOrders.HideSelection = false;
-            this.lvOrders.Location = new System.Drawing.Point(3, 16);
+            this.lvOrders.Location = new System.Drawing.Point(3, 17);
             this.lvOrders.Name = "lvOrders";
-            this.lvOrders.Size = new System.Drawing.Size(455, 273);
+            this.lvOrders.Size = new System.Drawing.Size(532, 250);
             this.lvOrders.TabIndex = 1;
             this.lvOrders.UseCompatibleStateImageBehavior = false;
             this.lvOrders.View = System.Windows.Forms.View.Details;
@@ -91,7 +91,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(134, 9);
+            this.label1.Location = new System.Drawing.Point(176, 8);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(216, 25);
             this.label1.TabIndex = 19;
@@ -100,18 +100,18 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.lvOrders);
-            this.groupBox1.Location = new System.Drawing.Point(12, 53);
+            this.groupBox1.Location = new System.Drawing.Point(14, 49);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(461, 292);
+            this.groupBox1.Size = new System.Drawing.Size(538, 270);
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Orders";
             // 
             // btnRequestDesign
             // 
-            this.btnRequestDesign.Location = new System.Drawing.Point(195, 351);
+            this.btnRequestDesign.Location = new System.Drawing.Point(227, 324);
             this.btnRequestDesign.Name = "btnRequestDesign";
-            this.btnRequestDesign.Size = new System.Drawing.Size(94, 36);
+            this.btnRequestDesign.Size = new System.Drawing.Size(110, 33);
             this.btnRequestDesign.TabIndex = 21;
             this.btnRequestDesign.Text = "Design Request";
             this.btnRequestDesign.UseVisualStyleBackColor = true;
@@ -119,9 +119,9 @@
             // 
             // btnAdvertise
             // 
-            this.btnAdvertise.Location = new System.Drawing.Point(375, 351);
+            this.btnAdvertise.Location = new System.Drawing.Point(437, 324);
             this.btnAdvertise.Name = "btnAdvertise";
-            this.btnAdvertise.Size = new System.Drawing.Size(94, 36);
+            this.btnAdvertise.Size = new System.Drawing.Size(110, 33);
             this.btnAdvertise.TabIndex = 22;
             this.btnAdvertise.Text = "Advertise";
             this.btnAdvertise.UseVisualStyleBackColor = true;
@@ -134,9 +134,9 @@
             // 
             // btnViewDetails
             // 
-            this.btnViewDetails.Location = new System.Drawing.Point(15, 351);
+            this.btnViewDetails.Location = new System.Drawing.Point(17, 324);
             this.btnViewDetails.Name = "btnViewDetails";
-            this.btnViewDetails.Size = new System.Drawing.Size(94, 36);
+            this.btnViewDetails.Size = new System.Drawing.Size(110, 33);
             this.btnViewDetails.TabIndex = 23;
             this.btnViewDetails.Text = "View Details";
             this.btnViewDetails.UseVisualStyleBackColor = true;
@@ -144,9 +144,9 @@
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(485, 405);
+            this.ClientSize = new System.Drawing.Size(566, 374);
             this.Controls.Add(this.btnViewDetails);
             this.Controls.Add(this.btnAdvertise);
             this.Controls.Add(this.btnRequestDesign);

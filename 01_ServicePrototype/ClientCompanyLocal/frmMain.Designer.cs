@@ -38,18 +38,18 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 62);
+            this.label1.Location = new System.Drawing.Point(14, 57);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(260, 13);
+            this.label1.Size = new System.Drawing.Size(274, 12);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Logged in as: Dell Corporation (API Key: 1A-0039482)";
+            this.label1.Text = "Logged in as: Dell Korea (API Key: 1A-0039482)";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(105, 9);
+            this.label2.Location = new System.Drawing.Point(122, 8);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(164, 25);
             this.label2.TabIndex = 19;
@@ -57,9 +57,9 @@
             // 
             // btnViewOrders
             // 
-            this.btnViewOrders.Location = new System.Drawing.Point(45, 115);
+            this.btnViewOrders.Location = new System.Drawing.Point(52, 106);
             this.btnViewOrders.Name = "btnViewOrders";
-            this.btnViewOrders.Size = new System.Drawing.Size(105, 41);
+            this.btnViewOrders.Size = new System.Drawing.Size(122, 38);
             this.btnViewOrders.TabIndex = 20;
             this.btnViewOrders.Text = "&View Order";
             this.btnViewOrders.UseVisualStyleBackColor = true;
@@ -67,9 +67,9 @@
             // 
             // btnCreateOrder
             // 
-            this.btnCreateOrder.Location = new System.Drawing.Point(202, 115);
+            this.btnCreateOrder.Location = new System.Drawing.Point(236, 106);
             this.btnCreateOrder.Name = "btnCreateOrder";
-            this.btnCreateOrder.Size = new System.Drawing.Size(105, 41);
+            this.btnCreateOrder.Size = new System.Drawing.Size(122, 38);
             this.btnCreateOrder.TabIndex = 21;
             this.btnCreateOrder.Text = "&Create Order";
             this.btnCreateOrder.UseVisualStyleBackColor = true;
@@ -82,9 +82,9 @@
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(354, 187);
+            this.ClientSize = new System.Drawing.Size(413, 173);
             this.Controls.Add(this.btnCreateOrder);
             this.Controls.Add(this.btnViewOrders);
             this.Controls.Add(this.label2);
