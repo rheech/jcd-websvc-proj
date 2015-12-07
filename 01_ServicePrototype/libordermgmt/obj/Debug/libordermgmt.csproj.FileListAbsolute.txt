@@ -1,2 +1,11 @@
 D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\libordermgmt\bin\Debug\libordermgmt.dll
 D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\libordermgmt\bin\Debug\libordermgmt.pdb
+D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServicePrototype\bin\Debug\bus_stops_data.txt
+D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServicePrototype\bin\Debug\Resources\dell_xps_jbl.jpg
+D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServicePrototype\bin\Debug\libordermgmt.dll
+D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServicePrototype\bin\Debug\libordermgmt.pdb
+D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServicePrototype\libordermgmt\obj\Debug\libordermgmt.csprojResolveAssemblyReference.cache
+D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServicePrototype\libordermgmt\obj\Debug\Interop.ADOX.dll
+D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServicePrototype\libordermgmt\obj\Debug\libordermgmt.csproj.ResolveComReference.cache
+D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServicePrototype\libordermgmt\obj\Debug\libordermgmt.dll
+D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServicePrototype\libordermgmt\obj\Debug\libordermgmt.pdb

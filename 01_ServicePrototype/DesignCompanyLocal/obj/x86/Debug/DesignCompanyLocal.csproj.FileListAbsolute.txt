@@ -1,0 +1,16 @@
+D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServicePrototype\DesignCompanyLocal\bin\Debug\bus_stops_data.txt
+D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServicePrototype\DesignCompanyLocal\bin\Debug\Resources\dell_xps_jbl.jpg
+D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServicePrototype\DesignCompanyLocal\bin\Debug\DesignCompanyLocal.exe
+D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServicePrototype\DesignCompanyLocal\bin\Debug\DesignCompanyLocal.pdb
+D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServicePrototype\DesignCompanyLocal\bin\Debug\libordermgmt.dll
+D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServicePrototype\DesignCompanyLocal\bin\Debug\libwebsvcprod.dll
+D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServicePrototype\DesignCompanyLocal\bin\Debug\libordermgmt.pdb
+D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServicePrototype\DesignCompanyLocal\bin\Debug\libwebsvcprod.pdb
+D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServicePrototype\DesignCompanyLocal\obj\x86\Debug\DesignCompanyLocal.csprojResolveAssemblyReference.cache
+D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServicePrototype\DesignCompanyLocal\obj\x86\Debug\DesignCompanyLocal.frmProcessOrder.resources
+D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServicePrototype\DesignCompanyLocal\obj\x86\Debug\DesignCompanyLocal.frmMain.resources
+D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServicePrototype\DesignCompanyLocal\obj\x86\Debug\DesignCompanyLocal.frmOrderDetails.resources
+D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServicePrototype\DesignCompanyLocal\obj\x86\Debug\DesignCompanyLocal.Properties.Resources.resources
+D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServicePrototype\DesignCompanyLocal\obj\x86\Debug\DesignCompanyLocal.csproj.GenerateResource.Cache
+D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServicePrototype\DesignCompanyLocal\obj\x86\Debug\DesignCompanyLocal.exe
+D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServicePrototype\DesignCompanyLocal\obj\x86\Debug\DesignCompanyLocal.pdb

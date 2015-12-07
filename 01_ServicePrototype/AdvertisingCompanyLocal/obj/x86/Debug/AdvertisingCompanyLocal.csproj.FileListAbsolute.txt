@@ -1,0 +1,16 @@
+D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServicePrototype\AdvertisingCompanyLocal\bin\Debug\bus_stops_data.txt
+D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServicePrototype\AdvertisingCompanyLocal\bin\Debug\Resources\dell_xps_jbl.jpg
+D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServicePrototype\AdvertisingCompanyLocal\bin\Debug\AdvertisingCompanyLocal.exe
+D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServicePrototype\AdvertisingCompanyLocal\bin\Debug\AdvertisingCompanyLocal.pdb
+D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServicePrototype\AdvertisingCompanyLocal\bin\Debug\libordermgmt.dll
+D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServicePrototype\AdvertisingCompanyLocal\bin\Debug\libwebsvcprod.dll
+D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServicePrototype\AdvertisingCompanyLocal\bin\Debug\libordermgmt.pdb
+D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServicePrototype\AdvertisingCompanyLocal\bin\Debug\libwebsvcprod.pdb
+D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServicePrototype\AdvertisingCompanyLocal\obj\x86\Debug\AdvertisingCompanyLocal.csprojResolveAssemblyReference.cache
+D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServicePrototype\AdvertisingCompanyLocal\obj\x86\Debug\AdvertisingCompanyLocal.frmAdvertise.resources
+D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServicePrototype\AdvertisingCompanyLocal\obj\x86\Debug\AdvertisingCompanyLocal.frmMain.resources
+D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServicePrototype\AdvertisingCompanyLocal\obj\x86\Debug\AdvertisingCompanyLocal.frmViewDetails.resources
+D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServicePrototype\AdvertisingCompanyLocal\obj\x86\Debug\AdvertisingCompanyLocal.Properties.Resources.resources
+D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServicePrototype\AdvertisingCompanyLocal\obj\x86\Debug\AdvertisingCompanyLocal.csproj.GenerateResource.Cache
+D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServicePrototype\AdvertisingCompanyLocal\obj\x86\Debug\AdvertisingCompanyLocal.exe
+D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServicePrototype\AdvertisingCompanyLocal\obj\x86\Debug\AdvertisingCompanyLocal.pdb

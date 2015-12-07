@@ -41,6 +41,7 @@
             this.btnModifyOrder = new System.Windows.Forms.Button();
             this.btnViewDesign = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.btnAdvertise = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -122,7 +123,7 @@
             // 
             // btnViewDesign
             // 
-            this.btnViewDesign.Location = new System.Drawing.Point(225, 295);
+            this.btnViewDesign.Location = new System.Drawing.Point(154, 295);
             this.btnViewDesign.Name = "btnViewDesign";
             this.btnViewDesign.Size = new System.Drawing.Size(107, 33);
             this.btnViewDesign.TabIndex = 22;
@@ -132,7 +133,7 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(430, 295);
+            this.btnClose.Location = new System.Drawing.Point(428, 295);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(107, 33);
             this.btnClose.TabIndex = 23;
@@ -140,11 +141,22 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // btnAdvertise
+            // 
+            this.btnAdvertise.Location = new System.Drawing.Point(291, 295);
+            this.btnAdvertise.Name = "btnAdvertise";
+            this.btnAdvertise.Size = new System.Drawing.Size(107, 33);
+            this.btnAdvertise.TabIndex = 24;
+            this.btnAdvertise.Text = "&Advertise";
+            this.btnAdvertise.UseVisualStyleBackColor = true;
+            this.btnAdvertise.Click += new System.EventHandler(this.btnAdvertise_Click);
+            // 
             // frmViewOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(552, 338);
+            this.Controls.Add(this.btnAdvertise);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnViewDesign);
             this.Controls.Add(this.btnModifyOrder);
@@ -176,5 +188,6 @@
         protected System.Windows.Forms.Button btnModifyOrder;
         protected System.Windows.Forms.Button btnViewDesign;
         protected System.Windows.Forms.Button btnClose;
+        protected System.Windows.Forms.Button btnAdvertise;
     }
 }

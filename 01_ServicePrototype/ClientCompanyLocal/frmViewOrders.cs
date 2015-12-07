@@ -109,5 +109,47 @@ namespace ClientCompanyLocal
         {
             this.Close();
         }
+
+        private bool GetSelectedOrder(ref OrderInfo order, ref Product product)
+        {
+            if (lvOrders.SelectedItems.Count > 0)
+            {
+                order = (OrderInfo)lvOrders.SelectedItems[0].Tag;
+                product = new Product();
+
+                if (_om.FindProduct(order.OrderID, ref product))
+                {
+                    return true;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select an order.", "Order", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+
+            return false;
+        }
+
+        private void btnAdvertise_Click(object sender, EventArgs e)
+        {
+            OrderInfo info;
+            Product product;
+
+            info = new OrderInfo();
+            product = new Product();
+
+            if (GetSelectedOrder(ref info, ref product))
+            {
+                frmAdvertise fAdvertise = new frmAdvertise(_om, info, product);
+
+                if (fAdvertise.ShowDialog() == DialogResult.OK)
+                {
+                    info.OrderStatus = ORDERSTATUS.Advertising;
+                    _om.UpdateOrder(info);
+                }
+
+                UpdateOrderList();
+            }
+        }
     }
 }
