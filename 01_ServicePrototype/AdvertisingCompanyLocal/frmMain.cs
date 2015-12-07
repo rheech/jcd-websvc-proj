@@ -124,7 +124,10 @@ namespace AdvertisingCompanyLocal
             }
             else
             {
-                MessageBox.Show("Error occurred while reading the database.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (order.OrderID != 0)
+                {
+                    MessageBox.Show("Error occurred while reading the database.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -133,20 +136,21 @@ namespace AdvertisingCompanyLocal
             OrderInfo info;
             Product product;
 
-            if (MessageBox.Show("Are you sure you want to process the design request?", "Design Request", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            info = new OrderInfo();
+            product = new Product();
+
+            if (GetSelectedOrder(ref info, ref product))
             {
-                info = new OrderInfo();
-                product = new Product();
+                if (MessageBox.Show("Are you sure you want to process the design request?", "Design Request", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    info.OrderStatus = ORDERSTATUS.Processing;
 
-                GetSelectedOrder(ref info, ref product);
+                    _om.UpdateOrder(info);
 
-                info.OrderStatus = ORDERSTATUS.Processing;
+                    MessageBox.Show("Request complete", "Design Request", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                _om.UpdateOrder(info);
-
-                MessageBox.Show("Request complete", "Design Request", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                UpdateOrderList();
+                    UpdateOrderList();
+                }
             }
         }
 
@@ -190,17 +194,18 @@ namespace AdvertisingCompanyLocal
             info = new OrderInfo();
             product = new Product();
 
-            GetSelectedOrder(ref info, ref product);
-
-            frmAdvertise fAdvertise = new frmAdvertise(_om, info, product);
-
-            if (fAdvertise.ShowDialog() == DialogResult.OK)
+            if (GetSelectedOrder(ref info, ref product))
             {
-                info.OrderStatus = ORDERSTATUS.Advertising;
-                _om.UpdateOrder(info);
-            }
+                frmAdvertise fAdvertise = new frmAdvertise(_om, info, product);
 
-            UpdateOrderList();
+                if (fAdvertise.ShowDialog() == DialogResult.OK)
+                {
+                    info.OrderStatus = ORDERSTATUS.Advertising;
+                    _om.UpdateOrder(info);
+                }
+
+                UpdateOrderList();
+            }
         }
     }
 }
