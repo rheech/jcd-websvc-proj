@@ -82,6 +82,18 @@ namespace ClientCompanyLocal
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
+            if (lvServices.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Please choose a service.", "Order", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            if (txtProductName.Text.Trim() == "" || txtTags.Text.Trim() == "" || txtDescription.Text.Trim() == "")
+            {
+                MessageBox.Show("Please fill out the order.", "Order", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
             SubmitOrder();
             MessageBox.Show("Order complete.", "Order", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
@@ -99,8 +111,8 @@ namespace ClientCompanyLocal
 
                 if (_converter != null)
                 {
-                    lblAmount.Text = String.Format("Amount Due: ${0:#,##0.00} ({1:N0} Won)",
-                            service.Price, (int)_converter.DollarToWon((decimal)service.Price));
+                    lblAmount.Text = String.Format("Amount Due: {0:#,##0.00} EUR ({1:N0} KRW)",
+                            service.Price, (int)(Math.Round(_converter.EuroToWon((decimal)service.Price) / 1000000.0M, MidpointRounding.ToEven) * 1000000));
                 }
             }
         }
