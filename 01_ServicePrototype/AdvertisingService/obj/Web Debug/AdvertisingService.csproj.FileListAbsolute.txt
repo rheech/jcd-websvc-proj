@@ -1,7 +1,0 @@
-D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\AdvertisingService\bin\AdvertisingService.dll
-D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\AdvertisingService\bin\AdvertisingService.pdb
-D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\AdvertisingService\bin\libordermgmt.dll
-D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\AdvertisingService\bin\libordermgmt.pdb
-D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\AdvertisingService\obj\Web Debug\AdvertisingService.csprojResolveAssemblyReference.cache
-D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\AdvertisingService\obj\Web Debug\AdvertisingService.dll
-D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\AdvertisingService\obj\Web Debug\AdvertisingService.pdb

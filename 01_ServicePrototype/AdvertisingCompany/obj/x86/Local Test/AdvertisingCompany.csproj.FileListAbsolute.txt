@@ -1,6 +1,0 @@
-D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\bin\Debug\AdvertisingCompany.exe.config
-D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\bin\Debug\AdvertisingCompany.exe
-D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\AdvertisingCompany\obj\x86\Local Test\AdvertisingCompany.frmMain.resources
-D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\AdvertisingCompany\obj\x86\Local Test\AdvertisingCompany.Properties.Resources.resources
-D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\AdvertisingCompany\obj\x86\Local Test\AdvertisingCompany.csproj.GenerateResource.Cache
-D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\AdvertisingCompany\obj\x86\Local Test\AdvertisingCompany.exe

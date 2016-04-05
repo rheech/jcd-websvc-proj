@@ -1,6 +1,0 @@
-D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\libordermgmt\bin\Web Debug\libordermgmt.dll
-D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\libordermgmt\bin\Web Debug\libordermgmt.pdb
-D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\libordermgmt\obj\Web Debug\Interop.ADOX.dll
-D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\libordermgmt\obj\Web Debug\libordermgmt.csproj.ResolveComReference.cache
-D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\libordermgmt\obj\Web Debug\libordermgmt.dll
-D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\libordermgmt\obj\Web Debug\libordermgmt.pdb

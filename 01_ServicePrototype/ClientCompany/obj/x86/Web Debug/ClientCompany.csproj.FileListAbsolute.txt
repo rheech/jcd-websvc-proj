@@ -1,8 +1,0 @@
-D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\ClientCompany\obj\x86\Web Debug\ClientCompany.Properties.Resources.resources
-D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\ClientCompany\obj\x86\Web Debug\ClientCompany.csproj.GenerateResource.Cache
-D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\ClientCompany\obj\x86\Web Debug\ClientCompany.frmMain.resources
-D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\ClientCompany\bin\x86\Web Debug\ClientCompany.exe.config
-D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\ClientCompany\bin\x86\Web Debug\ClientCompany.exe
-D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\ClientCompany\bin\x86\Web Debug\ClientCompany.pdb
-D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\ClientCompany\obj\x86\Web Debug\ClientCompany.exe
-D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\ClientCompany\obj\x86\Web Debug\ClientCompany.pdb

@@ -1,6 +1,0 @@
-﻿Purchasing Service
-Ordering Service
-Invoicing Service
-Design Request Service
-Final Design Submission
-Approval Service

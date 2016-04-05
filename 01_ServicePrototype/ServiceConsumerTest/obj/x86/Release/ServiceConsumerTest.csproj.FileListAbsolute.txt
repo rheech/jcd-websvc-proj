@@ -1,2 +1,0 @@
-D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\ServiceConsumerTest\bin\Release\ServiceConsumerTest.exe.config
-D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\bin\Release\ServiceConsumerTest.exe.config

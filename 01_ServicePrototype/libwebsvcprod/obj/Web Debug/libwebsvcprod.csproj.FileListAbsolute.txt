@@ -1,5 +1,0 @@
-D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\libwebsvcprod\bin\Web Debug\libwebsvcprod.dll.config
-D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\libwebsvcprod\bin\Web Debug\libwebsvcprod.dll
-D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\libwebsvcprod\bin\Web Debug\libwebsvcprod.pdb
-D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\libwebsvcprod\obj\Web Debug\libwebsvcprod.dll
-D:\Users\chlee\Desktop\JCDecaux_Prototype\01_ServiceProducer\libwebsvcprod\obj\Web Debug\libwebsvcprod.pdb
